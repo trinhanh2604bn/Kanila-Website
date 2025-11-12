@@ -1,1 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+:root {
+  /* ---------- 🎨 COLORS ---------- */
+  --color-white: #ffffff;
+  --color-beige: #fdf9f8;
+  --color-pink1: #ffebee;
+  --color-pink2: #ffd6de;
+  --color-pink3: #ffadbe;
+  --color-red: #6b1e2e;
+  --color-brown: #372b2b;
+  --color-grey: #d9d9d9;
+
+  /* ---------- 🔤 FONTS ---------- */
+  --font-nunito: 'Nunito', sans-serif;
+  --font-beVietnam: 'Be Vietnam', sans-serif;
+  --font-beVietnamPro: 'Be Vietnam Pro', sans-serif;
+
+  /* ---------- 💪 FONT WEIGHTS ---------- */
+  --font-weight-black: 900;
+  --font-weight-extraBold: 800;
+  --font-weight-medium: 500;
+  --font-weight-italic: italic;
+  --font-weight-regular: 400;
+
+  /* ---------- 🔠 FONT SIZES ---------- */
+  --font-size-xs: 14px;
+  --font-size-s: 16px;
+  --font-size-m: 20px;
+  --font-size-l: 35px;
+  --font-size-xl: 40px;
+  --font-size-mxs: 10px;
+  --font-size-ms: 11px;
+  --font-size-mm: 14px;
+  --font-size-ml: 20px;
+  --font-size-mxl: 24px;
+
+  /* ---------- 📏 LINE HEIGHTS ---------- */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-base: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ---------- 📐 SPACING ---------- */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 160px;
+  --space-12: 192px;
+  --space-13: 256px;
+  --space-container: 16px;
+  --space-section: 24px;
+
+  /* ---------- 🔲 BORDERS ---------- */
+  --border-0: 0;
+  --border-1: 1px solid;
+  --border-2: 2px solid;
+  --border-3: 8px solid;
+
+  /* ---------- 🟣 RADII ---------- */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-full: 9999px;
+  --radius-top: 4px 4px 0 0;
+  --radius-right: 0 4px 4px 0;
+  --radius-bottom: 0 0 4px 4px;
+  --radius-left: 4px 0 0 4px;
+
+  /* ---------- 🌫️ SHADOWS ---------- */
+  --shadow-light: 0 0 6px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 0 12px rgba(0, 0, 0, 0.2);
+
+  /* ---------- 📏 BREAKPOINTS ---------- */
+  --breakpoint-xs: 768px;
+  --breakpoint-sm: 992px;
+  --breakpoint-md: 1200px;
+  --breakpoint-xsMax: (max-width: 767px);
+  --breakpoint-smMin: (min-width: 768px);
+  --breakpoint-smMax: (max-width: 991px);
+  --breakpoint-mdMin: (min-width: 992px);
+  --breakpoint-mdMax: (max-width: 1199px);
+  --breakpoint-lgMin: (min-width: 1200px);
+
+  /* ---------- 🖥️ SITE DIMENSIONS ---------- */
+  --site-containerMax: 1248px;
+  --site-maxWidth: 1440px;
+  --site-headerHeight: 54px;
+  --site-minWidthFS: 1024px;
+  --site-sidebarWidth: 203px;
+  --site-topBarHeight: 34px;
+  --site-legacyWidth: 980px;
+  --site-breadcrumbHeight: 50px;
+  --site-mainIndent: var(--space-5);
+
+  /* ---------- ↔️ LETTER SPACING ---------- */
+  --letter-spacing-normal: normal;
+  --letter-spacing-sm: 0.0625em;
+  --letter-spacing-md: 0.125em;
+  --letter-spacing-lg: 0.25em;
+
+  /* ---------- 🧱 Z-INDICES ---------- */
+  --z-fixedBar: 1000;
+  --z-header: 1010;
+  --z-flyout: 1020;
+  --z-modal: 1030;
+  --z-max: 2147483647;
+
+  /* ---------- 🔘 BUTTONS ---------- */
+  --button-height: 44px;
+  --button-height-sm: 32px;
+  --button-height-xs: 24px;
+
+  /* ---------- 🧾 FORMS ---------- */
+  --form-height: 44px;
+  --form-height-sm: 36px;
+  --form-height-xs: 32px;
+  --form-border-width: 1px;
+  --form-border-width-bold: 2px;
+  --form-font-size: var(--font-size-s);
+  --form-padding-x: var(--space-4);
+  --form-padding-y: var(--space-3);
+  --form-color: var(--color-brown);
+  --form-bg: var(--color-white);
+  --form-border-color: var(--color-grey);
+  --form-border-focus-color: var(--color-red);
+  --form-border-radius: var(--radius-sm);
+  --form-disabled-bg: var(--color-pink1);
+  --form-disabled-opacity: 0.7;
+  --form-radio-size: 20px;
+  --form-radio-size-sm: 15px;
+  --form-radio-margin: var(--space-3);
+  --form-radio-margin-sm: var(--space-2);
+  --form-placeholder-color: var(--color-grey);
+  --form-placeholder-focus-color: var(--color-brown);
+  --form-line-height: var(--line-height-base);
+  --form-margin-bottom: var(--space-4);
+
+  /* ---------- 🪟 MODAL ---------- */
+  --modal-padding-xs: var(--space-2);
+  --modal-padding-sm: var(--space-4);
+  --modal-padding-lg: var(--space-6);
+  --modal-header-height: var(--site-headerHeight);
+  --modal-radius: var(--radius-md);
+  --modal-x-size: 13px;
+  --modal-width-0: 384px;
+  --modal-width-1: 472px;
+  --modal-width-2: 576px;
+  --modal-width-3: 650px;
+  --modal-width-4: 783px;
+  --modal-width-5: 980px;
+  --modal-width-6: 1036px;
+
+  /* ---------- 📖 MEASURE (text width) ---------- */
+  --measure-0: 20em;
+  --measure-1: 30em;
+  --measure-2: 34em;
+  --measure-3: 41em;
+}

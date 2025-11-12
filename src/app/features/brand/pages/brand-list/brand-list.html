@@ -1,7 +1,6 @@
 <section class="brand-page">
   <h1 class="page-title">DANH SÁCH THƯƠNG HIỆU</h1>
 
-  <!-- Thanh chữ cái -->
   <div class="alphabet-nav">
     <app-filter
       *ngFor="let letter of alphabet"
@@ -12,7 +11,6 @@
     </app-filter>
   </div>
 
-  <!-- Danh sách thương hiệu -->
   <div class="brand-list">
     <ng-container *ngFor="let letter of alphabet">
       <div *ngIf="brands[letter]" [id]="letter" class="brand-section">
