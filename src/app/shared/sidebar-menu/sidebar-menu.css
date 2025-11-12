@@ -1,0 +1,88 @@
+/* --- TỔNG THỂ VÀ MÀU NỀN --- */
+:host {
+    /* Định nghĩa màu hồng chủ đạo và màu nền nhạt */
+    --primary-pink: none;
+    --light-pink-bg: #fff0f5; /* Màu nền hồng nhạt */
+    display: block;          
+}
+
+.sidebar-container {
+    width: 250px; 
+    padding: 20px 25px; 
+    /* Áp dụng màu nền hồng nhạt */
+    background-color: var(--light-pink-bg); 
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    /* Xóa viền bên phải (nếu có) */
+    border-right: none; 
+}
+
+/* --- 1. PROFILE HEADER --- */
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    /* Xóa hoặc làm mờ đường phân cách nếu không cần thiết */
+    border-bottom: 1px solid #f9e2e7; 
+}
+
+.user-icon {
+    font-size: 28px;
+    /* Màu hồng cho icon */
+    color: var(--primary-pink); 
+    margin-right: 12px;
+}
+
+/* --- 2. MENU TÀI KHOẢN CÁ NHÂN (Và các tiêu đề) --- */
+.group-title, .group-title-header {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--primary-pink); /* Tiêu đề màu hồng */
+    margin-top: 15px;
+    margin-bottom: 15px; /* Tăng khoảng cách dưới tiêu đề */
+    text-transform: none; /* Bỏ uppercase */
+}
+
+/* --- CÁC MỤC MENU (Hồ Sơ, Mật Khẩu, Địa Chỉ...) --- */
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    /* TĂNG KHOẢNG CÁCH: Tạo khoảng trắng lớn giữa các mục */
+    margin: 20px 0; 
+}
+
+.menu-list a, .membership-status {
+    text-decoration: none;
+    color: #444; 
+    font-size: 16px; /* Tăng kích thước chữ cho rõ ràng */
+    padding: 5px 0;
+    display: block;
+}
+
+/* Hạng Thành Viên */
+.membership-status {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-pink); /* Màu hồng */
+    margin-top: 25px;
+    margin-bottom: 25px; 
+}
+
+/* --- 3. QUẢN LÝ ĐƠN HÀNG --- */
+.order-management .group-title {
+    /* Đảm bảo màu đen/xám cho tiêu đề nhóm thứ hai */
+    color: #333; 
+    margin-top: 25px; /* Tăng khoảng cách trên */
+}
+
+/* --- ĐƯỜNG PHÂN CÁCH (Nếu cần) --- */
+.divider {
+    height: 1px;
+    background-color: #f9e2e7;
+    margin: 20px 0;
+}
