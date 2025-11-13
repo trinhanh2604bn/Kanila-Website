@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { AccountShell } from './pages/account-shell/account-shell';
 import { ProfileUser } from './pages/profile-user/profile-user';
 import { ChangePassword } from './pages/change-password/change-password';
+import { Address } from './pages/address/address';
 
 
 export const AccountModuleModule: Routes = [
@@ -11,6 +12,7 @@ export const AccountModuleModule: Routes = [
     children: [
       {path: 'info', component: ProfileUser},
       {path: 'password', component: ChangePassword},
+      {path: 'address', component: Address},
 
      { path: '', redirectTo: 'info', pathMatch: 'full' }
     ]

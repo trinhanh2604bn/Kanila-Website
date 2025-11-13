@@ -18,8 +18,8 @@
 /* Đề mục lớn – Nunito, black */
 .big-title {
   font-family: var(--font-nunito);
-  font-weight: var(--font-weight-black);
-  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-l);
 }
 
 @media (max-width: 768px) {
