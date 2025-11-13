@@ -1,16 +1,17 @@
 :host {
     --primary-color: #A81F1F; 
     --light-primary-color: #ff9999; 
-    --light-bg-color: #fce8e8; 
+    --light-bg-color: #fceeee; 
     --link-color: #333;       
     --border-color: #f9e2e7;  
-    display: block; 
+    display: block;
+    background-color: var(--light-bg-color); 
+    border-radius: 8px;
 }
 
 .sidebar-container {
     width: 250px; 
-    padding: 20px 25px; 
-    background-color: var(--light-bg-color); 
+    padding: 10px 10px;
     font-family: Arial, sans-serif;
     line-height: 1.4;
     border-right: none; 
@@ -22,15 +23,15 @@
     width: 100%;        
     max-width: 100%;
     padding: 16px 20px;
-    margin-bottom: 16px;  
+    margin-bottom: 20px;  
   }
+  
 }
 
 .user-profile {
     display: flex;
     align-items: center; 
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--border-color); 
 }
 
@@ -67,14 +68,8 @@
     align-items: center;
     cursor: pointer;
     padding: 10px 0;
-    margin-top: 15px;
     margin-bottom: 5px; 
-}
 
-.group-title {
-    font-size: 16px; 
-    font-weight: bold; 
-    color: var(--link-color); 
 }
 
 .account-settings .group-title,
@@ -116,7 +111,6 @@
 .membership-status {
     font-size: 16px;
     font-weight: normal; 
-    color: var(--light-primary-color); 
     margin-top: 25px;
     margin-bottom: 25px; 
     padding-left: 20px; 

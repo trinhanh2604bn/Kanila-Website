@@ -1,28 +1,29 @@
 .collapse-panel {
-  border-radius: 4px;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-/* nút header */
 .collapse-header {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
 }
 
-/* phần nội dung header do bạn truyền vào */
+/* phần header-content */
 .header-content {
-  display: flex;
-  align-items: center;
+  width: 100%;
 }
 
 /* icon mũi tên */
-.collapse-header i {
-  font-size: 14px;
+.collapse-header i.fa-solid {
+  font-size: 16px;
+  color: var(--primary-color, #333);
 }
 
 /* body xổ xuống */
