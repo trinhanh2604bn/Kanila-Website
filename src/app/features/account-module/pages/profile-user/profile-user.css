@@ -5,7 +5,7 @@
 /* ================== NỀN & KHUNG ================== */
 
 .profile-page {
-  background-color: var(--color-pink1);        /* #ffebee */
+  background-color: var(--color-pink1);     
   padding: var(--space-4);
 }
 
@@ -14,8 +14,6 @@
   border-radius: var(--radius-sm);
   padding: var(--space-4);
 }
-
-/* ================== TYPOGRAPHY RULES ================== */
 
 /* Đề mục lớn – Nunito, black */
 .big-title {
@@ -70,18 +68,6 @@
     font-size: var(--font-size-ms);
   }
 }
-
-/* (Nếu sau dùng chú thích nhỏ thì áp dụng BeVietnam + xs/mxs)
-.caption {
-  font-family: var(--font-beVietnam);
-  font-size: var(--font-size-xs);
-}
-@media (max-width: 768px) {
-  .caption {
-    font-size: var(--font-size-mxs);
-  }
-}
-*/
 
 /* ================== LAYOUT & FORM ================== */
 
