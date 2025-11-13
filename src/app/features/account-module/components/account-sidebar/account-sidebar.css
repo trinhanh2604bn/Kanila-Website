@@ -1,6 +1,6 @@
 :host {
   display: block;
-  background-color: var(--color-pink2); /* nền sidebar */
+  background-color: var(--color-pink1); /* nền sidebar */
   border-radius: var(--radius-md);
 }
 
