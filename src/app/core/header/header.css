@@ -1,0 +1,95 @@
+/* --- DÒNG QUẢNG CÁO ĐẦU TIÊN (Màu hồng nhạt, căn giữa) --- */
+.top-bar-ad {
+    background-color: white;
+    max-width: 1920px; /* Điều chỉnh lại max-width để có thể căn giữa */
+    margin: 0 auto; /* Căn giữa phần tử */
+    align-items: center;
+    padding: 10px 320px;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    text-align: center; /* Căn giữa văn bản */
+}
+
+/* --- DÒNG CHÍNH (LOGO | TÌM KIẾM | LIÊN KẾT) --- */
+.main-header-row {
+    width: 100%; /* Sử dụng 100% để rộng bằng chiều rộng của màn hình */
+    background-color: #f6ebe8;
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    align-items: center;
+    padding: 15px 320px;
+    border-bottom: 1px solid #eee;
+    max-width: 1920px; /* Điều chỉnh lại max-width */
+    margin: 0 auto; /* Căn giữa phần tử */
+}
+
+/* --- KHỐI LOGO --- */
+.header-logo img {
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5a2a2a;
+}
+
+/* --- KHỐI TÌM KIẾM --- */
+.header-search {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-search input {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    width: 426px;
+    height: 40px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* --- KHỐI LIÊN KẾT (CỘNG ĐỒNG, HELLO ANH, CÀI ĐẶT) --- */
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+.header-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.header-links a:hover {
+    color: #a81f1f;
+}
+
+/* --- CSS CHO THANH MENU PHỤ (KHÔNG THAY ĐỔI) --- */
+.menu {
+    background-color: #6B1E2E;
+    width: 100%; /* Sử dụng chiều rộng 100% */
+    max-width: 1920px; /* Điều chỉnh lại max-width */
+    height: 65px;
+    display: flex;
+    padding: 0 320px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Căn giữa phần tử */
+    padding: 10px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.menu a:hover {
+    background-color: #a81f1f;
+    border-radius: 5px;
+}
