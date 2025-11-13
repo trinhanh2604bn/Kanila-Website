@@ -1,18 +1,20 @@
+/* 🎯 Base style – dùng chung cho mọi nơi */
 .filter {
   background: transparent;
   border: none;
-  color: #372b2b;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 500;
-  font-size: 20px;
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
   letter-spacing: 0;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-brown);
   transition: color 0.2s ease;
 }
 
+/* Hiệu ứng hover mặc định (nếu không bị override) */
 .filter:hover,
 .filter:active,
 .filter.active {
-  color: #ffadbe;
+  color: var(--color-pink3);
 }
