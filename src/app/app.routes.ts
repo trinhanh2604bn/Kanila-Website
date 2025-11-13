@@ -7,14 +7,16 @@ export const routes: Routes = [
     path: '',
     component: MainLayout, 
     children: [
+      { path: '', redirectTo: 'profile', pathMatch: 'full'
+      },
       {
         path: '',
-        loadComponent: () =>
-          import('./features/account-module/pages/profile-user/profile-user').then(m => m.ProfileUser)
-      }
+        loadChildren: () =>
+          import('./features/account-module/account-module-module').then(m => m.AccountModuleModule)
+      },
     ]
   },
 
-  { path: '**', redirectTo: '' } // fallback
+  { path: '**', redirectTo: '' }
 ];
 

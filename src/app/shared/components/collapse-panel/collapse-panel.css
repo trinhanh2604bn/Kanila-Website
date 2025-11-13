@@ -1,0 +1,31 @@
+.collapse-panel {
+  border-radius: 4px;
+}
+
+/* nút header */
+.collapse-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* phần nội dung header do bạn truyền vào */
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+/* icon mũi tên */
+.collapse-header i {
+  font-size: 14px;
+}
+
+/* body xổ xuống */
+.collapse-body {
+  margin-top: 8px;
+}

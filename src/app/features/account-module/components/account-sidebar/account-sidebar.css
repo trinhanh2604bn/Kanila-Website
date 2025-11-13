@@ -1,0 +1,152 @@
+:host {
+    --primary-color: #A81F1F; 
+    --light-primary-color: #ff9999; 
+    --light-bg-color: #fce8e8; 
+    --link-color: #333;       
+    --border-color: #f9e2e7;  
+    display: block; 
+}
+
+.sidebar-container {
+    width: 250px; 
+    padding: 20px 25px; 
+    background-color: var(--light-bg-color); 
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    border-right: none; 
+}
+
+/* MOBILE: sidebar full khung nội dung */
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 100%;        
+    max-width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 16px;  
+  }
+}
+
+.user-profile {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color); 
+}
+
+.user-icon {
+    font-size: 36px;
+    color: #444;
+    margin-right: 15px;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: normal; 
+    color: #333;
+}
+
+.user-edit-link {
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+    text-decoration: none; 
+    margin-top: 1px;
+}
+
+
+.group-title-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 0;
+    margin-top: 15px;
+    margin-bottom: 5px; 
+}
+
+.group-title {
+    font-size: 16px; 
+    font-weight: bold; 
+    color: var(--link-color); 
+}
+
+.account-settings .group-title,
+.primary-color {
+    color: var(--primary-color); 
+}
+
+.arrow-icon {
+    font-size: 14px; 
+    color: var(--primary-color);
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px; 
+    padding-left: 20px; 
+}
+
+.menu-list li {
+    margin: 20px 0; 
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: var(--link-color); 
+    font-size: 16px; 
+    font-weight: normal; 
+    padding: 0; 
+    display: block;
+    transition: color 0.2s;
+}
+
+.menu-list a:hover {
+    color: var(--primary-color);
+}
+
+
+.membership-status {
+    font-size: 16px;
+    font-weight: normal; 
+    color: var(--light-primary-color); 
+    margin-top: 25px;
+    margin-bottom: 25px; 
+    padding-left: 20px; 
+}
+
+.group-title-link {
+    color: var(--link-color);
+    text-decoration: none; 
+    font-size: 16px; 
+    font-weight: normal; 
+    display: block; 
+    
+    padding-left: 0; 
+    padding-top: 15px;    
+    padding-bottom: 15px; 
+    margin: 0;
+}
+.group-title-link:hover {
+    color: var(--primary-color);
+}
+
+.order-management .group-title-header {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 20px 0;
+}

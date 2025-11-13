@@ -1,0 +1,20 @@
+/* ======= DESKTOP: 2 cột ======= */
+.account-shell {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr); /* sidebar + content */
+  column-gap: 24px;
+  align-items: flex-start;
+}
+
+.account-content {
+  background: #fdecec; 
+  border-radius: 8px;
+  min-height: 200px;
+}
+
+/* ======= MOBILE: xếp dọc ======= */
+@media (max-width: 768px) {
+  .account-shell {
+    display: block;     
+  }
+}
