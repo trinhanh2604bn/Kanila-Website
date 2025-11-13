@@ -43,7 +43,7 @@
   font-family: var(--font-nunito);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-m);
-  color: var(--color-brown);
+  color: var(--color-red);
 }
 
 @media (max-width: 768px) {

@@ -76,11 +76,15 @@
   color: var(--color-brown);
 }
 
+.profile-title.big-title {
+  color: var(--color-red);
+}
+
 .profile-content {
   background-color: var(--color-pink1);
   border-radius: var(--radius-sm);
   padding: var(--space-4) var(--space-5) var(--space-5);
-  max-width: 520px;
+  max-width: 100%;
 }
 
 /* Avatar + Hello Anh + button */
@@ -144,7 +148,7 @@
 }
 
 .field-label {
-  width: 180px;
+  width: 200px;
   color: var(--color-brown);
 }
 
