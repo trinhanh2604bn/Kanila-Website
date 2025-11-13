@@ -3,6 +3,7 @@ import { AccountShell } from './pages/account-shell/account-shell';
 import { ProfileUser } from './pages/profile-user/profile-user';
 import { ChangePassword } from './pages/change-password/change-password';
 import { Address } from './pages/address/address';
+import { Favorite } from './pages/favorite/favorite';
 
 
 export const AccountModuleModule: Routes = [
@@ -13,6 +14,7 @@ export const AccountModuleModule: Routes = [
       {path: 'info', component: ProfileUser},
       {path: 'password', component: ChangePassword},
       {path: 'address', component: Address},
+      {path: 'wishlist', component: Favorite},
 
      { path: '', redirectTo: 'info', pathMatch: 'full' }
     ]
