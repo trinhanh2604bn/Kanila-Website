@@ -4,6 +4,7 @@ import { ProfileUser } from './pages/profile-user/profile-user';
 import { ChangePassword } from './pages/change-password/change-password';
 import { Address } from './pages/address/address';
 import { Favorite } from './pages/favorite/favorite';
+import { Discount } from './pages/discount/discount';
 
 
 export const AccountModuleModule: Routes = [
@@ -15,6 +16,7 @@ export const AccountModuleModule: Routes = [
       {path: 'password', component: ChangePassword},
       {path: 'address', component: Address},
       {path: 'wishlist', component: Favorite},
+      {path: 'discount', component: Discount},
 
      { path: '', redirectTo: 'info', pathMatch: 'full' }
     ]
