@@ -1,0 +1,128 @@
+/* General container layout */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #f4f4f4; /* Subtle background color */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #e2e2e2;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.user-links a {
+    display: block;
+    margin: 12px 0;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.user-links a:hover {
+    color: #a81f1f;
+}
+
+/* Main content styles */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Product list styles */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual product item */
+.product-item {
+    background-color: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.product-item:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.product-item .product-image img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #6B1E2E;
+    margin: 10px 0;
+}
+
+.add-to-cart {
+    background-color: #6B1E2E;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #a81f1f;
+}
+
+/* Responsive grid for mobile view */
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 15px;
+    }
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+}

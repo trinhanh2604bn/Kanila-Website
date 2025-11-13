@@ -1,5 +1,4 @@
 <div class="sidebar-container">
-    
     <div class="user-profile">
         <i class="fas fa-user-circle user-icon"></i>
         <div class="user-details">
@@ -10,10 +9,11 @@
 
     <div class="menu-group account-settings">
         <div class="group-title-header">
-            <span class="group-title primary-color">Tài Khoản Cá Nhân</span>
+            <span class="group-title">Tài Khoản Cá Nhân</span>
             <i class="fas fa-chevron-down arrow-icon primary-color"></i>
         </div>
         
+        <!-- Menu items always visible -->
         <ul class="menu-list">
             <li><a routerLink="/profile/info">Hồ Sơ</a></li>
             <li><a routerLink="/profile/change-password">Thay Đổi Mật Khẩu</a></li>
@@ -27,12 +27,13 @@
 
     <div class="menu-group order-management">
         <div class="group-title-header">
-            <span class="group-title">Quản Lý Đơn Hàng</span>
+            <a routerLink="/profile/wishlist" class="group-title-link">Danh Mục Yêu Thích</a>
         </div>
-        <ul class="menu-list">
-            <li><a routerLink="/profile/wishlist">Danh Mục Yêu Thích</a></li>
-            <li><a routerLink="/profile/vouchers">Mã Giảm Giá</a></li>
-        </ul>
     </div>
     
+    <div class="menu-group order-management">
+        <div class="group-title-header">
+            <a routerLink="/profile/vouchers" class="group-title-link">Mã Giảm Giá</a>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,24 @@
+/* src/app/app.component.css */
+
+.main-body-content {
+    display: flex;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding-top: 10px;
+    align-items: flex-start;
+}
+
+app-sidebar-menu {
+    display: block;
+    width: 250px; 
+    flex-shrink: 0;
+    margin-right: 20px; 
+    background-color: #fef5f7; 
+}
+
+.main-body-content > router-outlet + * { 
+    flex-grow: 1; 
+    background-color: white; 
+    padding: 30px;
+    border-radius: 4px;
+}

@@ -1,0 +1,20 @@
+/* Content wrapper to bring points section up */
+.content-wrapper {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: flex-start; /* Align items to the top */
+  padding: 0 20px; /* Optional: add padding if needed */
+  margin-left: 140px; /* Adjust for sidebar width */
+  width: 100%;
+  min-height: 100vh; /* Ensure it takes full height */
+  box-sizing: border-box;
+}
+
+/* Optional styling for the points component */
+app-points {
+  max-width: 1200px; /* Set a max-width if needed */
+  width: 100%; /* Full width */
+  padding: 20px;
+  background-color: #f6ebe8; /* Optional background color */
+  margin-top: -550px; /* Ensure there's no margin at the top */
+}
