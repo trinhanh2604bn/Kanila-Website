@@ -1,146 +1,185 @@
 :host {
-    --primary-color: #A81F1F; 
-    --light-primary-color: #ff9999; 
-    --light-bg-color: #fceeee; 
-    --link-color: #333;       
-    --border-color: #f9e2e7;  
-    display: block;
-    background-color: var(--light-bg-color); 
-    border-radius: 8px;
+  display: block;
+  background-color: var(--color-pink2); /* nền sidebar */
+  border-radius: var(--radius-md);
 }
 
+/* Khung sidebar */
 .sidebar-container {
-    width: 250px; 
-    padding: 10px 10px;
-    font-family: Arial, sans-serif;
-    line-height: 1.4;
-    border-right: none; 
+  width: 250px;
+  padding: 12px 14px;
+  font-family: var(--font-beVietnamPro);
+  line-height: var(--line-height-base);
 }
 
-/* MOBILE: sidebar full khung nội dung */
+/* MOBILE */
 @media (max-width: 768px) {
   .sidebar-container {
-    width: 100%;        
-    max-width: 100%;
+    width: 100%;
     padding: 16px 20px;
-    margin-bottom: 20px;  
+    margin-bottom: var(--space-5);
   }
-  
 }
 
+/* ===================================
+   USER PROFILE
+=================================== */
+
 .user-profile {
-    display: flex;
-    align-items: center; 
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-color); 
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-grey);
 }
 
 .user-icon {
-    font-size: 36px;
-    color: #444;
-    margin-right: 15px;
+  font-size: 36px;
+  color: var(--color-brown);
+  margin-right: 15px;
 }
 
-.user-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-}
-
+/* "Hello Anh" — mục nhỏ (Nunito medium size m/mm) */
 .user-name {
-    font-size: 16px;
-    font-weight: normal; 
-    color: #333;
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-brown);
 }
 
+@media (max-width: 768px) {
+  .user-name {
+    font-size: var(--font-size-mm);
+  }
+}
+
+/* "Sửa hồ sơ" — chú thích (BeVietnam xs/mxs) */
 .user-edit-link {
-    font-size: 13px;
-    color: #666;
-    cursor: pointer;
-    text-decoration: none; 
-    margin-top: 1px;
+  font-family: var(--font-beVietnam);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-xs);
+  color: var(--color-brown);
+  opacity: 0.7;
+  margin-top: 2px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .user-edit-link {
+    font-size: var(--font-size-mxs);
+  }
+}
+
+/* ===================================
+   MENU GROUP / TITLE
+=================================== */
 
 .group-title-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    padding: 10px 0;
-    margin-bottom: 5px; 
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  cursor: pointer;
 }
 
-.account-settings .group-title,
-.primary-color {
-    color: var(--primary-color); 
+.group-title {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-brown);
+}
+
+@media (max-width: 768px) {
+  .group-title {
+    font-size: var(--font-size-mm);
+  }
 }
 
 .arrow-icon {
-    font-size: 14px; 
-    color: var(--primary-color);
+  font-size: 14px;
+  color: var(--color-red);
 }
 
+/* ===================================
+   MENU LIST
+=================================== */
+
 .menu-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 25px; 
-    padding-left: 20px; 
+  list-style: none;
+  padding-left: 20px;
+  margin-bottom: 28px;
 }
 
 .menu-list li {
-    margin: 20px 0; 
+  margin: 18px 0;
 }
 
+/* Mục nhỏ: Hồ sơ, Địa Chỉ, Mật khẩu... */
 .menu-list a {
-    text-decoration: none;
-    color: var(--link-color); 
-    font-size: 16px; 
-    font-weight: normal; 
-    padding: 0; 
-    display: block;
-    transition: color 0.2s;
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-brown);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+@media (max-width: 768px) {
+  .menu-list a {
+    font-size: var(--font-size-mm);
+  }
 }
 
 .menu-list a:hover {
-    color: var(--primary-color);
+  color: var(--color-red);
 }
 
+/* ===================================
+   MEMBERSHIP
+=================================== */
 
 .membership-status {
-    font-size: 16px;
-    font-weight: normal; 
-    margin-top: 25px;
-    margin-bottom: 25px; 
-    padding-left: 20px; 
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-red);
+  padding-left: 20px;
+  margin: 25px 0;
 }
+
+@media (max-width: 768px) {
+  .membership-status {
+    font-size: var(--font-size-mm);
+  }
+}
+
+/* ===================================
+   LINK (Danh mục yêu thích / Mã giảm giá)
+=================================== */
 
 .group-title-link {
-    color: var(--link-color);
-    text-decoration: none; 
-    font-size: 16px; 
-    font-weight: normal; 
-    display: block; 
-    
-    padding-left: 0; 
-    padding-top: 15px;    
-    padding-bottom: 15px; 
-    margin: 0;
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-brown);
+  padding: 15px 0;
+  text-decoration: none;
+  display: block;
 }
+
+@media (max-width: 768px) {
+  .group-title-link {
+    font-size: var(--font-size-mm);
+  }
+}
+
 .group-title-link:hover {
-    color: var(--primary-color);
+  color: var(--color-red);
 }
 
-.order-management .group-title-header {
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-
+/* Divider */
 .divider {
-    height: 1px;
-    background-color: var(--border-color);
-    margin: 20px 0;
+  height: 1px;
+  background-color: var(--color-grey);
+  margin: var(--space-5) 0;
 }
