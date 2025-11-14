@@ -1,0 +1,60 @@
+:host {
+  display: block;
+}
+
+/* khối 1 đơn */
+.order-card {
+  background-color: var(--color-pink1);
+  padding: var(--space-3) var(--space-4);
+}
+
+/* Tổng tiền */
+.order-summary {
+  margin-top: var(--space-2);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.order-summary-label {
+  font-family: var(--font-beVietnamPro);
+  color: var(--color-brown);
+}
+
+.order-summary-value {
+  font-family: var(--font-beVietnamPro);
+  color: var(--color-brown);
+}
+
+/* Nút */
+.order-actions {
+  margin-top: var(--space-2);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.order-detail-btn {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-sm);
+  border: var(--border-1) solid var(--color-brown);
+  background-color: var(--color-pink1);
+  color: var(--color-brown);
+  cursor: pointer;
+}
+
+.order-detail-btn:hover {
+  background-color: var(--color-beige);
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .order-card {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .order-detail-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,28 @@
+<div class="order-card">
+  <!-- DS sản phẩm trong đơn -->
+  <app-order-item
+    *ngFor="let item of items"
+    [image]="item.image"
+    [brand]="item.brand"
+    [name]="item.name"
+    [quantity]="item.quantity"
+    [price]="item.price">
+  </app-order-item>
+
+  <!-- Tổng tiền -->
+  <div class="order-summary">
+    <div class="order-summary-label body-text">
+      Tổng Số Tiền:
+    </div>
+    <div class="order-summary-value body-text">
+      {{ total | number : '1.0-0' }}đ
+    </div>
+  </div>
+
+  <!-- Nút xem chi tiết -->
+  <div class="order-actions">
+    <button type="button" class="order-detail-btn body-text">
+      Xem Chi Tiết Đơn Hàng
+    </button>
+  </div>
+</div>
