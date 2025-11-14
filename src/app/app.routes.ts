@@ -18,8 +18,14 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/brand/pages/brand-list/brand-list').then((m) => m.BrandListComponent),
       },
+
+      {
+        path: 'brands/:brand',
+        loadComponent: () =>
+          import('./features/brand/pages/brand-catalog/brand-catalog').then(
+            (m) => m.BrandCatalogComponent
+          ),
+      },
     ],
   },
-
-  { path: '**', redirectTo: '' }, // fallback
 ];

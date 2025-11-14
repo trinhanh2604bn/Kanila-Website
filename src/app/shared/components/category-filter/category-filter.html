@@ -1,0 +1,45 @@
+<!-- ⭐ MOBILE FILTER BUTTON -->
+<div class="mobile-filter-btn" (click)="toggleMobile()">
+  <img src="assets/icons/filter.svg" class="filter-icon" />
+</div>
+
+<!-- ⭐ DESKTOP SIDEBAR -->
+<div class="desktop-filter">
+  <div class="filter-block" *ngFor="let item of filters" [class.active]="item.open">
+    <div class="filter-header" (click)="toggle(item)">
+      <span class="filter-title">{{ item.title }}</span>
+      <span class="arrow" [class.open]="item.open"></span>
+    </div>
+
+    <div class="filter-content" *ngIf="item.open">
+      <ng-container *ngIf="item.type === 'checkbox'">
+        <label class="option" *ngFor="let opt of item.options">
+          <input type="checkbox" />
+          {{ opt }}
+        </label>
+      </ng-container>
+
+      <ng-container *ngIf="item.type === 'price'">
+        <label class="option" *ngFor="let opt of priceOptions">
+          <input type="radio" name="price-range" />
+          {{ opt }}
+        </label>
+
+        <div class="manual-price-row">
+          <label class="radio-circle">
+            <input type="radio" name="price-range" />
+            <span class="circle"></span>
+          </label>
+
+          <div class="price-boxes">
+            <input type="number" placeholder="Min" class="price-box" />
+            <span class="dash">-</span>
+            <input type="number" placeholder="Max" class="price-box" />
+          </div>
+        </div>
+
+        <button class="apply-btn">Áp dụng</button>
+      </ng-container>
+    </div>
+  </div>
+</div>

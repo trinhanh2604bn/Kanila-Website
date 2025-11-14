@@ -1,0 +1,27 @@
+<section class="catalog-page">
+  <!-- LEFT FILTER COLUMN -->
+  <aside class="catalog-filter">
+    <app-category-filter></app-category-filter>
+  </aside>
+
+  <!-- RIGHT PRODUCT LIST -->
+  <div class="catalog-products">
+    <h1 class="catalog-title">TARTE</h1>
+
+    <div class="product-grid">
+      <!-- LOOP SẢN PHẨM -->
+      <div *ngFor="let p of products">
+        <app-product-card
+          [brand]="p.brand"
+          [description]="p.description"
+          [bought]="p.bought"
+          [name]="p.name"
+          [price]="p.price"
+          [rating]="p.rating"
+          [stock]="p.stock"
+          [image]="p.image"
+        ></app-product-card>
+      </div>
+    </div>
+  </div>
+</section>
