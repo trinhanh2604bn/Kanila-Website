@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Container ngoài cùng: 1920, canh giữa */
+.frame-1920 {
+  max-width: 1920px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+/* Hai bên: 320 khi đủ rộng, co dần nhưng không < 16 */
+.content-rail {
+  padding-inline: clamp(16px, calc((100vw - 1280px) / 2), 320px);
+}
+
+/* Nội dung chính: 1280 + padding 16 */
+.content-inner {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 16px;
+}

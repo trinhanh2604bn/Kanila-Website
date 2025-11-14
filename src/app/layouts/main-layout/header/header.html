@@ -1,0 +1,69 @@
+
+<header>
+    <!-- Dòng Quảng Cáo -->
+    <div class="top-bar-ad">
+        <div>
+            Chương trình khuyến mãi 50% nhân dịp Halloween!
+        </div>
+    </div>
+
+    <!-- Phần Header chính -->
+    <div class="main-header-row">
+        <div>
+            <div class="header-logo">
+                <img src="/public/images/logo.png" alt="Kanila logo">
+            </div>
+
+            <div class="header-search">
+                <div class="search-wrapper">
+                    <input type="text" placeholder="Tìm kiếm">
+                    <i class="fa fa-search search-icon"></i>
+                </div>
+            </div>
+
+            <div class="header-links">
+                <a href="#"><i class="fa fa-users"></i> Cộng đồng</a>
+                <a href="#"><i class="fa fa-user"></i> Hello Anh</a>
+                <a href="#"><i class="fa fa-cog"></i> Cài đặt</a>
+            </div>
+
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger-menu" (click)="toggleMenu()">
+                <i class="fa fa-bars"></i> <!-- Ba gạch -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="menu">
+        <div>
+            <a href="#">Tất cả</a>
+            <a href="#">Khuôn mặt</a>
+            <a href="#">Đôi mắt</a>
+            <a href="#">Đôi môi</a>
+            <a href="#">Đôi má</a>
+            <a href="#">Sản phẩm mới</a>
+            <a href="#">Thương hiệu</a>
+            <a href="#">Set quà</a>
+            <a href="#">Deal hot</a>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-shopping-bag"></i></a>
+        </div>
+    </div>
+
+    <!-- Mobile Slide Menu -->
+    <div class="menu-slide" [ngClass]="{'show': menuVisible}">
+        <a href="#">Tất cả</a>
+        <a href="#">Khuôn mặt</a>
+        <a href="#">Đôi mắt</a>
+        <a href="#">Đôi môi</a>
+        <a href="#">Đôi má</a>
+        <a href="#">Sản phẩm mới</a>
+        <a href="#">Thương hiệu</a>
+        <a href="#">Set quà</a>
+        <a href="#">Deal hot</a>
+        <a href="#"><i class="fa fa-heart"></i></a>
+        <a href="#"><i class="fa fa-shopping-bag"></i></a>
+    </div>
+</header>
+
