@@ -15,6 +15,12 @@ export const routes: Routes = [
   // },
   {
     path:'',
-    component:Mainpage
+    component:MainLayout,
+    children: [
+      {
+        path: '',
+        component: Mainpage
+      }
+    ]
   }
 ];
