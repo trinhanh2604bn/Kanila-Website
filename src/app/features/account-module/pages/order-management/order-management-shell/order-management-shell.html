@@ -1,13 +1,25 @@
 <div class="orders-page">
-  <h2 class="big-title">QUẢN LÝ ĐƠN HÀNG</h2>
+  <h2 class="orders-title big-title">
+    QUẢN LÝ ĐƠN HÀNG
+  </h2>
 
   <!-- Tabs trạng thái -->
   <nav class="orders-tabs">
-    <a routerLink="processing" routerLinkActive="active">Đang Xử Lý</a>
-    <a routerLink="shipping" routerLinkActive="active">Chờ Giao Hàng</a>
-    <a routerLink="delivered" routerLinkActive="active">Đã Giao Hàng</a>
-    <a routerLink="returned" routerLinkActive="active">Trả Hàng</a>
-    <a routerLink="cancelled" routerLinkActive="active">Đã Hủy</a>
+    <a routerLink="processing" routerLinkActive="active" class="tab-link">
+      Đang Xử Lý
+    </a>
+    <a routerLink="shipping" routerLinkActive="active" class="tab-link">
+      Chờ Giao Hàng
+    </a>
+    <a routerLink="delivered" routerLinkActive="active" class="tab-link">
+      Đã Giao Hàng
+    </a>
+    <a routerLink="returned" routerLinkActive="active" class="tab-link">
+      Trả Hàng
+    </a>
+    <a routerLink="cancelled" routerLinkActive="active" class="tab-link">
+      Đã Hủy
+    </a>
   </nav>
 
   <!-- Nội dung từng trạng thái -->
