@@ -1,194 +1,259 @@
-/* Các biến màu sắc */
-:root {
-    --primary-color: #8c002b; /* Màu đỏ đậm (Màu thương hiệu) */
-    --light-pink: #fcebeb;   /* Màu hồng nhạt cho thẻ trạng thái */
-    --silver-bg: #ffffff;    /* Nền thẻ Bạc trắng */
-    --gold-bg: #fffbe6;
-    --diamond-bg: #e6f7ff;
+:host {
+  display: block;
+  background-color: var(--color-pink1);
 }
 
-/* 1. Thiết lập chung */
+/* ========== KHUNG CHUNG ========== */
+
 .membership-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: var(--space-4) var(--space-5);
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: var(--font-beVietnamPro);
+  font-size: var(--font-size-s);
+  color: var(--color-brown);
 }
 
+/* TIÊU ĐỀ PHỤ */
 .section-title {
-    color: #333; /* Tiêu đề chính màu tối */
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-l);
+  text-transform: uppercase;
+  color: var(--color-red);
 }
 
 .explore-title {
-    margin-top: 40px;
+  margin-top: var(--space-6);
 }
 
-/* 2. Vùng trạng thái hiện tại (Status Summary) */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: var(--font-size-ml);
+  }
+}
+
+/* ========== VÙNG TRẠNG THÁI HIỆN TẠI ========== */
+
 .status-summary {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
 }
 
 .status-card {
-    flex: 1;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    color: #333;
+  flex: 1;
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-light);
+  color: var(--color-brown);
 }
 
 .status-card h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 15px;
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
 }
 
-/* Thẻ "Để nâng hạng" */
-.required-level {
-    background-color: var(--light-pink);
-}
-.required-level h3 {
-    color: var(--primary-color);
-}
-.required-level p {
-    margin: 5px 0;
-    font-size: 0.95rem;
-}
-.required-level strong {
-    color: var(--primary-color);
-    font-weight: bold;
+.status-card p {
+  margin: 2px 0;
+  font-family: var(--font-beVietnamPro);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
 }
 
-/* Thẻ "Hạng hiện tại" */
+.required-level,
 .current-level {
-    background-color: var(--light-pink);
+    background-color: var(--color-beige);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+/* Thẻ "Để nâng thứ hạng thẻ tiếp theo" */
+.required-level h3 {
+  color: var(--color-red);
+  font-weight: var(--font-weight-extraBold)
+}
+
+.required-level strong {
+  color: var(--color-red);
+}
+
+/* Thẻ "Hạng thành viên hiện tại" */
+
+.current-level h3 {
+    color: var(--color-red);
+    font-weight: var(--font-weight-extraBold);
+}
+
 .current-level-info {
-    color: var(--primary-color);
-    font-size: 2rem;
-    font-weight: bold;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
+  margin-top: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-xl);
+  color: #8a8a8a;
 }
+
 .current-level .star-icon {
-    color: #a9a9a9;
-    font-size: 2.5rem;
-    margin-right: 10px;
+  font-size: 2.5rem;
+  margin-right: var(--space-2);
+  color: #a9a9a9;
 }
 
-/* 3. Vùng Khám phá các hạng (Explore Levels) */
+/* ========== VÙNG KHÁM PHÁ CÁC HẠNG ========== */
+
 .explore-levels {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap; 
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
 }
 
+/* Base cho tất cả card */
 .level-card {
-    flex: 1;
-    min-width: 250px;
-    border-radius: 10px;
-    padding: 25px 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  min-width: 260px;
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-medium);
+  background-color: var(--color-white);
+  border: 2px solid transparent;  
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Header “BẠC / VÀNG / KIM CƯƠNG” */
 .level-header h3 {
-    margin-top: 5px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
+  margin-top: var(--space-1);
+  margin-bottom: 0;
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-m);
+  text-transform: uppercase;
 }
 
+.level-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Icon hạng */
 .level-icon {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 10px;
+  font-size: 3rem;
+  display: block;
+  margin-bottom: var(--space-2);
 }
 
+/* Danh sách quyền lợi */
 .benefits-list {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-    margin: 15px 0;
-    flex-grow: 1;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0;
+  flex-grow: 1;
 }
 
 .benefits-list li {
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: #444;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-beVietnamPro);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-base);
+  color: var(--color-brown);
 }
 
-.level-card strong {
-    font-weight: bold;
-}
+/* ======== TÙY BIẾN THEO HẠNG ======== */
 
-.level-button {
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px 0;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-/* Định kiểu cho từng hạng */
-/* Hạng BẠC */
+/* BẠC */
 .silver {
-    background-color: var(--silver-bg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 5px #d1cfcf inset;
-}
-.silver .level-icon { color: var(--primary-color); }
-.silver h3 { color: #333; }
-.silver strong { color: #333; }
-.silver-button:disabled { 
-    background-color: #d1cfcf; 
-    color: white;
-    cursor: default;
-    opacity: 1;
+  background-color: #f5f5f5; /* nền xám rất nhạt */
+  border-color: var(--color-red);
 }
 
-/* Hạng VÀNG */
+.silver .level-icon {
+  color: #8a8a8a; 
+}
+
+.silver h3 {
+  color: #7a7a7a; 
+}
+
+.silver strong {
+  color: #7a7a7a;
+}
+
+.silver .benefits-list li {
+  color: var(--color-brown);
+}
+
+.silver:hover {
+  border-color: #8a8a8a !important;
+}
+
+/* VÀNG */
 .gold {
-    background-color: var(--gold-bg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 5px #ffcc00 inset;
+  background-color: #fffbe6;
+  box-shadow: var(--shadow-medium);
 }
 .gold .level-icon { color: #ffcc00; }
 .gold h3 { color: #ffcc00; }
 .gold strong { color: #ffcc00; }
-.gold-button:disabled { 
-    background-color: #fce78d; 
-    color: white;
-    cursor: default;
-    opacity: 1;
-}
 
-/* Hạng KIM CƯƠNG */
+/* KIM CƯƠNG */
 .diamond {
-    background-color: var(--diamond-bg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 5px #00c4cc inset;
+  background-color: #e6f7ff;
+  box-shadow: var(--shadow-medium);
 }
 .diamond .level-icon { color: #00c4cc; }
 .diamond h3 { color: #00c4cc; }
 .diamond strong { color: #00c4cc; }
-.diamond-button { 
-    background-color: var(--primary-color); 
-    color: white; 
+
+/* Hover: card nào cũng chỉ lúc rê chuột mới có viền rõ hơn */
+.level-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* Mỗi hạng có màu viền riêng khi hover */
+.silver:hover {
+  border-color: var(--color-red);
+}
+
+.gold:hover {
+  border-color: #ffcc00;
+}
+
+.diamond:hover {
+  border-color: #00c4cc;
+}
+
+/* ========== MOBILE ========== */
+
+@media (max-width: 768px) {
+  .membership-container {
+    padding: var(--space-3);
+  }
+
+  .status-summary {
+    flex-direction: column;
+  }
+
+  .explore-levels {
+    flex-direction: column;
+  }
+
+  .level-card {
+    min-width: 100%;
+  }
 }
