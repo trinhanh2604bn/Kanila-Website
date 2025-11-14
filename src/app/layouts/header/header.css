@@ -31,6 +31,11 @@
     width: 100%;
     border-bottom: 1px solid #eee;
 }
+.icon {
+    display: flex;        /* Sử dụng Flexbox để các phần tử nằm ngang */
+    gap: 0px;             /* Giảm khoảng cách giữa các icon */
+    align-items: center;  /* Căn chỉnh các icon theo chiều dọc */
+}
 
 .header-content {
     display: flex;
@@ -194,7 +199,7 @@
     .header-content {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        /* align-items: center; */
         gap: 24px;
     }
 
@@ -245,12 +250,14 @@
     /* Đảm bảo hamburger menu ở bên trái, logo ở giữa, các icon ở bên phải */
     .hamburger-menu {
         order: 1;
-        margin-left: 16px; /* Khoảng cách từ bên trái */
+        margin-left: 0px; /* Khoảng cách từ bên trái */
+        font-size: 16px;
     }
 
     .header-logo {
         order: 2;
         text-align: center;
+        padding-left: 110px
     }
 
     .header-links {
@@ -258,6 +265,7 @@
         display: flex;
         gap: 10px;
         justify-content: flex-end; /* Căn phải các icon */
+        padding-left: 100px;
     }
 
     /* Ẩn chữ "Cộng đồng" trong mobile */
