@@ -1,0 +1,86 @@
+:host {
+  display: block;
+}
+
+/* nền của 1 dòng sản phẩm */
+.order-item {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background-color: var(--color-pink1);
+}
+
+/* Ảnh */
+.item-thumb img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: var(--border-1) solid var(--color-grey);
+}
+
+/* Khối bên phải */
+.item-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hàng trên: tên + số lượng/giá */
+.item-row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Thương hiệu & tên */
+.item-brand {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-brown);
+}
+
+.item-name {
+  font-family: var(--font-beVietnam);
+  font-size: var(--font-size-xs);
+  color: var(--color-brown);
+}
+
+/* Cột số lượng & giá */
+.item-qty-price {
+  text-align: right;
+  font-family: var(--font-beVietnamPro);
+  font-size: var(--font-size-xs);
+  color: #b6a6c7;
+}
+
+.item-price {
+  color: var(--color-brown);
+}
+
+/* Hàng dưới: tổng */
+.item-row-bottom {
+  margin-top: var(--space-1);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  font-family: var(--font-beVietnamPro);
+  font-size: var(--font-size-xs);
+}
+
+.item-total-label {
+  color: #b6a6c7;
+}
+
+.item-total-value {
+  color: var(--color-brown);
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .order-item {
+    padding: var(--space-2);
+  }
+}
