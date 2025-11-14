@@ -1,1 +1,7 @@
-<p>orders-processing works!</p>
+<div class="orders-list">
+  <app-order-card
+    *ngFor="let order of orders"
+    [items]="order.items"
+    [total]="order.total">
+  </app-order-card>
+</div>

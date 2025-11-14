@@ -4,31 +4,35 @@
     <img [src]="image" alt="{{ name }}" />
   </div>
 
-  <!-- Thông tin sản phẩm -->
+  <!-- Khối nội dung: giữa + phải -->
   <div class="item-main">
-    <div class="item-row-top">
-      <div class="item-title">
-        <div class="item-brand label-text">
-          {{ brand }}
-        </div>
-        <div class="item-name body-text">
-          {{ name }}
-        </div>
+    <!-- GIỮA: thương hiệu + tên -->
+    <div class="item-info">
+      <div class="item-brand label-text">
+        {{ brand }}
       </div>
-
-      <div class="item-qty-price">
-        <div class="item-qty body-text"> {{ quantity }}x </div>
-        <div class="item-price body-text">
-          {{ price | number : '1.0-0' }}đ
-        </div>
+      <div class="item-name body-text">
+        {{ name }}
       </div>
     </div>
 
-    <div class="item-row-bottom">
-      <span class="item-total-label body-text">Tổng</span>
-      <span class="item-total-value body-text">
-        {{ (price * quantity) | number : '1.0-0' }}đ
-      </span>
+    <!-- PHẢI: số lượng + giá & Tổng + giá -->
+    <div class="item-prices">
+      <!-- Hàng 1: số lượng + giá -->
+      <div class="price-row body-text">
+        <span class="item-qty">{{ quantity }}x</span>
+        <span class="item-price">
+          {{ price | number : '1.0-0' }}đ
+        </span>
+      </div>
+
+      <!-- Hàng 2: Tổng + tổng tiền -->
+      <div class="price-row body-text">
+        <span class="item-total-label">Tổng</span>
+        <span class="item-total-value">
+          {{ (price * quantity) | number : '1.0-0' }}đ
+        </span>
+      </div>
     </div>
   </div>
 </div>

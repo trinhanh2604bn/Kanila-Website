@@ -1,40 +1,34 @@
-:host {
-  display: block;
-}
-
-/* nền của 1 dòng sản phẩm */
 .order-item {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: var(--space-3);
-  padding: var(--space-3);
   background-color: var(--color-pink1);
 }
 
-/* Ảnh */
+/* Ảnh bên trái */
 .item-thumb img {
   width: 56px;
   height: 56px;
   object-fit: cover;
   border-radius: var(--radius-sm);
-  border: var(--border-1) solid var(--color-grey);
 }
 
-/* Khối bên phải */
+/* Khối giữa + phải */
 .item-main {
   flex: 1;
   display: flex;
-  flex-direction: column;
-}
-
-/* Hàng trên: tên + số lượng/giá */
-.item-row-top {
-  display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: var(--space-3);
 }
 
-/* Thương hiệu & tên */
+/* GIỮA: thương hiệu + tên */
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .item-brand {
   font-family: var(--font-nunito);
   font-weight: var(--font-weight-medium);
@@ -43,44 +37,60 @@
 }
 
 .item-name {
-  font-family: var(--font-beVietnam);
-  font-size: var(--font-size-xs);
-  color: var(--color-brown);
-}
-
-/* Cột số lượng & giá */
-.item-qty-price {
-  text-align: right;
   font-family: var(--font-beVietnamPro);
+  font-weight: var(--font-weight-regular);
   font-size: var(--font-size-xs);
-  color: #b6a6c7;
-}
-
-.item-price {
   color: var(--color-brown);
 }
 
-/* Hàng dưới: tổng */
-.item-row-bottom {
-  margin-top: var(--space-1);
+/* PHẢI: 2 hàng giá */
+.item-prices {
   display: flex;
-  justify-content: flex-end;
-  gap: var(--space-1);
-  font-family: var(--font-beVietnamPro);
-  font-size: var(--font-size-xs);
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
 }
 
+/* Mỗi hàng bên phải */
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Số lượng / label Tổng – màu xám nhạt */
+.item-qty,
 .item-total-label {
   color: #b6a6c7;
 }
 
+/* Giá & tổng giá – màu chữ chính */
+.item-price,
 .item-total-value {
   color: var(--color-brown);
 }
 
-/* mobile */
+/* ================== MOBILE ================== */
 @media (max-width: 768px) {
   .order-item {
-    padding: var(--space-2);
+    align-items: flex-start;
+  }
+
+  /* VẪN giữ layout 2 cột: info bên trái, giá bên phải */
+  .item-main {
+    flex-direction: row;          /* giữ hàng ngang */
+    align-items: flex-start;
+  }
+
+  /* Cột bên phải: 2 hàng đều căn phải */
+  .item-prices {
+    align-items: flex-end;        /* căn phải theo trục ngang */
+    text-align: right;            /* text trong span cũng căn phải */
+  }
+
+  .price-row {
+    justify-content: flex-end;    /* 2 phần tử trong mỗi hàng dạt về phải */
+    width: 100%;
   }
 }
+
