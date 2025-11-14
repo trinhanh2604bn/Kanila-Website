@@ -1,0 +1,395 @@
+.card {
+  position: relative;
+  background: var(--color-pink1);
+  border-radius: 20px;
+  padding: 12px;
+  transition: 0.25s ease;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.product-img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* ICON GROUP */
+.icon-group {
+  position: absolute;
+  top: 12px;
+  right: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
+}
+
+/* ICON BUTTONS */
+.icon-btn {
+  border: none;
+  background: none;
+  font-size: 18px;
+  color: var(--color-grey);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.1s ease, color 0.1s ease;
+}
+
+.icon-btn:active {
+  transform: scale(0.85);
+  animation: btn-bounce 0.25s ease-out;
+}
+
+/* Bounce animation */
+@keyframes icon-bounce {
+  0% {
+    transform: scale(0.85);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Hover: show both icons */
+.card:hover .icon-btn {
+  opacity: 5;
+}
+
+.heart-btn.active {
+  opacity: 1 !important;
+  color: var(--color-pink3) !important;
+}
+
+/* Product info */
+.content {
+  margin-top: 10px;
+}
+
+.product-brand {
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-extraBold);
+  color: var(--color-brown);
+}
+
+.product-name {
+  font-family: var(--font-nunito);
+  color: var(--color-brown);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+}
+
+.stars i {
+  color: var(--color-red);
+  margin-right: 3px;
+  font-size: 16px;
+}
+
+.price {
+  font-family: var(--font-beVietnamPro);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-red);
+}
+
+.cart-btn {
+  width: fit-content;
+  text-align: center;
+  padding: 5px 15px;
+  border: 1px solid var(--color-brown);
+  background: transparent;
+  border-radius: 50px;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.cart-btn:hover {
+  background: var(--color-brown);
+  color: var(--color-beige);
+}
+
+.cart-btn:active {
+  background: var(--color-brown);
+  color: var(--color-beige);
+  transform: scale(0.92); /* Thu nhỏ */
+  animation: cart-bounce 0.25s ease-out;
+}
+
+/* 🎯 Hiệu ứng bật lại (bounce) */
+@keyframes cart-bounce {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.overlay-content {
+  background: var(--color-pink1);
+  width: 90%;
+  max-width: 980px;
+  max-height: 90vh;
+  position: relative;
+  padding: 24px 28px;
+  border-radius: 20px;
+
+  overflow-y: auto; /* Scroll dọc */
+  overflow-x: hidden; /* Không bao giờ scroll ngang */
+}
+
+/* NÚT ĐÓNG */
+.overlay-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--color-brown);
+}
+
+/* LAYOUT CHÍNH */
+.overlay-body {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* LEFT: IMAGE + RATING */
+.overlay-left {
+  flex: 0 0 360px; /* chiều rộng cố định, không tràn */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview-img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.overlay-rating {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.overlay-rating i {
+  color: var(--color-red);
+  font-size: 15px;
+  margin: 0 2px;
+}
+
+/* RIGHT: TEXT */
+.overlay-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.overlay-name {
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-extraBold);
+  color: var(--color-brown);
+  margin: 0;
+}
+
+/* SOLD + STATUS TRÊN 1 HÀNG */
+.overlay-top-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-brown);
+}
+
+.status-value.out-of-stock {
+  color: var(--color-red);
+  font-weight: var(--font-weight-regular);
+}
+
+/* DESCRIPTION – tự xuống hàng */
+.overlay-desc {
+  width: 100%;
+  max-width: 100%;
+  white-space: normal; /* Cho phép xuống dòng */
+  word-wrap: break-word; /* Xuống dòng khi gặp chữ dài */
+  overflow-wrap: break-word; /* Giống dòng trên nhưng hỗ trợ rộng hơn */
+  line-height: 1.6;
+  margin: 16px 0;
+}
+
+/* LINK BÊN PHẢI */
+.overlay-link-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.overlay-link {
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-s);
+  color: var(--color-red);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.overlay-link:hover {
+  text-decoration: underline;
+}
+
+/* GIÁ SẢN PHẨM + PRICE */
+.overlay-price-row {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.price-label {
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-s);
+  color: var(--color-brown);
+}
+
+.price-value {
+  font-family: var(--font-beVietnamPro);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-extraBold);
+  color: var(--color-red);
+}
+
+/* BUTTONS BÊN PHẢI CỘT TEXT */
+.overlay-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.btn-add,
+.btn-buy {
+  border-radius: 50px;
+  padding: 5px 15px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+}
+
+.btn-add {
+  background: var(--color-pink3);
+  color: var(--color-brown);
+}
+
+.btn-buy {
+  background: var(--color-red);
+  color: var(--color-beige);
+}
+
+.btn-add:hover {
+  background: var(--color-brown);
+  color: var(--color-beige);
+}
+
+.btn-buy:hover {
+  background: var(--color-brown);
+  color: var(--color-beige);
+}
+
+.btn-add:active,
+.btn-buy:active {
+  transform: scale(0.85);
+  animation: btn-bounce 0.25s ease-out;
+}
+
+/* Bounce animation */
+@keyframes btn-bounce {
+  0% {
+    transform: scale(0.85);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ───────── MOBILE: ≤ 768px ───────── */
+@media (max-width: 768px) {
+  .overlay-content {
+    width: 95%;
+    max-width: 480px;
+    max-height: 90vh;
+    padding: 18px 16px 20px;
+  }
+
+  .overlay-body {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .overlay-left {
+    flex: 0 0 auto;
+  }
+
+  .preview-img {
+    max-width: 260px;
+  }
+
+  .overlay-rating {
+    margin-top: 10px;
+  }
+
+  .overlay-right {
+    width: 100%;
+  }
+
+  .overlay-name {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .overlay-top-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .overlay-link-row {
+    justify-content: flex-end;
+  }
+
+  .overlay-actions {
+    justify-content: flex-end;
+  }
+}
