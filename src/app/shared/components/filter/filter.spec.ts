@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Filter } from './filter';
+import { FilterComponent } from './filter';
 
 describe('Filter', () => {
-  let component: Filter;
-  let fixture: ComponentFixture<Filter>;
+  let component: FilterComponent;
+  let fixture: ComponentFixture<FilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Filter]
-    })
-    .compileComponents();
+      imports: [FilterComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(Filter);
+    fixture = TestBed.createComponent(FilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

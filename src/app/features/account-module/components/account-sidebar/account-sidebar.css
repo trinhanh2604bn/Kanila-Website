@@ -1,0 +1,185 @@
+:host {
+  display: block;
+  background-color: var(--color-pink1); /* nền sidebar */
+  border-radius: var(--radius-md);
+}
+
+/* Khung sidebar */
+.sidebar-container {
+  width: 250px;
+  padding: 12px 14px;
+  font-family: var(--font-beVietnamPro);
+  line-height: var(--line-height-base);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: var(--space-5);
+  }
+}
+
+/* ===================================
+   USER PROFILE
+=================================== */
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-grey);
+}
+
+.user-icon {
+  font-size: 36px;
+  color: var(--color-brown);
+  margin-right: 15px;
+}
+
+/* "Hello Anh" — mục nhỏ (Nunito medium size m/mm) */
+.user-name {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-red);
+}
+
+@media (max-width: 768px) {
+  .user-name {
+    font-size: var(--font-size-mm);
+  }
+}
+
+/* "Sửa hồ sơ" — chú thích (BeVietnam xs/mxs) */
+.user-edit-link {
+  font-family: var(--font-beVietnam);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-xs);
+  color: var(--color-brown);
+  opacity: 0.7;
+  margin-top: 2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .user-edit-link {
+    font-size: var(--font-size-mxs);
+  }
+}
+
+/* ===================================
+   MENU GROUP / TITLE
+=================================== */
+
+.group-title-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.group-title {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-brown);
+}
+
+@media (max-width: 768px) {
+  .group-title {
+    font-size: var(--font-size-mm);
+  }
+}
+
+.arrow-icon {
+  font-size: 14px;
+  color: var(--color-red);
+}
+
+/* ===================================
+   MENU LIST
+=================================== */
+
+.menu-list {
+  list-style: none;
+  padding-left: 20px;
+  margin-bottom: 28px;
+}
+
+.menu-list li {
+  margin: 18px 0;
+}
+
+/* Mục nhỏ: Hồ sơ, Địa Chỉ, Mật khẩu... */
+.menu-list a {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-brown);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+@media (max-width: 768px) {
+  .menu-list a {
+    font-size: var(--font-size-mm);
+  }
+}
+
+.menu-list a:hover {
+  color: var(--color-red);
+}
+
+/* ===================================
+   MEMBERSHIP
+=================================== */
+
+.membership-status {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-red);
+  padding-left: 20px;
+  margin: 25px 0;
+}
+
+@media (max-width: 768px) {
+  .membership-status {
+    font-size: var(--font-size-mm);
+  }
+}
+
+/* ===================================
+   LINK (Danh mục yêu thích / Mã giảm giá)
+=================================== */
+
+.group-title-link {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-brown);
+  padding: 15px 0;
+  text-decoration: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .group-title-link {
+    font-size: var(--font-size-mm);
+  }
+}
+
+.group-title-link:hover {
+  color: var(--color-red);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background-color: var(--color-grey);
+  margin: var(--space-5) 0;
+}

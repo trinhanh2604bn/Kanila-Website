@@ -1,0 +1,18 @@
+<div class="collapse-panel" [class.is-open]="isOpen">
+  <!-- Header: phần click để mở/đóng -->
+  <button class="collapse-header" type="button" (click)="toggle()">
+    <!-- Nội dung tiêu đề do nơi dùng truyền vào -->
+    <div class="header-content">
+      <ng-content select="[collapse-header]"></ng-content>
+    </div>
+
+    <!-- Icon mũi tên -->
+    <i class="fa-solid"
+       [ngClass]="isOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+  </button>
+
+  <!-- Body: phần nội dung xổ ra / ẩn đi -->
+  <div class="collapse-body" *ngIf="isOpen">
+    <ng-content></ng-content>
+  </div>
+</div>

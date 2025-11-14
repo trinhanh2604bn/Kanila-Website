@@ -1,3 +1,3 @@
-<button class="filter" [class.active]="active" (click)="onClick()">
+<button class="filter" [ngClass]="[variant, active ? 'active' : '']" (click)="onClick()">
   <ng-content></ng-content>
 </button>

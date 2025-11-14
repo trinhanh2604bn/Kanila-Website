@@ -28,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 65px;
+    height: 65px; 
 }
 
 /* --- LOGO --- */
@@ -41,9 +41,10 @@
     margin-right: 80px; 
 }
 
+/* Khối bọc để định vị icon bên trong */
 .search-wrapper {
     position: relative;
-    display: inline-block;
+    display: inline-block; 
 }
 
 /* Icon kính lúp */
@@ -67,15 +68,15 @@
     outline: none;
 }
 
-/* --- KHỐI LIÊN KẾT --- */
+/* --- LIÊN KẾT (CỘNG ĐỒNG, HELLO ANH, CÀI ĐẶT) --- */
 .header-links {
     display: flex;
     align-items: center;
 }
 
 .header-links a {
-    margin-left: 30px; 
-    padding-right: 20px; 
+    margin-left: 30px;
+    padding-right: 20px;
     text-decoration: none;
     color: #555;
     font-size: 16px;
@@ -86,7 +87,7 @@
     color: #a81f1f;
 }
 
-/* --- CSS CHO THANH MENU PHỤ --- */
+/* --- MENU --- */
 .menu {
     background-color: #6B1E2E;
     width: 100%;
@@ -152,7 +153,7 @@
 /* --- MOBILE: Hiển thị Hamburger Menu trên màn hình nhỏ --- */
 @media (max-width: 768px) {
     .main-header-row > div {
-        padding: 10px 20px;
+        padding: 10px 20px; /* Giảm padding cho mobile */
     }
 
     .hamburger-menu {
@@ -164,25 +165,6 @@
     }
 
     .menu.show {
-        display: block;
-    }
-}
-
-/* --- Khi màn hình nhỏ dần, thay đổi cấu trúc cho đến 360px --- */
-@media (max-width: 360px) {
-    .header-logo img {
-        height: 40px;  /* Giảm kích thước logo trên màn hình nhỏ */
-    }
-
-    .header-search input {
-        width: 200px;  /* Giảm kích thước ô tìm kiếm */
-    }
-
-    .header-links a {
-        font-size: 14px;  /* Giảm kích thước font của các liên kết */
-    }
-
-    .menu a {
-        font-size: 14px;  /* Giảm kích thước font trong menu */
+        display: block; /* Hiển thị menu khi người dùng nhấn vào hamburger */
     }
 }

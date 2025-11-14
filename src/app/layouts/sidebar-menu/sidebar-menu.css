@@ -49,6 +49,9 @@
     text-decoration: none; 
     margin-top: 1px;
 }
+.user-edit-link :hover{
+    color: var(--primary-color)
+}
 
 .group-title-header {
     display: flex;
@@ -84,6 +87,7 @@
 
 .menu-list li {
     margin: 20px 0; 
+    cursor: pointer;
 }
 
 .menu-list a {

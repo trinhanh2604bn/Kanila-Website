@@ -1,0 +1,41 @@
+
+<app-collapse-panel [startOpen]="true">
+  <!-- HEADER: -->
+  <div collapse-header class="user-profile">
+    <i class="fas fa-user-circle user-icon"></i>
+    <div class="user-details">
+      <div class="user-name">Hello Anh</div>
+      <div class="user-edit-link">Sửa Hồ Sơ</div>
+    </div>
+  </div>
+  <!-- BODY: -->
+  <div class="sidebar-body">
+    <div class="menu-group account-settings">
+        <div class="order-management">
+        <div class="group-title-header">
+          <a routerLink="/profile/account" class="group-title-link">Tài khoản cá nhân</a>
+        </div>
+      </div>
+
+      <ul class="menu-list">
+        <li><a routerLink="info">Hồ Sơ</a></li>
+        <li><a routerLink="password">Thay Đổi Mật Khẩu</a></li>
+        <li><a routerLink="address">Địa Chỉ</a></li>
+        <li><a routerLink="payment">Phương Thức Thanh Toán</a></li>
+        <li><a routerLink="membership">Hạng Thành Viên</a></li>
+      </ul>
+    </div>
+
+    <div class="menu-group order-management">
+      <div class="group-title-header">
+        <a routerLink="wishlist" class="group-title-link">Danh Mục Yêu Thích</a>
+      </div>
+    </div>
+
+    <div class="menu-group order-management">
+      <div class="group-title-header">
+        <a routerLink="discount" class="group-title-link">Mã Giảm Giá</a>
+      </div>
+    </div>
+  </div>
+</app-collapse-panel>

@@ -1,0 +1,107 @@
+<div class="profile-page">
+  <div class="profile-panel">
+    <!-- ĐỀ MỤC LỚN -->
+    <h2 class="profile-title big-title">
+      HỒ SƠ CỦA TÔI
+    </h2>
+
+    <div class="profile-content">
+      <!-- Hàng avatar + Hello Anh + Chọn ảnh -->
+      <div class="profile-header-row">
+        <div class="profile-avatar">
+          <!-- Có thể thay span bằng <img> -->
+          <span class="avatar-placeholder"></span>
+        </div>
+
+        <div class="profile-header-info">
+          <!-- Tiêu đề phụ (Hello Anh) -->
+          <div class="profile-hello sub-title">
+            Hello Anh
+          </div>
+
+          <!-- Button: text body -->
+          <button type="button" class="btn-choose-image body-text">
+            Chọn ảnh
+          </button>
+        </div>
+      </div>
+
+      <!-- Form thông tin -->
+      <div class="profile-form">
+        <div class="form-row">
+          <label class="field-label label-text">Tên Đăng Nhập:</label>
+          <input
+            class="field-input body-text"
+            type="text"
+            placeholder="Anh"
+          />
+        </div>
+
+        <div class="form-row">
+          <label class="field-label label-text">Tên:</label>
+          <input
+            class="field-input body-text"
+            type="text"
+            placeholder="Anh"
+          />
+        </div>
+
+        <div class="form-row">
+          <label class="field-label label-text">Email:</label>
+          <input
+            class="field-input body-text"
+            type="email"
+            placeholder="Anh@gmail.com"
+          />
+        </div>
+
+        <div class="form-row">
+          <label class="field-label label-text">Số Điện Thoại:</label>
+          <input
+            class="field-input body-text"
+            type="tel"
+            placeholder="0123456789"
+          />
+        </div>
+
+        <div class="form-row">
+          <label class="field-label label-text">Giới Tính:</label>
+
+          <div class="gender-group">
+            <label class="gender-option body-text">
+              <input type="radio" name="gender" checked />
+              <span>Nam</span>
+            </label>
+
+            <label class="gender-option body-text">
+              <input type="radio" name="gender" />
+              <span>Nữ</span>
+            </label>
+
+            <label class="gender-option body-text">
+              <input type="radio" name="gender" />
+              <span>Khác</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="field-label label-text">Ngày Sinh:</label>
+          <input
+            class="field-input body-text"
+            type="date"
+            placeholder="Ngày / tháng / năm"
+          />
+          <!-- input type="date" sẽ bật calendar khi click -->
+        </div>
+      </div>
+
+      <!-- Nút Lưu -->
+      <div class="profile-actions">
+        <button type="button" class="btn-save body-text">
+          Lưu
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

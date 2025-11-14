@@ -1,0 +1,239 @@
+:host {
+  display: block;
+}
+
+/* ================== NỀN & KHUNG ================== */
+
+.profile-page {
+  background-color: var(--color-pink1);     
+  padding: var(--space-4);
+}
+
+.profile-panel {
+  background-color: var(--color-pink1);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+}
+
+/* Đề mục lớn – Nunito, black */
+.big-title {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-l);
+}
+
+@media (max-width: 768px) {
+  .big-title {
+    font-size: var(--font-size-mxl);
+  }
+}
+
+/* Tiêu đề phụ – Nunito, extraBold */
+.sub-title {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-l);
+}
+
+@media (max-width: 768px) {
+  .sub-title {
+    font-size: var(--font-size-ml);
+  }
+}
+
+/* Label / mục nhỏ – Nunito, medium */
+.label-text,
+.field-label {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+}
+
+@media (max-width: 768px) {
+  .label-text,
+  .field-label {
+    font-size: var(--font-size-mm);
+  }
+}
+
+/* Nội dung body – BeVietnamPro, regular */
+.body-text {
+  font-family: var(--font-beVietnamPro);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
+}
+
+@media (max-width: 768px) {
+  .body-text {
+    font-size: var(--font-size-ms);
+  }
+}
+
+/* ================== LAYOUT & FORM ================== */
+
+.profile-title {
+  margin: 0 0 var(--space-3) 0;
+  color: var(--color-brown);
+}
+
+.profile-title.big-title {
+  color: var(--color-red);
+}
+
+.profile-content {
+  background-color: var(--color-pink1);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  max-width: 100%;
+}
+
+/* Avatar + Hello Anh + button */
+.profile-header-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-full);
+  border: var(--border-1) solid var(--color-grey);
+  background-color: var(--color-pink2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-placeholder {
+  width: 70%;
+  height: 70%;
+  border-radius: var(--radius-full);
+  border: var(--border-1) solid var(--color-grey);
+}
+
+.profile-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: var(--color-brown);
+}
+
+/* Nút "Chọn ảnh" */
+.btn-choose-image {
+  align-self: flex-start;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-sm);
+  border: var(--border-1) solid var(--color-brown);
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.btn-choose-image:hover {
+  background-color: var(--color-beige);
+}
+
+/* Form */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.field-label {
+  width: 200px;
+  color: var(--color-brown);
+}
+
+/* Input – dùng token form */
+.field-input {
+  flex: 1;
+  min-height: var(--form-height-sm);
+  padding: var(--form-padding-y) var(--form-padding-x);
+  border-radius: var(--form-border-radius);
+  border: var(--form-border-width) solid var(--form-border-color);
+  line-height: var(--form-line-height);
+  color: var(--form-color);
+}
+
+.field-input::placeholder {
+  color: var(--form-placeholder-color);
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--form-border-focus-color);
+}
+
+/* Giới tính */
+.gender-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.gender-option {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-brown);
+}
+
+.gender-option input {
+  margin: 0;
+}
+
+/* Nút lưu */
+.profile-actions {
+  margin-top: var(--space-6);
+  text-align: center;
+}
+
+.btn-save {
+  min-height: var(--button-height);
+  padding-inline: var(--space-7);
+  border-radius: var(--radius-full);
+  border: none;
+  background-color: var(--color-pink3);
+  color: var(--color-brown);
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  filter: brightness(0.96);
+}
+
+/* ================== MOBILE ================== */
+@media (max-width: 768px) {
+  .profile-page {
+    padding: var(--space-3);
+  }
+
+  .profile-panel {
+    padding: var(--space-3);
+  }
+
+  .profile-content {
+    padding: var(--space-3);
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .field-label {
+    width: auto;
+  }
+
+  .field-input {
+    width: 100%;
+  }
+}

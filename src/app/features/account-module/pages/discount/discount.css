@@ -1,0 +1,132 @@
+:host {
+  display: block;
+  background-color: var(--color-pink1);
+}
+
+/* ================== KHỐI CHÍNH ================== */
+.discount-codes {
+  padding: var(--space-4);
+  font-family: var(--font-beVietnamPro);
+}
+
+/* ================== TIÊU ĐỀ PHỤ ================== */
+.discount-codes h2 {
+  text-align: left;                  /* 👈 Căn trái theo yêu cầu */
+  margin-bottom: var(--space-4);
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-l);
+  color: var(--color-red);
+}
+
+@media (max-width: 768px) {
+  .discount-codes h2 {
+    font-size: var(--font-size-ml);
+  }
+}
+
+
+/* ================== TABS ================== */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.tab {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-grey);
+  background-color: var(--color-pink2);
+  cursor: pointer;
+
+  /* Mục nhỏ */
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-red);
+}
+
+@media (max-width: 768px) {
+  .tab {
+    font-size: var(--font-size-mm);
+  }
+}
+
+.tab.active {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  border-color: var(--color-red);
+}
+
+/* ================== DANH SÁCH MÃ ================== */
+.code-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.code-item {
+  background-color: var(--color-white);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-light);
+  transition: background-color 0.2s ease;
+}
+
+.code-item:hover {
+  background-color: var(--color-pink2);
+}
+
+/* ================== HEADER MÃ ================== */
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* tiêu đề nhỏ */
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-red);
+  margin-bottom: var(--space-3);
+}
+
+@media (max-width: 768px) {
+  .code-header {
+    font-size: var(--font-size-mm);
+  }
+}
+
+.code-header .logo {
+  width: 50px;
+}
+
+.code-header .logo img {
+  width: 100%;
+  height: auto;
+}
+
+.status {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-family: var(--font-beVietnamPro);
+  font-size: var(--font-size-s);
+}
+
+/* ================== CHI TIẾT ================== */
+.code-details p {
+  margin: var(--space-1) 0;
+  font-family: var(--font-beVietnamPro);
+  font-size: var(--font-size-s);
+  color: var(--color-brown);
+}
+
+@media (max-width: 768px) {
+  .code-details p {
+    font-size: var(--font-size-ms);
+  }
+}

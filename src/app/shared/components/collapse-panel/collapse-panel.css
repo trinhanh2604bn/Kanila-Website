@@ -1,0 +1,32 @@
+.collapse-panel {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.collapse-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* phần header-content */
+.header-content {
+  width: 100%;
+}
+
+/* icon mũi tên */
+.collapse-header i.fa-solid {
+  font-size: 16px;
+  color: var(--primary-color, #333);
+}
+
+/* body xổ xuống */
+.collapse-body {
+  margin-top: 8px;
+}
