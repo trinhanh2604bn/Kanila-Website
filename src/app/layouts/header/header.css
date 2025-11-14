@@ -5,17 +5,24 @@
     padding: 10px 0;
 }
 
-.top-bar-ad > div {
-    max-width: 1920px;
+/* Khối giữa dùng chung cho 3 phần: top bar, header, menu */
+.top-bar-ad > div,
+.main-header-row > .header-content,
+.menu > div {
+    max-width: 1200px;          /* co lại cho dễ nhìn trên laptop */
     margin: 0 auto;
-    padding: 0 320px;
+    padding: 0 16px;            /* thay vì 320px để không bị tràn */
+}
+
+/* Nội dung text quảng cáo */
+.top-bar-ad > div {
     font-weight: bold;
     color: black;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
-    white-space: nowrap;  /* Ngăn chặn chữ xuống dòng */
-    overflow: hidden;  /* Đảm bảo không bị tràn ra ngoài */
-    text-overflow: ellipsis;  /* Thêm dấu "..." nếu nội dung quá dài */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* --- DÒNG CHÍNH (LOGO | TÌM KIẾM | LIÊN KẾT) --- */
@@ -25,96 +32,122 @@
     border-bottom: 1px solid #eee;
 }
 
-.main-header-row > div {
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 10px 320px;
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 65px;
+    height: 70px;
+    gap: 24px;
 }
 
+/* Logo */
 .header-logo img {
     height: 50px;
+    display: block;
 }
 
-/* --- KHỐI TÌM KIẾM --- */
+/* --- Thanh Tìm Kiếm --- */
 .header-search {
-    text-align: center;
+    flex: 1; /* Chiếm toàn bộ không gian còn lại */
+    position: relative;
+    display: block;
+    max-width: 400px; /* Giới hạn chiều rộng của thanh tìm kiếm */
+    margin: 0 auto;
 }
 
+/* Bao quanh ô input */
 .search-wrapper {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px; /* Bo góc đẹp */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo bóng cho ô tìm kiếm */
+    border: 1px solid #ddd; /* Đường viền nhẹ */
 }
 
+/* Input tìm kiếm */
+.header-search input {
+    width: 100%;
+    padding: 12px 45px 12px 20px; /* Padding cho phần text */
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Biểu tượng tìm kiếm */
 .search-icon {
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 12px; /* Căn chỉnh vào bên phải */
     transform: translateY(-50%);
     color: #888;
     font-size: 18px;
     cursor: pointer;
 }
 
-.header-search input {
-    padding: 10px 45px 10px 20px;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    width: 426px;
-    height: 40px;
-    font-size: 16px;
-    outline: none;
+/* Hiệu ứng focus cho input */
+.header-search input:focus {
+    background-color: #fff;
+    border-color: #a81f1f;
+    box-shadow: 0 0 5px rgba(168, 31, 31, 0.2);
 }
 
-/* --- KHỐI LIÊN KẾT --- */
+/* Hiệu ứng hover cho biểu tượng */
+.search-icon:hover {
+    color: #a81f1f;
+}
+
+/* --- Liên kết người dùng (icon) --- */
 .header-links {
     display: flex;
     align-items: center;
-    justify-content: flex-end;  /* Căn các mục ra góc phải */
-    transition: transform 0.3s ease;  /* Thêm hiệu ứng khi thụt vào */
+    gap: 16px;
+    white-space: nowrap;
+    justify-content: flex-end; /* Căn phải các icon */
 }
 
 .header-links a {
-    margin-left: 30px;
-    padding-right: 20px;
     text-decoration: none;
     color: #555;
-    font-size: 16px;
-    white-space: nowrap;
+    font-size: 15px;
 }
 
 .header-links a:hover {
     color: #a81f1f;
 }
 
-/* --- MENU --- */
+/* Hamburger Menu */
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* --- Menu chính (desktop) --- */
 .menu {
     background-color: #6B1E2E;
     width: 100%;
-    height: 65px;
 }
 
 .menu > div {
-    max-width: 1920px;
-    margin: 0 auto;
-    height: 65px;
+    height: 56px;
     display: flex;
-    justify-content: space-evenly;  /* Đảm bảo các mục trong menu được căn đều ngang */
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    gap: 8px;
 }
 
 .menu a {
     text-decoration: none;
     color: white;
-    padding: 10px 20px;
-    margin: 0;
-    font-size: 16px;
-    display: inline-block; /* Đảm bảo các mục nằm trên cùng một dòng */
-    white-space: nowrap;  /* Ngăn chặn chữ xuống dòng */
+    padding: 8px 14px;
+    font-size: 15px;
+    white-space: nowrap;
 }
 
 .menu a:hover {
@@ -122,18 +155,12 @@
     border-radius: 5px;
 }
 
-/* --- MOBILE MENU --- */
-.hamburger-menu {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
-}
-
+/* --- Menu Slide cho mobile --- */
 .menu-slide {
     position: fixed;
     top: 0;
-    left: -250px;  /* Initially hidden off-screen */
-    width: 250px;
+    left: -260px;
+    width: 260px;
     height: 100%;
     background-color: #6B1E2E;
     transition: left 0.3s ease;
@@ -144,10 +171,10 @@
 .menu-slide a {
     display: block;
     color: white;
-    font-size: 18px;
-    padding: 15px;
+    font-size: 16px;
+    padding: 12px 10px;
     text-decoration: none;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .menu-slide a:hover {
@@ -155,63 +182,105 @@
     border-radius: 5px;
 }
 
-/* Khi menu được kích hoạt, trượt vào từ bên trái */
+/* Khi menu được hiển thị */
 .menu-slide.show {
     left: 0;
 }
 
-/* --- MOBILE: Hiển thị Hamburger Menu và Ẩn Menu ban đầu --- */
-@media (max-width: 768px) {
-    /* Khi màn hình thu nhỏ, các mục trong header và menu sẽ chuyển sang hiển thị theo cột */
-    .main-header-row > div {
-        flex-direction: column;
-        align-items: flex-start;
+/* --- Responsive --- */
+
+/* Màn hình máy tính và tablet lớn vẫn giữ nguyên */
+@media (min-width: 768px) {
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
     }
 
-    /* Hiển thị hamburger menu */
-    .hamburger-menu {
+    .header-search {
+        flex: 1;
         display: block;
     }
 
-    .menu {
-        display: none;  /* Ẩn menu khi thu nhỏ màn hình */
-    }
-
-    /* Ẩn các liên kết trong header khi thu nhỏ và thụt vào */
     .header-links {
         display: flex;
-        flex-direction: column;  /* Chuyển các liên kết thành cột */
-        margin-top: 20px;
-        padding-left: 30px;  /* Thụt vào từ trái */
-        transform: translateX(100%);  /* Ẩn các mục ra ngoài */
-        transition: transform 0.3s ease;  /* Thêm hiệu ứng khi di chuyển */
+        align-items: center;
+        gap: 16px;
     }
 
-    .header-links.show {
-        transform: translateX(0);  /* Khi nhấn hamburger, các liên kết sẽ trở lại */
-    }
-
-    .header-links a {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    /* Điều chỉnh thanh tìm kiếm để chiếm toàn bộ chiều rộng */
-    .header-search {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .header-search input {
-        width: 100%;  /* Đảm bảo input chiếm toàn bộ chiều rộng */
+    .hamburger-menu {
+        display: none;
     }
 
     .menu-slide {
-        left: -250px;  /* Ẩn menu slide */
-        z-index: 1000;
+        display: none;
+    }
+
+    /* Giữ menu ngang */
+    .menu {
+        display: block;
+    }
+}
+
+/* Khi màn hình nhỏ (mobile) */
+@media (max-width: 768px) {
+    .header-content {
+        height: auto;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        justify-content: center; /* Cho phép logo và hamburger menu nằm ở giữa */
+        flex-direction: row; /* Xếp theo hàng (row) */
+    }
+
+    /* Ẩn thanh tìm kiếm và các liên kết trên màn hình nhỏ */
+    .header-search,
+    .header-links {
+        display: none;
+    }
+    .top-bar-ad {
+        display: none; /* Ẩn phần quảng cáo */
+    }
+
+    /* Đảm bảo hamburger menu ở bên trái, logo ở giữa, các icon ở bên phải */
+    .hamburger-menu {
+        order: 1;
+        margin-left: 16px; /* Khoảng cách từ bên trái */
+    }
+
+    .header-logo {
+        order: 2;
+        text-align: center;
+    }
+
+    .header-links {
+        order: 3;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end; /* Căn phải các icon */
+    }
+
+    /* Ẩn chữ "Cộng đồng" trong mobile */
+    .header-links a span {
+        display: none;
+    }
+
+    /* Tối ưu các icon */
+    .header-links a {
+        font-size: 12px; /* Tăng kích thước icon nếu cần */
+    }
+
+    /* Ẩn menu ngang trên mobile */
+    .menu {
+        display: none;
+    }
+
+    /* Hiển thị slide menu khi cần */
+    .menu-slide {
+        left: -260px;
     }
 
     .menu-slide.show {
-        left: 0; /* Hiển thị menu slide khi hamburger được nhấn */
+        left: 0;
     }
 }
