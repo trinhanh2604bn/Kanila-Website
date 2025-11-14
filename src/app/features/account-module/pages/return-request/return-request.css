@@ -1,0 +1,196 @@
+:host {
+  display: block;
+}
+
+/* ===== NỀN & KHUNG CHUNG ===== */
+
+.return-page {
+  background-color: var(--color-pink1);
+  padding: var(--space-4);
+}
+
+.return-panel {
+  background-color: var(--color-pink1);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* ===== TYPOGRAPHY CƠ BẢN ===== */
+
+/* tiêu đề phụ – giống các trang khác */
+.return-title {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-l);
+  color: var(--color-red);
+}
+
+@media (max-width: 768px) {
+  .return-title {
+    font-size: var(--font-size-ml);
+  }
+}
+
+/* ghi chú nhỏ */
+.return-note {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-beVietnamPro);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
+  color: var(--color-brown);
+}
+
+@media (max-width: 768px) {
+  .return-note {
+    font-size: var(--font-size-ms);
+  }
+}
+
+/* giống “Thêm Địa Chỉ” trong Address */
+.return-section-title {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-m);
+  color: var(--color-red);
+}
+
+/* mục nhỏ – nhãn 1., 2., 3. */
+.field-label {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-brown);
+  margin-bottom: var(--space-1);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .field-label {
+    font-size: var(--font-size-mm);
+  }
+}
+
+/* body text – input, select, textarea, button */
+.body-text {
+  font-family: var(--font-beVietnamPro);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
+}
+
+@media (max-width: 768px) {
+  .body-text {
+    font-size: var(--font-size-ms);
+  }
+}
+
+/* ===== FORM LAYOUT ===== */
+
+.return-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.return-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* input/select dùng token form chung */
+
+.field-input {
+  min-height: var(--form-height-sm);
+  padding: var(--form-padding-y) var(--form-padding-x);
+  border-radius: var(--form-border-radius);
+  border: var(--form-border-width) solid var(--form-border-color);
+  line-height: var(--form-line-height);
+  color: var(--form-color);
+  background-color: var(--color-white);
+}
+
+.field-input::placeholder {
+  color: var(--form-placeholder-color);
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--form-border-focus-color);
+}
+
+/* nút “Chọn Đường Dẫn” – giả input rộng 100% */
+
+.upload-input {
+  width: 100%;
+  text-align: left;
+  min-height: var(--form-height-sm);
+  padding: var(--form-padding-y) var(--form-padding-x);
+  border-radius: var(--form-border-radius);
+  border: var(--form-border-width) solid var(--form-border-color);
+  background-color: var(--color-white);
+  color: var(--form-placeholder-color);
+  cursor: pointer;
+}
+
+.upload-input:hover {
+  background-color: var(--color-beige);
+}
+
+/* textarea */
+
+.textarea-input {
+  width: 100%;
+  min-height: 180px;
+  padding: var(--form-padding-y) var(--form-padding-x);
+  border-radius: var(--form-border-radius);
+  border: var(--form-border-width) solid var(--form-border-color);
+  resize: vertical;
+  line-height: var(--form-line-height);
+  color: var(--form-color);
+  background-color: var(--color-white);
+}
+
+.textarea-input::placeholder {
+  color: var(--form-placeholder-color);
+}
+
+.textarea-input:focus {
+  outline: none;
+  border-color: var(--form-border-focus-color);
+}
+
+/* ===== NÚT GỬI YÊU CẦU ===== */
+
+.return-actions {
+  margin-top: var(--space-3);
+  text-align: center;
+}
+
+.return-submit {
+  min-height: var(--button-height);
+  padding-inline: var(--space-7);
+  border-radius: var(--radius-full);
+  border: none;
+  background-color: var(--color-pink3);
+  color: var(--color-brown);
+  cursor: pointer;
+}
+
+.return-submit:hover {
+  filter: brightness(0.96);
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+  .return-page {
+    padding: var(--space-3);
+  }
+
+  .return-panel {
+    padding: var(--space-3);
+  }
+}
