@@ -4,7 +4,7 @@
   border-radius: var(--radius-md);
 }
 
-/* Khung sidebar */
+/* Khung sidebar (nếu có bọc thêm div.sidebar-container) */
 .sidebar-container {
   width: 250px;
   padding: 12px 14px;
@@ -12,7 +12,6 @@
   line-height: var(--line-height-base);
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .sidebar-container {
     width: 100%;
@@ -38,7 +37,7 @@
   margin-right: 15px;
 }
 
-/* "Hello Anh" — mục nhỏ (Nunito medium size m/mm) */
+/* "Hello Anh" */
 .user-name {
   font-family: var(--font-nunito);
   font-weight: var(--font-weight-medium);
@@ -52,7 +51,7 @@
   }
 }
 
-/* "Sửa hồ sơ" — chú thích (BeVietnam xs/mxs) */
+/* "Sửa hồ sơ" — chú thích */
 .user-edit-link {
   font-family: var(--font-beVietnam);
   font-weight: var(--font-weight-regular);
@@ -80,6 +79,13 @@
   align-items: center;
   padding: 12px 0;
   cursor: pointer;
+  border-radius: var(--radius-md); /* để hover bo góc đẹp */
+  transition: background-color 0.2s ease;
+}
+
+/* HOVER BACKGROUND cho phần tiêu đề nhóm */
+.group-title-header:hover {
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .group-title {
@@ -111,17 +117,31 @@
 }
 
 .menu-list li {
-  margin: 18px 0;
+  margin: 10px 0;
 }
 
 /* Mục nhỏ: Hồ sơ, Địa Chỉ, Mật khẩu... */
+/* ==== UPDATED: tất cả item 1 dòng, chiều cao bằng nhau ==== */
 .menu-list a {
   font-family: var(--font-nunito);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-m);
   color: var(--color-brown);
   text-decoration: none;
-  transition: color 0.25s;
+  transition: color 0.25s, background-color 0.2s ease, transform 0.15s ease;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 10px 6px 20px;
+  height: 40px;              /* CỐ ĐỊNH CHIỀU CAO */
+  box-sizing: border-box;
+  white-space: nowrap;       /* Không cho xuống dòng */
+  overflow: hidden;
+  text-overflow: ellipsis;   /* Dài quá thì '...' */
+
+  border-radius: var(--radius-md);
 }
 
 @media (max-width: 768px) {
@@ -130,8 +150,10 @@
   }
 }
 
+/* HOVER BACKGROUND cho item trong menu */
 .menu-list a:hover {
   color: var(--color-red);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* ===================================
@@ -157,14 +179,27 @@
    LINK (Danh mục yêu thích / Mã giảm giá)
 =================================== */
 
+/* ==== UPDATED: cũng 1 dòng, cùng chiều cao với menu-list a ==== */
 .group-title-link {
   font-family: var(--font-nunito);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-m);
   color: var(--color-brown);
-  padding: 15px 0;
   text-decoration: none;
-  display: block;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 10px 6px 20px;
+  height: 40px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  border-radius: var(--radius-md);
+  transition: color 0.25s, background-color 0.2s ease, transform 0.15s ease;
 }
 
 @media (max-width: 768px) {
@@ -175,6 +210,7 @@
 
 .group-title-link:hover {
   color: var(--color-red);
+  /* background-color: rgba(255, 255, 255, 0.8); */
 }
 
 /* Divider */
