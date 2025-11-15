@@ -113,8 +113,7 @@
 }
 
 .required-level,
-.current-level {
-    background-color: var(--color-beige);
+.current-level { 
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -270,5 +269,42 @@
     flex-direction: column;
   }
 
+}
+
+/* Hiệu ứng điểm thưởng hạng thành viên */
+.required-level,
+.current-level {
+  display: flex;
+  padding: 0.8em 1.1em;
+  border: none;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+      15deg,
+      var(--color-beige),
+      var(--color-beige),
+      var(--color-beige),
+      var(--color-beige),
+      var(--color-beige),
+    white,
+    white,
+      var(--color-beige),
+      var(--color-beige),
+      var(--color-beige),
+      var(--color-beige),
+      var(--color-beige)
+    )
+    no-repeat;
+  background-size: 200%;
+  background-position: left center;
+  transition: background 0.3s ease;
+}
+
+.required-level:hover,
+.current-level:hover {
+  background-size: 320%;
+  background-position: right center;
 }
 
