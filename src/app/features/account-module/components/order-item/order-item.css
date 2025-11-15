@@ -1,8 +1,19 @@
 .order-item {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  background-color: var(--color-pink1);
+  gap: var(--space-4);
+  background-color: var(--color-beige);
+  /* border: 1px solid black; */
+  border-radius: 8px;
+  padding: 5px;
+  position: relative;
+  object-fit: cover;
+  transition: transform 0.5s;
+  margin: 5px;
+}
+
+.order-item:hover{
+  transform: scale(1.02);
 }
 
 /* Ảnh bên trái */
@@ -26,7 +37,7 @@
 .item-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .item-brand {
@@ -55,13 +66,13 @@
 .price-row {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-5);
 }
 
 /* Số lượng / label Tổng – màu xám nhạt */
 .item-qty,
 .item-total-label {
-  color: #b6a6c7;
+  color: var(--color-grey);
 }
 
 /* Giá & tổng giá – màu chữ chính */
@@ -76,20 +87,19 @@
     align-items: flex-start;
   }
 
-  /* VẪN giữ layout 2 cột: info bên trái, giá bên phải */
   .item-main {
-    flex-direction: row;          /* giữ hàng ngang */
+    flex-direction: row;       
     align-items: flex-start;
   }
 
-  /* Cột bên phải: 2 hàng đều căn phải */
+  /* Cột bên phải */
   .item-prices {
-    align-items: flex-end;        /* căn phải theo trục ngang */
-    text-align: right;            /* text trong span cũng căn phải */
+    align-items: flex-end;    
+    text-align: right;        
   }
 
   .price-row {
-    justify-content: flex-end;    /* 2 phần tử trong mỗi hàng dạt về phải */
+    justify-content: flex-end;  
     width: 100%;
   }
 }
