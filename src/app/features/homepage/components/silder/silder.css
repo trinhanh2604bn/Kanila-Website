@@ -1,0 +1,198 @@
+.beautySwiper {
+  width: 100%;             /* khoảng nửa màn hình */
+  max-width: 1920px;      /* như bạn nói */
+  height: 365px;          /* chiều cao mong muốn */
+  margin: 20px auto;      /* căn giữa ngang + cách trên một chút */
+  position: relative;
+  --swiper-navigation-color: #6B1E2E;
+  --swiper-pagination-color: #6B1E2E;
+  --swiper-navigation-size: 12px
+  --swiper-pagination-size: 12px
+  display: block;
+  /* margin: 8px 8px; */
+  padding: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Layout core */
+.slide-layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Background màu trơn */
+.bg-color {
+  position: absolute;
+  inset: 0;
+  background: #ffe4ec;
+  z-index: 1;
+  max-width: 1920px;
+  height: 465px;
+  animation: slideInRight 1s ease forwards;
+}
+
+/* Text bên trái */
+.text-box {
+  position: absolute;
+  z-index: 5;
+  top: 10%;
+  left: 8%;
+  width: 40%;
+  max-width: 420px;
+  color: var(--color-brown);
+  animation: slideInRight 1.3s ease forwards;
+}
+
+/* .title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+} */
+
+.title1{
+  font: var(--font-nunit);
+  font-size: 42px;
+  font-weight: 650;
+  margin-bottom: 10px;
+  animation: slideInRight 1.7s ease forwards;
+}
+.subtitle {
+  font-size: 40px;
+  opacity: 0.7;
+  margin-bottom: 14px;
+  font: var(--font-beVietnamPro);
+  /* font-weight: var(--font-weight-medium); */
+  animation: slideInRight 1.3s ease forwards;
+}
+
+.description {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-bottom: 16px;
+  font: var(--font-beVietnamPro);
+  animation: slideInRight 0.9s ease forwards;
+}
+
+/* .cta-btn {
+  background: #ff76a9;
+  border: none;
+  padding: 12px 28px;
+  font-size: 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #fff;
+}
+
+.cta-btn:hover {
+  background: #ff8cbb;
+} */
+
+/* Ảnh neo góc phải */
+.image-box {
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  height: 90%;
+  width: 60%;
+  margin:  auto;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+
+     /* Ảnh sẽ scale theo chiều cao màn hình */
+}
+
+.image-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: translateX(50px);
+  animation: slideInRight 1s ease forwards;
+}
+
+/* Animation xuất hiện mềm mượt */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-45px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(80px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Arrow mờ và hover mới hiện */
+.beautySwiper::part(button-next),
+.beautySwiper::part(button-prev) {
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.beautySwiper:hover::part(button-next),
+.beautySwiper:hover::part(button-prev) {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .text-box {
+    width: 80%;
+    left: 10%;
+    top: 10%;
+  }
+  .image-box {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0px;
+    opacity: 25%;
+  }
+}
+
+/* From Uiverse.io by AlimurtuzaCodes */
+.btn {
+  border: none;
+  width: 11em;
+  height: 2em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #ec99b1;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+}
+
+.sparkle {
+  fill:var( --color-beige);
+  transition: all 800ms ease;
+}
+
+.text {
+  font-weight: 100;
+  color: var( --color-beige);
+  font-size: 10px;
+  font: var(--font-beVietnamPro);
+}
+
+.btn:hover {
+  background: linear-gradient(0deg,#F5A3B7,#e67aa5);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 227, 250, 0.4),
+  inset 0px -4px 0px 0px rgba(247, 170, 192, 0.2),
+  0px 0px 0px 4px #ffdbf333,
+  0px 0px 180px 0px #febfcc;
+  transform: translateY(-2px);
+}
+
+.btn:hover .text {
+  color: white;
+}
+
+.btn:hover .sparkle {
+  fill: white;
+  transform: scale(1.2);
+}
