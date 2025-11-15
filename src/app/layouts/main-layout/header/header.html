@@ -23,30 +23,28 @@
       </div>
 
       <!-- Nhóm icon: Tìm kiếm + Cộng đồng + Cài đặt -->
-      <div class="header-links">
-        <!-- Icon kính lúp (mobile: hover sẽ hiện chữ) -->
+      <!-- <div class="header-links">
         <a href="#" class="search-mobile">
-          <i class="fa fa-search"></i><span> Tìm kiếm</span>
+          <i class="fa fa-search"></i>
         </a>
 
         <a href="#">
-          <i class="fa fa-users"></i><span> Cộng đồng</span>
+          <i class="fa fa-users"></i>
         </a>
 
         <a href="#">
-          <i class="fa fa-cog"></i><span> Cài đặt</span>
+          <i class="fa fa-cog"></i>
         </a>
-      </div>
+      </div> -->
 
-      <!-- Thanh 3 ngang -->
+      <!-- Thanh 3 gạch -->
       <div class="hamburger-menu" (click)="toggleMenu()" aria-label="Mở menu">
         <i class="fa fa-bars"></i>
       </div>
 
-      <!-- Icon person đứng một mình ở góc phải -->
+      <!-- Icon Cá nhân -->
       <a href="#" class="user-avatar">
         <i class="fa fa-user"></i>
-        <span>Hello Anh</span>
       </a>
     </div>
   </div>
@@ -70,7 +68,7 @@
     </div>
   </div>
 
-  <!-- Mobile Slide Menu -->
+  <!-- Menu mobile (dropdown từ trên xuống, chiếm 30% chiều ngang) -->
   <div class="menu-slide" [ngClass]="{'show': menuVisible}">
     <a href="#">Tất cả</a>
     <a href="#">Khuôn mặt</a>
