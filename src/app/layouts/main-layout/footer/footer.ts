@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
 export class Footer {
 subscribe(ev: Event) {
     ev.preventDefault();
-    // TODO: gọi API/Service đăng ký email nếu bạn có
     alert('Cảm ơn bạn đã đăng ký!');
   }
 }
