@@ -1,17 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoryFilterComponent } from '../../../../shared/components/category-filter/category-filter';
-import { ProductCardComponent } from '../../../../shared/components/product-card/product-card';
+import { ProductCardComponent } from '../../../../shared/components/product-card/product-card'; ///import { MCategoryFilter } from '../../../../shared/components/m-category-filter/m-category-filter';
 
 @Component({
   selector: 'app-brand-catalog',
   standalone: true,
-  imports: [CommonModule, CategoryFilterComponent, ProductCardComponent],
+  imports: [CommonModule, CategoryFilterComponent, ProductCardComponent], ///MCategoryFilter,
   templateUrl: './brand-catalog.html',
   styleUrls: ['./brand-catalog.css'],
 })
 export class BrandCatalogComponent {
-  // ⭐ Dữ liệu sản phẩm (demo)
   products = [
     {
       brand: 'Charlotte Tilbury',

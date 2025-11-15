@@ -5,7 +5,6 @@
   color: var(--color-red);
   margin-bottom: 12px;
 }
-
 .alphabet-nav {
   top: 0;
   z-index: 10;
@@ -21,7 +20,6 @@
 .alphabet-nav::-webkit-scrollbar {
   display: none;
 }
-
 .alphabet-nav app-filter .filter {
   font-family: var(--font-nunito);
   font-size: var(--font-size-l);
@@ -29,17 +27,13 @@
   color: var(--color-beige);
   white-space: nowrap;
 }
-
 .brand-content {
   margin-top: 28px;
 }
-
 .brand-section {
-  margin-bottom: 48px;
-  /* để scrollIntoView trừ sẵn header + alphabet-nav */
+  margin-bottom: 48px; /* để scrollIntoView trừ sẵn header + alphabet-nav */
   scroll-margin-top: var(--brand-scroll-offset, 0px);
 }
-
 .brand-section h2 {
   font-family: var(--font-nunito);
   font-size: var(--font-size-l);
@@ -47,26 +41,95 @@
   color: var(--color-red);
   margin-bottom: 10px;
 }
-
 .brand-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px 32px;
 }
-
 .brand-grid app-filter .filter {
   font-family: var(--font-nunito);
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-medium);
   color: var(--color-brown);
+  display: inline-block; /* để transform hoạt động mượt */
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
-/* ======================================================
-   ===== RESPONSIVE — ĐẶT TRƯỚC ::ng-deep LÀ SAI =====
-   ===== CHUYỂN TẤT CẢ XUỐNG DƯỚI CÙNG (ĐÃ FIX) =====
-   ====================================================== */
+.brand-grid app-filter .filter:hover {
+  animation: bounce-up 0.4s ease;
+}
 
-/* ===== Responsive ===== */
+/* Hover bounce lên */
+@keyframes bounce-up {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  70% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Click bounce xuống */
+@keyframes bounce-down {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(6px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  70% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ======= ALPHABET NAV HOVER DOCK EFFECT ======= */
+.alphabet-nav {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding: 12px 0;
+}
+.alphabet-nav .letter {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-beige);
+  cursor: pointer;
+  transition: transform 0.25s ease, margin 0.25s ease;
+  display: inline-block;
+}
+.alphabet-nav .letter:hover {
+  transform: scale(1.8);
+  margin: 0 12px;
+}
+.alphabet-nav .letter:hover + .letter,
+.alphabet-nav .letter:has(+ .letter:hover) {
+  transform: scale(1.5);
+  margin: 0 8px;
+}
+.alphabet-nav .letter:hover + .letter + .letter,
+.alphabet-nav .letter:has(+ .letter + .letter:hover) {
+  transform: scale(1.2);
+  margin: 0 4px;
+} /* reset */
+.alphabet-nav .letter {
+  transform-origin: bottom;
+} /* ===== Responsive ===== */
 @media (min-width: 992px) {
   .brand-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -76,13 +139,11 @@
     overflow-x: visible !important;
     white-space: normal !important;
   }
-
   .alphabet-nav app-filter .filter {
     flex: 1; /* mỗi chữ chiếm 1 phần đều nhau */
     text-align: center; /* căn giữa từng chữ */
   }
 }
-
 @media (max-width: 768px) {
   /* Page-title thu nhỏ */
   .page-title {
@@ -94,36 +155,24 @@
     flex-wrap: nowrap; /* ⭐ không xuống hàng */
     overflow-x: auto; /* ⭐ cuộn ngang */
     justify-content: flex-start; /* ⭐ không dàn đều */
-  }
-
-  /* Alphabet-nav chữ thu nhỏ */
+  } /* Alphabet-nav chữ thu nhỏ */
   ::ng-deep .alphabet-nav app-filter .filter {
     font-size: var(--font-size-s) !important;
     font-weight: var(--font-weight-regular) !important;
     white-space: nowrap;
-  }
-
-  /* Title A, B, C thu nhỏ */
+  } /* Title A, B, C thu nhỏ */
   .brand-section h2 {
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-medium);
-  }
-
-  /* Brand-grid item thu nhỏ */
+  } /* Brand-grid item thu nhỏ */
   ::ng-deep .brand-grid app-filter .filter {
     font-size: var(--font-size-s) !important;
     font-weight: var(--font-weight-regular) !important;
   }
-
   .brand-grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-
-/* ======================================================
-   ===== STYLE OVERRIDE (GIỮ LẠI nhưng KHÔNG override mobile)
-   ====================================================== */
-
 ::ng-deep .alphabet-nav app-filter .filter {
   font-family: var(--font-nunito);
   font-size: var(--font-size-m);
@@ -131,12 +180,10 @@
   color: var(--color-beige);
   transition: color 0.25s ease;
 }
-
 ::ng-deep .alphabet-nav app-filter .filter:hover,
 ::ng-deep .alphabet-nav app-filter .filter.active {
   color: var(--color-pink3);
 }
-
 ::ng-deep .brand-grid app-filter .filter {
   font-family: var(--font-nunito);
   font-size: var(--font-size-m);
@@ -144,11 +191,9 @@
   color: var(--color-brown);
   transition: color 0.2s ease;
 }
-
 ::ng-deep .brand-grid app-filter .filter:hover {
   color: var(--color-pink3);
 }
-
 .brand-section.active h2 {
   text-decoration: underline;
   text-underline-offset: 4px;

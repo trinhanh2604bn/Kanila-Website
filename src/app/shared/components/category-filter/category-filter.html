@@ -1,10 +1,7 @@
-<!-- ⭐ MOBILE FILTER BUTTON -->
-<div class="mobile-filter-btn" (click)="toggleMobile()">
-  <img src="assets/icons/filter.svg" class="filter-icon" />
-</div>
-
 <!-- ⭐ DESKTOP SIDEBAR -->
 <div class="desktop-filter">
+  <div class="filter">Bộ Lọc</div>
+
   <div class="filter-block" *ngFor="let item of filters" [class.active]="item.open">
     <div class="filter-header" (click)="toggle(item)">
       <span class="filter-title">{{ item.title }}</span>
@@ -26,19 +23,20 @@
         </label>
 
         <div class="manual-price-row">
-          <label class="radio-circle">
-            <input type="radio" name="price-range" />
-            <span class="circle"></span>
-          </label>
+          <div class="option1">
+            <label class="radio-circle">
+              <input type="radio" name="price-range" />
+            </label>
+          </div>
 
           <div class="price-boxes">
             <input type="number" placeholder="Min" class="price-box" />
-            <span class="dash">-</span>
+            <span style="color: #372b2b">-</span>
             <input type="number" placeholder="Max" class="price-box" />
           </div>
         </div>
 
-        <button class="apply-btn">Áp dụng</button>
+        <button class="apply-btn" style="margin-left: 55px">Áp dụng</button>
       </ng-container>
     </div>
   </div>

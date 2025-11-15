@@ -1,11 +1,22 @@
 /* ===== DESKTOP FILTER ===== */
 .desktop-filter {
   width: 100%;
-  max-width: 300px;
+  max-width: 230px;
+  background-color: var(--color-pink1);
+  padding: 8px;
+  border-radius: 20px;
 }
 
 .mobile-filter-btn {
   display: none;
+}
+
+.filter {
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extraBold);
+  color: var(--color-red);
+  padding-left: 5px;
 }
 
 /* Arrow */
@@ -24,11 +35,15 @@
 
 /* Filter blocks */
 .filter-block {
-  background: var(--color-pink1);
   border-radius: 12px;
   padding: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   border-bottom: 2px solid var(--color-brown);
+}
+
+.filter-block.active {
+  border-top: 2px solid var(--color-brown); /* Viền trên khi mở */
+  border-bottom: none; /* Loại bỏ viền dưới khi mở */
 }
 
 .filter-header {
@@ -39,8 +54,9 @@
 }
 
 .filter-title {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: var(--font-size-m);
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
   color: var(--color-brown);
 }
 
@@ -56,7 +72,7 @@
 .option {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   margin: 6px 0;
 }
 
@@ -64,17 +80,14 @@
 .manual-price-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 12px 0;
-}
-
-.radio-circle input {
-  display: none;
+  gap: 5px;
+  margin: 6px 0px 1px 0px;
+  height: 30px;
 }
 
 .circle {
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
   border: 2px solid var(--color-brown);
   border-radius: 50%;
 }
@@ -86,22 +99,72 @@
 .price-boxes {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .price-box {
   width: 70px;
+  height: 24px;
   padding: 6px;
   border: 1px solid var(--color-pink3);
   border-radius: 6px;
+  background-color: var(--color-beige);
 }
 
 .apply-btn {
-  margin-top: 12px;
-  width: 100%;
-  padding: 10px;
+  margin-top: 0px;
+  width: 80px;
+  text-align: center; /* Căn giữa text */
+  align-self: center; /* Canh giữa theo chiều ngang */
+  height: fit-content;
+  padding: 2px;
   border: 1px solid var(--color-brown);
-  border-radius: 8px;
+  border-radius: 20px;
+  color: var(--color-brown);
   background: var(--color-pink1);
-  font-weight: 600;
+  font-size: var(--font-size-s);
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  justify-self: center;
+}
+
+.apply-btn:hover {
+  background-color: var(--color-pink3);
+  color: var(--color-beige);
+  border: none;
+  transform: scale(1.08); /* Hiệu ứng bounce */
+}
+
+.apply-btn:active {
+  transform: scale(0.95);
+}
+/* --- Thêm tiêu đề "Bộ Lọc" --- */
+
+/* Container chứa tiêu đề "Bộ Lọc" */
+.filter-title-container {
+  margin-bottom: 12px;
+  padding-left: 16px;
+}
+
+/* Chữ "Bộ Lọc" màu đỏ đô, căn trái */
+.filter-title {
+  font-size: var(--font-size-m);
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-brown);
+}
+
+/* Container dưới các filter blocks */
+.color-container {
+  margin-top: 12px;
+  padding: 8px;
+  background-color: var(--color-pink2); /* Màu nền tùy chỉnh */
+  border-radius: 20px; /* Góc bo tròn */
+}
+
+/* Các kiểu khác cho container */
+.color-container.active {
+  background-color: var(--color-pink3); /* Màu nền khi được chọn */
 }
