@@ -16,6 +16,7 @@
 /* Tabs */
 .orders-tabs {
   display: flex;
+  justify-content: space-between;
   gap: var(--space-4);
   margin-bottom: var(--space-4);
   border-bottom: 1px solid var(--color-pink2);
