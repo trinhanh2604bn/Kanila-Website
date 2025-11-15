@@ -1,67 +1,85 @@
 <header>
-    <!-- Dòng Quảng Cáo -->
-    <div class="top-bar-ad">
-        <div>
-            Chương trình khuyến mãi 50% nhân dịp Halloween!
-        </div>
+  <!-- Dòng Quảng Cáo -->
+  <div class="top-bar-ad">
+    <div>
+      Chương trình khuyến mãi 50% nhân dịp Halloween!
     </div>
+  </div>
 
-    <!-- Phần Header chính -->
-    <div class="main-header-row">
-        <div>
-            <div class="header-logo">
-                <img src="/public/images/logo.png" alt="Kanila logo"> 
-            </div>
+  <!-- Phần Header chính -->
+  <div class="main-header-row">
+    <div class="header-content">
+      <!-- Logo -->
+      <div class="header-logo">
+        <img src="assets/images/logo.png" alt="Kanila logo">
+      </div>
 
-            <div class="header-search">
-                <div class="search-wrapper">
-                    <input type="text" placeholder="Tìm kiếm">
-                    <i class="fa fa-search search-icon"></i> 
-                </div>
-            </div>
-
-            <div class="header-links">
-                <a href="#"><i class="fa fa-users"></i> Cộng đồng</a>
-                <a href="#"><i class="fa fa-user"></i> Hello Anh</a>
-                <a href="#"><i class="fa fa-cog"></i> Cài đặt</a>
-            </div>
-
-            <!-- Hamburger Menu Icon -->
-            <div class="hamburger-menu" (click)="toggleMenu()">
-                <i class="fa fa-bars"></i> <!-- Ba gạch -->
-            </div>
+      <!-- Thanh search (desktop) -->
+      <div class="header-search">
+        <div class="search-wrapper">
+          <input type="text" placeholder="Tìm kiếm">
+          <i class="fa fa-search search-icon"></i>
         </div>
-    </div>
+      </div>
 
-    <!-- Menu -->
-    <div class="menu">
-        <div>
-            <a href="#">Tất cả</a>
-            <a href="#">Khuôn mặt</a>
-            <a href="#">Đôi mắt</a>
-            <a href="#">Đôi môi</a>
-            <a href="#">Đôi má</a>
-            <a href="#">Sản phẩm mới</a>
-            <a href="#">Thương hiệu</a>
-            <a href="#">Set quà</a>
-            <a href="#">Deal hot</a>
-            <a href="#"><i class="fa fa-heart"></i></a>
-            <a href="#"><i class="fa fa-shopping-bag"></i></a> 
-        </div>
-    </div>
+      <!-- Nhóm icon: Tìm kiếm + Cộng đồng + Cài đặt -->
+      <!-- <div class="header-links">
+        <a href="#" class="search-mobile">
+          <i class="fa fa-search"></i>
+        </a>
 
-    <!-- Mobile Slide Menu -->
-    <div class="menu-slide" [ngClass]="{'show': menuVisible}">
-        <a href="#">Tất cả</a>
-        <a href="#">Khuôn mặt</a>
-        <a href="#">Đôi mắt</a>
-        <a href="#">Đôi môi</a>
-        <a href="#">Đôi má</a>
-        <a href="#">Sản phẩm mới</a>
-        <a href="#">Thương hiệu</a>
-        <a href="#">Set quà</a>
-        <a href="#">Deal hot</a>
+        <a href="#">
+          <i class="fa fa-users"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa fa-cog"></i>
+        </a>
+      </div> -->
+
+      <!-- Thanh 3 gạch -->
+      <div class="hamburger-menu" (click)="toggleMenu()" aria-label="Mở menu">
+        <i class="fa fa-bars"></i>
+      </div>
+
+      <!-- Icon Cá nhân -->
+      <a href="#" class="user-avatar">
+        <i class="fa fa-user"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Menu desktop -->
+  <div class="menu">
+    <div>
+      <a href="#">Tất cả</a>
+      <a href="#">Khuôn mặt</a>
+      <a href="#">Đôi mắt</a>
+      <a href="#">Đôi môi</a>
+      <a href="#">Đôi má</a>
+      <a href="#">Sản phẩm mới</a>
+      <a href="#">Thương hiệu</a>
+      <a href="#">Set quà</a>
+      <a href="#">Deal hot</a>
+      <div class="icon">
         <a href="#"><i class="fa fa-heart"></i></a>
-        <a href="#"><i class="fa fa-shopping-bag"></i></a> 
+        <a href="#"><i class="fa fa-shopping-bag"></i></a>
+      </div>
     </div>
+  </div>
+
+  <!-- Menu mobile (dropdown từ trên xuống, chiếm 30% chiều ngang) -->
+  <div class="menu-slide" [ngClass]="{'show': menuVisible}">
+    <a href="#">Tất cả</a>
+    <a href="#">Khuôn mặt</a>
+    <a href="#">Đôi mắt</a>
+    <a href="#">Đôi môi</a>
+    <a href="#">Đôi má</a>
+    <a href="#">Sản phẩm mới</a>
+    <a href="#">Thương hiệu</a>
+    <a href="#">Set quà</a>
+    <a href="#">Deal hot</a>
+    <a href="#"><i class="fa fa-heart"></i></a>
+    <a href="#"><i class="fa fa-shopping-bag"></i></a>
+  </div>
 </header>
