@@ -84,7 +84,7 @@ header {
 
 .header-search input {
   width: 100%;
-  padding: 8px 45px 8px 20px;
+  padding: 8px 8px 8px 20px;
   font-size: 16px;
   border: none;
   border-radius: 50px;
@@ -307,11 +307,11 @@ header {
 
   /* Nhóm icon sau hamburger */
   .header-links {
-    order: 2;
+    order: 4;
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-left: 8px;
+    margin-left: 10px;
     margin-right: 0;
     justify-content: flex-start;
   }
@@ -350,12 +350,12 @@ header {
     display: none;
   }
 
-  /* Menu dropdown từ TRÊN XUỐNG, RỘNG 30% BÊN TRÁI */
+  /* Menu dropdown */
   .menu-slide {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 30%;
+    width: 50%;
     max-height: 70vh;
     overflow-y: auto;
     background-color: #6B1E2E;
