@@ -1,0 +1,18 @@
+<div class="faq-page">
+    <h1 class="page-title">TRUNG TÂM TRỢ GIÚP KANILA</h1>
+
+
+    <div class="faq-list">
+        <div class="faq-item" *ngFor="let faq of faqs" [class.expanded]="faq.isExpanded">
+            
+            <div class="faq-question-header" (click)="toggleExpand(faq)">
+                <span class="question-text">{{ faq.question }}</span>
+                <i class="ri-arrow-down-s-line expand-icon"></i>
+            </div>
+
+            <div class="faq-answer-content">
+                <p>{{ faq.answer }}</p>
+            </div>
+        </div>
+    </div>
+</div>

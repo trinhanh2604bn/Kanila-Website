@@ -1,0 +1,171 @@
+/* Sử dụng các biến CSS Kanila */
+.intro-page {
+  font-family: var(--font-nunito);
+
+}
+
+.page-title {
+  font-size: var(--font-size-xl, 35px);
+  font-weight: var(--font-weight-extraBold, 800);
+  color: var(--color-red, #6b1e2e);
+
+
+}
+.intro-content-wrapper {
+  max-width: 950px; 
+  width: 100%;
+  margin-inline: auto;
+  padding: 0 var(--space-4, 16px);
+}
+
+
+.hero-image-full-width {
+
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw; 
+    margin-right: -50vw;
+    margin-bottom: var(--space-6, 32px);
+    overflow: hidden; 
+    height: auto;
+}
+
+.hero-image-full-width .hero-image {
+    width: 100%; 
+    max-height: 550px; 
+    object-fit: cover;
+    display: block;
+    border-radius: 0; 
+}
+
+
+.hero-section {
+    text-align: center;
+    margin-bottom: var(--space-8, 64px); 
+}
+
+.brand-name {
+    font-size: var(--font-size-xl, 35px);
+    font-weight: var(--font-weight-extraBold, 800);
+    color: var(--color-red);
+    margin: 0;
+    letter-spacing: var(--letter-spacing-sm);
+}
+
+.slogan-title {
+    font-size: var(--font-size-l, 25px);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-brown);
+    margin: var(--space-2, 8px) 0;
+}
+
+.slogan-description {
+    font-size: var(--font-size-s, 16px);
+    line-height: var(--line-height-relaxed, 1.75);
+    color: var(--color-brown);
+    max-width: 700px;
+    margin: var(--space-4, 16px) auto 0;
+}
+
+.section-vision {
+    display: flex;
+    gap: var(--space-6, 32px);
+    margin-bottom: var(--space-8, 64px);
+}
+
+.vision-box {
+    flex: 1;
+    padding: var(--space-5, 24px);
+    border-radius: var(--radius-xl, 10px);
+    box-shadow: var(--shadow-light);
+}
+
+.box-pink {
+    background-color: var(--color-pink1, #FFE8EC);
+}
+
+.box-red {
+    background-color: var(--color-pink2, #FFD6DE);
+}
+
+.box-title {
+    font-size: var(--font-size-m, 20px);
+    font-weight: var(--font-weight-extraBold, 800);
+    color: var(--color-red);
+    margin-top: 0;
+    text-align: center;
+}
+
+.vision-box p {
+    font-size: var(--font-size-s, 16px);
+    line-height: var(--line-height-base, 1.5);
+    color: var(--color-brown);
+}
+
+.section-phuongcham, .section-giatri {
+    margin-bottom: var(--space-8, 64px);
+    text-align: center;
+    background-color: var(--color-pink1);
+    padding: 10px
+}
+
+.section-subtitle {
+    font-size: var(--font-size-l, 25px);
+    font-weight: var(--font-weight-extraBold, 800);
+    color: var(--color-red);
+    margin-bottom: var(--space-4, 16px);
+}
+
+.subtitle-text {
+    font-size: var(--font-size-s, 16px);
+    color: var(--color-brown);
+    max-width: 800px;
+    margin: var(--space-4, 16px) auto var(--space-7, 48px);
+}
+
+.phuongcham-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6, 32px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.phuongcham-item {
+    padding: var(--space-5, 24px);
+    background-color: var(--color-beige, #fdf9f8);
+    border-radius: var(--radius-lg, 8px);
+    box-shadow: var(--shadow-light);
+}
+
+.pc-icon {
+    width: 100px; 
+    height: auto;
+    margin-bottom: var(--space-3, 12px);
+}
+
+.pc-name {
+    font-size: var(--font-size-m, 20px);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-red);
+    margin: 0;
+}
+
+
+.value-map {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .section-vision {
+        flex-direction: column; 
+    }
+    .phuongcham-grid {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}

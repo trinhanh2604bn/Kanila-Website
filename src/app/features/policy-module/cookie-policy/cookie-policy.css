@@ -1,0 +1,66 @@
+
+
+.policy-page {
+  font-family: var(--font-nunito);
+  padding: var(--space-7, 48px) 0;
+}
+
+.policy-content-wrapper {
+
+  max-width: 850px; 
+  width: 100%;
+  margin-inline: auto;
+  padding: 15px;
+  background-color: var(--color-pink1);
+}
+
+.page-title {
+  font-size: var(--font-size-xl, 35px);
+  font-weight: var(--font-weight-extraBold, 800);
+  color: var(--color-red, #6b1e2e);
+  margin-bottom: 30px;
+    margin-inline: auto;
+    padding-left: 185px;
+
+}
+
+
+.section-title {
+  font-size: var(--font-size-l, 25px);
+  font-weight: var(--font-weight-extraBold, 800);
+  color: var(--color-red, #6b1e2e);
+  margin-top: var(--space-7, 48px);
+  margin-bottom: var(--space-4, 16px);
+}
+
+
+.section-title.sub {
+  font-size: var(--font-size-m, 20px);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-brown, #372b2b);
+  margin-top: var(--space-6, 32px);
+}
+
+.intro-text, .policy-content-wrapper p {
+  font-size: var(--font-size-s, 16px);
+  line-height: var(--line-height-relaxed, 1.75);
+  color: var(--color-brown, #372b2b);
+  margin-bottom: var(--space-5, 24px);
+}
+
+.cookie-list, .cookie-manage-list {
+  list-style: disc;
+  padding-left: var(--space-6, 32px);
+  margin-bottom: var(--space-6, 32px);
+}
+
+.cookie-list li, .cookie-manage-list li {
+  font-size: var(--font-size-s, 16px);
+  line-height: var(--line-height-relaxed, 1.75);
+  margin-bottom: var(--space-2, 8px);
+}
+
+.cookie-list li strong, .cookie-manage-list li strong {
+  color: var(--color-red, #6b1e2e);
+  font-weight: var(--font-weight-extraBold, 800);
+}

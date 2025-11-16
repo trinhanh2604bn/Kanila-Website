@@ -1,0 +1,75 @@
+<div class="page">
+
+  <!-- TITLE -->
+  <h1>E-Commerce Performance Dashboard</h1>
+
+  <!-- TOP CARDS -->
+  <div class="top-cards-container">
+    <div class="card" *ngFor="let c of topCards">
+      <div class="card-title">{{ c.title }}</div>
+      <div class="card-value">{{ c.value }}</div>
+      <div class="card-percent">+5.6% ↑</div>
+    </div>
+  </div>
+
+  <!-- FIRST ROW -->
+  <div class="chart-row">
+    <div class="chart-box">
+      <h3>Revenue By Month (1000đ)</h3>
+      <apx-chart 
+        [series]="revenueSeries" 
+        [chart]="barChart"
+        [xaxis]="revenueXAxis">
+      </apx-chart>
+    </div>
+
+    <div class="chart-box">
+      <h3>Website Traffic By Month</h3>
+      <apx-chart 
+        [series]="trafficSeries" 
+        [chart]="barChart"
+        [xaxis]="trafficXAxis">
+      </apx-chart>
+    </div>
+
+    <div class="chart-box">
+      <h3>Category</h3>
+      <apx-chart 
+        [series]="categorySeries"
+        [chart]="pieChart"
+        [labels]="categoryLabels">
+      </apx-chart>
+    </div>
+  </div>
+
+  <!-- SECOND ROW -->
+  <div class="chart-row">
+    <div class="chart-box">
+      <h3>New Users By Month</h3>
+      <apx-chart 
+        [series]="newUsersSeries" 
+        [chart]="lineChart"
+        [xaxis]="newUsersXAxis">
+      </apx-chart>
+    </div>
+
+    <div class="chart-box">
+      <h3>New Users</h3>
+      <apx-chart 
+        [series]="donutSeries"
+        [chart]="donutChart"
+        [labels]="donutLabels">
+      </apx-chart>
+    </div>
+
+    <div class="chart-box">
+      <h3>Order By Month</h3>
+      <apx-chart 
+        [series]="ordersSeries"
+        [chart]="lineChart"
+        [xaxis]="ordersXAxis">
+      </apx-chart>
+    </div>
+  </div>
+
+</div>

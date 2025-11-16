@@ -1,0 +1,70 @@
+<!-- <div class="review-page">
+  <h2 class="page-title">DUYỆT BÀI/ ĐÁNH GIÁ</h2>
+
+  <div class="review-list">
+    <div class="review-card" *ngFor="let item of posts">
+      <div class="review-header">
+        <div class="avatar"></div>
+        <div class="info">
+          <p class="user-name">{{ item.user }}</p>
+          <p class="text">Đã yêu cầu đăng bài</p>
+          <p class="content">Nội dung: {{ item.content }}</p>
+        </div>
+      </div>
+
+      <div class="time-box">2 Giờ Trước</div>
+
+      <div class="button-group">
+        <button class="approve">Duyệt Bài</button>
+        <button class="reject">Từ Chối</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="review-page">
+  <h2 class="page-title">DUYỆT BÀI/ ĐÁNH GIÁ</h2>
+
+  <div class="review-list">
+    <div class="review-card" *ngFor="let item of posts">
+
+            <div class="review-header">
+        <div class="avatar">
+          <i class="fa-regular fa-circle-user icon-user"></i>
+        </div>
+        <div class="info">
+          <div class="row-1">
+            <p class="user-name">{{ item.user }}</p>
+            <p class="text">Đã yêu cầu đăng bài</p>
+          </div>
+          <p class="content">Nội dung: {{ item.content }}</p>
+        </div>
+      </div>
+
+      <div class="review-details">
+          <div class="detail-item">
+              <span class="detail-label">Sản phẩm:</span>
+              <span class="detail-value">{{ item.productName }}</span>
+          </div>
+          <div class="detail-item">
+              <span class="detail-label">Xếp hạng:</span>
+              <span class="detail-value stars">{{ item.rating }} ⭐</span>
+          </div>
+      </div>
+      
+            <div class="review-footer">
+                <div class="time-box">
+            <span class="time-icon"><i class="ri-time-line"></i></span>
+            <span>2 Giờ Trước</span>
+        </div>
+
+        <div class="button-group">
+          <button class="approve">Duyệt Bài</button>
+          <button class="reject">Từ Chối</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

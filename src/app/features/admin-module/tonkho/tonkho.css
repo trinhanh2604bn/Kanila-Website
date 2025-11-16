@@ -1,0 +1,130 @@
+.product-page {
+  width: 100%;
+  padding: 30px 40px;
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #6B1E2E;
+}
+
+/* Thanh lọc */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.filter-bar select,
+.filter-bar input {
+  padding: 8px 12px;
+  border: 1px solid #d4a5ad;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  outline: none;
+}
+
+.filter-bar input {
+  width: 240px;
+}
+
+/* Bảng sản phẩm */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.product-table th {
+  background-color: #FFE8EC;
+  color: #372B2B;
+  font-weight: 700;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 2px solid #d4a5ad;
+}
+
+.product-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0cfd7;
+  font-size: 15px;
+  color: #372B2B;
+}
+
+.product-table tr:nth-child(even) {
+  background-color: #fff7f8;
+}
+
+.product-table tr:hover {
+  background-color: #FFEEF2;
+  transition: 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-bar input {
+    width: 100%;
+  }
+
+  .product-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.in-stock {
+  background-color: #D6EAF8;
+  color: #1B4F72;
+}
+
+.out-stock {
+  background-color: #FDEBD0;
+  color: #A04000;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination button,
+.pagination span {
+  padding: 6px 12px;
+  border: 1px solid #d4a5ad;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  background: white;
+}
+
+.pagination span.active {
+  background-color: #6B1E2E;
+  color: white;
+  border-color: #6B1E2E;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
