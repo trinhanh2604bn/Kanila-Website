@@ -1,4 +1,4 @@
-<div>GIỎ HÀNG</div>
+<!-- <div class="big-tiltle">GIỎ HÀNG</div>
 <div class="cart-container">
     <header class="cart-header">
         <div class="header-cell checkbox-cell">
@@ -12,9 +12,51 @@
 </div>
     <app-item-cart></app-item-cart>
     <app-item-cart></app-item-cart>
-    <app-item-cart></app-item-cart>
+    <app-item-cart></app-item-cart> -->
 
 
 
+<div class="big-tiltle">GIỎ HÀNG</div>
+<div class="cart-wrapper">
+    <div class="cart-left">
+        <div class="cart-container">
+            <header class="cart-header">
+                <div class="header-cell checkbox-cell">
+                    <input type="checkbox" aria-label="Select all products" (change)="toggleOrderRight($event)">
+                </div>
+                <div class="header-cell product-cell">Sản phẩm</div>
+                <div class="header-cell price-cell">Đơn giá</div>
+                <div class="header-cell quantity-cell">Số lượng</div>
+                <div class="header-cell total-cell">Thành tiền</div>
+            </header>
+        </div>
+            <app-item-cart></app-item-cart>
+    </div>
 
+    <div class="order-right" *ngIf="showOrderRight">
+        <div class="tiltle-column">Hóa đơn của bạn</div>
+        <div class="info">
+                <div class="total">
+                <div class="total-row">
+                    <span class="text">Tổng tiền hàng:</span>
+                    <span class="text">100000đ</span>
+                </div>
+                <div class="total-row">
+                    <span class="text">Phí vận chuyển:</span>
+                    <span class="text">0đ</span>
+                </div>
+                <div class="total-row">
+                    <span class="text">Tổng voucher giảm giá:</span>
+                    <span class="text">0đ</span>
+                </div>
+                <div class="total-row">
+                    <span class="text">Tổng thanh toán:</span>
+                    <span class="text">100000đ</span>
+                </div>
+                <hr>
+                <div class="btn text">Mua hàng</div>
+            </div>
+        </div>
+    </div>
+</div>
 

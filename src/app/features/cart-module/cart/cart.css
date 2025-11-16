@@ -1,4 +1,10 @@
-/* Tổng thể container */
+.big-tiltle{
+    color: var(--color-red);
+    font-family: var(--font-nunito);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-black);
+}
+
 .cart-container {
     width: 100%;
     margin: 20px auto;
@@ -11,8 +17,8 @@
 /* --- HEADER STYLES --- */
 .cart-header {
     display: flex;
-    background-color: #782d38; /* Màu đỏ sẫm */
-    color: white;
+    background-color: var(--color-red);
+    color: var(--color-beige);
     padding: 10px 0;
     font-weight: bold;
     font-size: 14px;
@@ -49,5 +55,112 @@
     }
     .cart-container{
         font-size: var(--font-size-s);
+    }
+    .big-tiltle{
+    font-size: var(--font-size-mxl);
+    font-weight: var(--font-weight-black);
+}
+}
+
+
+
+
+
+/* Giỏ hàng và Hóa đơn */
+.cart-wrapper {
+    display: flex;
+    gap: 5px; 
+    align-items: flex-start; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.cart-left {
+    flex-grow: 1; 
+}
+
+.order-right {
+    background-color: var(--color-beige);
+    border-radius: var(--radius-md);
+    min-width: 300px;
+    padding: var(--space-4); 
+    flex-shrink: 0; 
+    max-width: 400px;
+    /* flex-grow: 1 */
+}
+
+/* Tiêu đề "Hóa đơn của bạn" */
+.tiltle-column {
+    background-color: var(--color-red);
+    color: var(--color-beige);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+}
+
+.info {
+    background-color: var(--color-white);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(171, 19, 19, 0.2);
+}
+ 
+.info hr {
+    border: none;
+    border-top: 1px solid var(--color-brown);
+    margin: 5px 0;
+}
+
+/* Tổng tiền (Total) */
+.total {
+    text-align: center;
+}
+
+.total-row {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+}
+
+/* Nút Mua hàng (btn) */
+.btn{
+    margin: 10px;
+    padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-sm);
+  border: var(--border-1) solid var(--color-brown);
+  background-color: var(--color-pink2);
+  color: var(--color-brown);
+  cursor: pointer;
+  max-width: 250px;
+  box-shadow: 0 5px 10px rgba(171, 19, 19, 0.2);
+}
+
+.btn:hover {
+  background-color: var(--color-pink3);
+  box-shadow: none;
+}
+
+.btn:active{
+  opacity: 0.8;
+}
+
+.text{
+    font-size: var(--font-size-mm);
+    font-weight: var(--font-weight-medium);
+}
+
+@media (max-width: 1000px) {     
+    .cart-left, 
+    .order-right {
+        width: 100%;
+        max-width: unset;
+        flex-basis: 100%; 
     }
 }
