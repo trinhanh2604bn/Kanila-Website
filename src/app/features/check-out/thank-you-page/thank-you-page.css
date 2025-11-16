@@ -1,0 +1,90 @@
+.big-tiltle{
+    color: var(--color-red);
+    font-family: var(--font-nunito);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-black);
+}
+
+.tiltle{
+    color: var(--color-red);
+    font-family: var(--font-nunito);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-extraBold);
+    margin-bottom: 10px;
+}
+
+/* --- CONTAINER  --- */
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.body { 
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 10px;
+    max-width: 700px; 
+    color: var(--color-brown);
+    font-family: var(--font-beVietnamPro);
+    font-weight: var(--font-weight-regular);
+}
+
+.card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: var(--color-pink1);
+}
+
+.card .body, .card > div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.btn {
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-sm);
+    border: var(--border-1) solid var(--color-brown);
+    background-color: var(--color-pink2);
+    color: var(--color-brown);
+    cursor: pointer;
+    max-width: 250px;
+    box-shadow: 0 5px 10px rgba(171, 19, 19, 0.2);
+    margin: 10px auto;
+    display: block;
+}
+
+.btn:hover {
+  background-color: var(--color-pink3);
+  box-shadow: none;
+}
+
+.btn:active{
+  opacity: 0.8;
+}
+
+@media (max-width: 800px) {
+  .big-tiltle{
+    font-size: var(--font-size-mxl);
+}
+
+    .title {
+        font-size: var(--font-size-l);
+    }
+
+    .body{
+        font-family: var(--font-beVietnamPro);
+        font-weight: var(--font-weight-regular);
+        font-size: var(--font-size-ms);
+    }
+}

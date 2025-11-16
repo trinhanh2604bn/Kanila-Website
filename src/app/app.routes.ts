@@ -6,6 +6,7 @@ import { AccountModuleModule } from './features/account-module/account-module-mo
 import { AccountShell } from './features/account-module/pages/account-shell/account-shell';
 import { AccountSidebar } from './features/account-module/components/account-sidebar/account-sidebar';
 import { CheckOutPage } from './features/check-out/check-out-page/check-out-page';
+import { ThankYouPage } from './features/check-out/thank-you-page/thank-you-page';
 
 
 export const routes: Routes = [
@@ -26,7 +27,11 @@ export const routes: Routes = [
       {
         path: 'checkout',
         component: CheckOutPage
-      }
+      },
+      {
+        path: 'thanks',
+        component: ThankYouPage
+      },
     ]
   },
 
