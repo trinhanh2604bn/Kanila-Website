@@ -1,0 +1,32 @@
+.catalog-page {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  background-color: var(--color-beige);
+  transition: gap 0.3s ease;
+}
+
+/* ==== LEFT FILTER ==== */
+.catalog-filter {
+  position: sticky;
+  top: 20px; /* Bỏ var(--header-height) đi cho đơn giản */
+  height: fit-content;
+}
+
+/* ==== RIGHT PRODUCT GRID ==== */
+.catalog-title {
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-red);
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: grid;
+  /* Sửa lại minmax để phù hợp với card thật
+    (Card thật của chúng ta rộng hơn 210px)
+  */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
