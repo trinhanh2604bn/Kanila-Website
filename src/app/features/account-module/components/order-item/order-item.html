@@ -1,7 +1,7 @@
 <div class="order-item">
   <!-- Ảnh sản phẩm -->
   <div class="item-thumb">
-    <img [src]="image" alt="{{ name }}" />
+    <img src="your-image.jpg" class="cart-img">
   </div>
 
   <!-- Khối nội dung:  -->
@@ -9,19 +9,19 @@
 
     <div class="item-info">
       <div class="item-brand label-text">
-        {{ brand }}
+        Patrick Ta
       </div>
-      <div class="item-name body-text">
-        {{ name }}
+      <div class="item-name">
+        Bộ đôi má hồng kem & phấn Major Headlines Double-Take
       </div>
     </div>
 
     <div class="item-prices">
       <!-- Hàng 1: số lượng + giá -->
       <div class="price-row body-text">
-        <span class="item-qty">{{ quantity }}x</span>
+        <span class="item-qty">1x</span>
         <span class="item-price">
-          {{ price | number : '1.0-0' }}đ
+          100.000đ
         </span>
       </div>
 
@@ -29,7 +29,7 @@
       <div class="price-row body-text">
         <span class="item-total-label">Tổng</span>
         <span class="item-total-value">
-          {{ (price * quantity) | number : '1.0-0' }}đ
+          100.000đ
         </span>
       </div>
     </div>

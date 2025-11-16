@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  background-color: var(--color-beige);
+  background-color: var(--color-white);
   /* border: 1px solid black; */
   border-radius: 8px;
   padding: 5px;
@@ -43,14 +43,21 @@
 .item-brand {
   font-family: var(--font-nunito);
   font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-s);
   color: var(--color-brown);
 }
 
 .item-name {
-  font-family: var(--font-beVietnamPro);
+  font-family: var(--font-nunito);
   font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-m);
+  color: var(--color-brown);
+}
+
+.body-text{
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
   color: var(--color-brown);
 }
 
@@ -102,5 +109,17 @@
     justify-content: flex-end;  
     width: 100%;
   }
+
+  .item-brand {
+  font-size: var(--font-size-ms);
+}
+
+.item-name {
+  font-size: var(--font-size-mm);
+}
+
+.body-text{
+  font-size: var(--font-size-s);
+}
 }
 

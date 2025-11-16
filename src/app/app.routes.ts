@@ -26,10 +26,6 @@ export const routes: Routes = [
         component: Cart
       },
       {
-        path: 'cartitem',
-        component: ItemCart
-      },
-      {
         path: 'checkout',
         component: CheckOutPage
       },

@@ -4,8 +4,8 @@
 
 /* khối 1 đơn */
 .order-card {
-  background-color: var(--color-pink1);
-  padding: var(--space-5) var(--space-5);
+  background-color: var(--color-beige);
+  padding: var(--space-2) ;
   border-radius: 10px;
   margin: 10px;
   position: relative;
@@ -26,9 +26,11 @@
   gap: var(--space-5);
 }
 
-.order-summary-label {
+.order-summary-label,
+.body-text {
   font-family: var(--font-beVietnamPro);
   color: var(--color-brown);
+  font-size: 14px;
 }
 
 .order-summary-value {
@@ -72,5 +74,9 @@
   .order-detail-btn {
     width: 100%;
     text-align: center;
+  }
+
+  .body-text{
+    font-size: 11px;
   }
 }

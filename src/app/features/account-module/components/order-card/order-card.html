@@ -1,13 +1,7 @@
 <div class="order-card">
   <!-- DS sản phẩm trong đơn -->
-  <app-order-item
-    *ngFor="let item of items"
-    [image]="item.image"
-    [brand]="item.brand"
-    [name]="item.name"
-    [quantity]="item.quantity"
-    [price]="item.price">
-  </app-order-item>
+  <app-order-item></app-order-item>
+  <app-order-item></app-order-item>
 
   <!-- Tổng tiền -->
   <div class="order-summary">
@@ -15,7 +9,7 @@
       Tổng Số Tiền:
     </div>
     <div class="order-summary-value body-text">
-      {{ total | number : '1.0-0' }}đ
+      200.000đ
     </div>
   </div>
 
