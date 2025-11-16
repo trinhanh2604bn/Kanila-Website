@@ -1,0 +1,263 @@
+.body{
+    color: var(--color-brown);
+    font-family: var(--font-beVietnamPro);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-s);
+}
+
+.order-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4); 
+  max-width: var(--site-containerMax);
+  margin: 0 auto;
+  padding: var(--space-2);
+  width: 100%;
+}
+
+.payment-group {
+  display: flex;
+  flex-direction: column;  
+  gap: 5px; 
+  align-items: flex-start;
+  background-color: var(--color-beige);
+}
+
+.ui-checkbox {
+  margin-right: 5px; 
+  align-self: flex-start;
+}
+
+.order-left{
+    flex: 1;
+  background-color: var(--color-beige);
+  border-radius: var(--radius-md);
+  min-width: 400px;
+}
+
+.order-right{
+    background-color: var(--color-beige);
+  border-radius: var(--radius-md);
+  min-width: 300px;
+}
+
+.tiltle-column{
+    background-color: var(--color-red);
+    color: var(--color-beige);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: var(--font-size-l);
+}
+
+.big-tiltle{
+    color: var(--color-red);
+    font-family: var(--font-nunito);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-black);
+}
+
+.sub {
+    color: var(--color-red);
+    font-family: var(--font-nunito);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-extraBold);
+}
+
+.text{
+    font-family: var(--font-nunito);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-medium);
+}
+
+.info{
+    background-color: var(--color-pink1);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.info-item{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--color-beige);
+    padding: 5px 10px;
+}
+
+.info-item div:nth-child(1) {
+  min-width:180px;
+}
+
+.info-item div:nth-child(2) {
+  flex-grow: 1; 
+  text-align: left; 
+}
+
+.total{
+    text-align: center;
+}
+
+.total-row{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+}
+
+.btn{
+    margin: 10px;
+    padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-sm);
+  border: var(--border-1) solid var(--color-brown);
+  background-color: var(--color-pink2);
+  color: var(--color-brown);
+  cursor: pointer;
+  max-width: 250px;
+  box-shadow: 0 5px 10px rgba(171, 19, 19, 0.2);
+}
+
+@media (max-width: 800px) {
+  .order-right,
+  .order-left{
+    width: 100%;
+  }
+  .big-tiltle{
+    font-size: var(--font-size-mxl);
+    font-weight: var(--font-weight-black);
+}
+
+.sub {
+    font-size: var(--font-size-ml);
+    font-weight: var(--font-weight-extraBold);
+}
+
+.text{
+    font-size: var(--font-size-mm);
+    font-weight: var(--font-weight-medium);
+}
+
+.body{
+    font-family: var(--font-beVietnamPro);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-ms);
+}
+.tiltle-column{
+    font-size: var(--font-size-ml);
+}
+}
+
+
+
+
+
+
+/* From Uiverse.io by Galahhad */ 
+/* checkbox settings */
+
+.ui-checkbox {
+  --primary-color: #6b1e2e;
+  --secondary-color: #ffffff;
+  --primary-hover-color: #372b2b;
+  /* checkbox */
+  --checkbox-diameter: 20px;
+  --checkbox-border-radius: 5px;
+  --checkbox-border-color: #372b2b;
+  --checkbox-border-width: 1px;
+  --checkbox-border-style: solid;
+  /* checkmark */
+  --checkmark-size: 1.2;
+}
+
+.ui-checkbox, 
+.ui-checkbox *, 
+.ui-checkbox *::before, 
+.ui-checkbox *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ui-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--checkbox-diameter);
+  height: var(--checkbox-diameter);
+  border-radius: var(--checkbox-border-radius);
+  background: var(--secondary-color);
+  border: var(--checkbox-border-width) var(--checkbox-border-style) var(--checkbox-border-color);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.ui-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+  box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+  border-radius: inherit;
+  opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  -o-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+}
+
+.ui-checkbox::before {
+  top: 40%;
+  left: 50%;
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  border-right: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  -ms-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  opacity: 0;
+  -webkit-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+  -o-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+  transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+}
+
+/* actions */
+
+.ui-checkbox:hover {
+  border-color: var(--primary-color);
+}
+
+.ui-checkbox:checked {
+  background: var(--primary-color);
+  border-color: transparent;
+}
+
+.ui-checkbox:checked::before {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+  -ms-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+  transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+  -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  -o-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+}
+
+.ui-checkbox:active:not(:checked)::after {
+  -webkit-transition: none;
+  -o-transition: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  transition: none;
+  opacity: 1;
+}
+
+

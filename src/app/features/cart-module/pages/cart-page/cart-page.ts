@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrl: './cart-page.css',
 })
 export class CartPage {
-
 }

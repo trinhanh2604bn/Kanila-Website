@@ -37,11 +37,12 @@ export const AccountModuleModule: Routes = [
           { path: 'delivered', component: OrdersDelivered },
           { path: 'returned', component: OrdersReturn },
           { path: 'cancelled', component: OrdersCancelled },
-          { path: '', redirectTo: 'processing', pathMatch: 'full' } 
+          // { path: '', redirectTo: 'processing', pathMatch: 'full' } 
         ]
       },
 
-     { path: '', redirectTo: 'info', pathMatch: 'full' }
+    //  { path: '', redirectTo: 'info', pathMatch: 'full' }
     ]
+    
   }
 ]

@@ -1,6 +1,7 @@
 :host {
   display: block;
   width: 100%;
+  background-color: var(--color-beige);
 }
 
 /* Container ngoài cùng: 1920, canh giữa */
