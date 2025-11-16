@@ -1,101 +1,118 @@
-<app-collapse-panel [startOpen]="true">
-  <!-- HEADER: -->
-  <div collapse-header class="user-profile">
-    <i class="fas fa-user-circle user-icon"></i>
-    <div class="user-details">
-      <div class="user-name">Hello Anh</div>
+<div class="sidebar-container">
+  <app-collapse-panel [startOpen]="true">
+    <!-- HEADER: USER PROFILE -->
+    <div collapse-header class="user-profile">
+      <i class="fas fa-user-circle user-icon"></i>
+      <div class="user-details">
+        <div class="user-name">Hello Anh</div>
+      </div>
     </div>
-  </div>
 
-  <!-- BODY: -->
-  <div class="sidebar-body">
-    <div class="menu-group account-settings">
-      <div class="order-management">
+    <!-- BODY: SIDEBAR MENU -->
+    <div class="sidebar-body">
+      <!-- NHÓM: Tài khoản cá nhân -->
+      <div class="menu-group account-settings">
+        <ul class="menu-list">
+          <!-- HỒ SƠ: MỤC CẤP 1 BÌNH THƯỜNG, CÓ ICON MŨI TÊN -->
+          <li class="menu-item has-children">
+            <a
+              routerLink="/profile/account"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="parent-link"
+            >
+              <span>Tài Khoản Cá Nhân</span>
+              <i class="fas fa-chevron-down chevron"></i>
+            </a>
+
+            <!-- 4 MỤC CON -->
+            <ul class="submenu">
+              <li>
+                <a
+                  routerLink="info"
+                  routerLinkActive="is-active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Hồ Sơ
+                </a>
+              </li>
+              <li>
+                <a
+                  routerLink="address"
+                  routerLinkActive="is-active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Địa Chỉ
+                </a>
+              </li>
+              <li>
+                <a
+                  routerLink="payment"
+                  routerLinkActive="is-active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Hình Thức Thanh Toán
+                </a>
+              </li>
+              <li>
+                <a
+                  routerLink="membership"
+                  routerLinkActive="is-active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Hạng Thành Viên
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Làn Da Của Bạn (cùng cấp với Hồ Sơ) -->
+          <li class="menu-item">
+            <a
+              routerLink="YourSkin"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Làn Da Của Bạn
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- NHÓM: Quản lý đơn hàng -->
+      <div class="menu-group order-management">
         <div class="group-title-header">
           <a
-            routerLink="/profile/account"
+            routerLink="ordermanage"
             routerLinkActive="is-active"
-            class="group-title-link"
             [routerLinkActiveOptions]="{ exact: true }"
+            class="group-title-link"
           >
-            Tài khoản cá nhân
+            Quản Lý Đơn Hàng
           </a>
         </div>
-      </div>
 
-      <ul class="menu-list">
-        <li>
-          <a
-            routerLink="info"
-            routerLinkActive="is-active"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            Hồ Sơ
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="password"
-            routerLinkActive="is-active"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            Thay Đổi Mật Khẩu
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="address"
-            routerLinkActive="is-active"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            Địa Chỉ
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="payment"
-            routerLinkActive="is-active"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            Phương Thức Thanh Toán
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="membership"
-            routerLinkActive="is-active"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            Hạng Thành Viên
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="menu-group order-management">
-      <div class="group-title-header">
-        <a
-          routerLink="wishlist"
-          routerLinkActive="is-active"
-          class="group-title-link"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          Danh Mục Yêu Thích
-        </a>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a
+              routerLink="wishlist"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Danh Mục Yêu Thích
+            </a>
+          </li>
+          <li class="menu-item">
+            <a
+              routerLink="discount"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Mã Giảm Giá
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-
-    <div class="menu-group order-management">
-      <div class="group-title-header">
-        <a
-          routerLink="discount"
-          routerLinkActive="is-active"
-          class="group-title-link"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          Mã Giảm Giá
-        </a>
-      </div>
-    </div>
-  </div>
-</app-collapse-panel>
+  </app-collapse-panel>
+</div>

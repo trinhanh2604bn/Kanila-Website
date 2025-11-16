@@ -1,13 +1,15 @@
 :host {
   display: block;
-  background-color: var(--color-pink1); /* nền sidebar */
+  background-color: var(--color-pink1);
   border-radius: var(--radius-md);
 }
 
-/* Khung sidebar (nếu có bọc thêm div.sidebar-container) */
+/* ========== KHUNG SIDEBAR ========== */
+
 .sidebar-container {
-  width: 250px;
-  padding: 12px 14px;
+  width: 100%;
+  max-width: 420px;
+  padding: var(--space-4) var(--space-4);
   font-family: var(--font-beVietnamPro);
   line-height: var(--line-height-base);
 }
@@ -15,14 +17,13 @@
 @media (max-width: 768px) {
   .sidebar-container {
     width: 100%;
-    padding: 16px 20px;
+    padding: var(--space-4) 20px;
     margin-bottom: var(--space-5);
+    max-width: 100%;
   }
 }
 
-/* ===================================
-   USER PROFILE
-=================================== */
+/* ========== HEADER USER ========== */
 
 .user-profile {
   display: flex;
@@ -37,185 +38,189 @@
   margin-right: 15px;
 }
 
-/* "Hello Anh" */
+.user-details {
+  flex: 1;
+}
+
 .user-name {
   font-family: var(--font-nunito);
   font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-ml); /* ~ 18px: thay cho calc(var(--font-size-m) - 2px) */
   color: var(--color-red);
 }
 
 @media (max-width: 768px) {
   .user-name {
-    font-size: var(--font-size-mm);
+    font-size: calc(var(--font-size-mm) - 2px);
   }
 }
 
-/* "Sửa hồ sơ" — chú thích */
-.user-edit-link {
-  font-family: var(--font-beVietnam);
-  font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-xs);
-  color: var(--color-brown);
-  opacity: 0.7;
-  margin-top: 2px;
-  text-decoration: none;
-  cursor: pointer;
+/* ========== BODY ========== */
+
+.sidebar-body {
+  margin-top: var(--space-4);
 }
 
-@media (max-width: 768px) {
-  .user-edit-link {
-    font-size: var(--font-size-mxs);
-  }
+/* khoảng cách giữa các nhóm */
+.menu-group {
+  margin-bottom: 6px;
 }
 
-/* ===================================
-   MENU GROUP / TITLE
-=================================== */
+/* HEADER NHÓM */
 
 .group-title-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
-  cursor: pointer;
-  border-radius: var(--radius-md); /* để hover bo góc đẹp */
-  transition: background-color 0.2s ease;
+  margin-bottom: 2px;
 }
 
-/* HOVER BACKGROUND cho phần tiêu đề nhóm */
-.group-title-header:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.group-title {
-  font-family: var(--font-nunito);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-m);
-  color: var(--color-brown);
-}
-
-@media (max-width: 768px) {
-  .group-title {
-    font-size: var(--font-size-mm);
-  }
-}
-
-.arrow-icon {
-  font-size: 14px;
-  color: var(--color-red);
-}
-
-/* ===================================
-   MENU LIST
-=================================== */
+/* ========== DANH SÁCH CẤP 1 ========== */
 
 .menu-list {
   list-style: none;
-  padding-left: 20px;
-  margin-bottom: 28px;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* rất sát giữa các mục cấp 1 */
 }
 
 .menu-list li {
-  margin: 10px 0;
+  margin: 0;
+  padding: 2px;
 }
 
-/* Mục nhỏ: Hồ sơ, Địa Chỉ, Mật khẩu... */
-/* ==== UPDATED: tất cả item 1 dòng, chiều cao bằng nhau ==== */
-.menu-list a {
+/* ===== LINK CẤP 1 ===== */
+/* Tài khoản cá nhân, Hồ Sơ (parent-link), Làn Da Của Bạn, ... */
+
+.group-title-link,
+.menu-list > .menu-item > a,
+.parent-link {
   font-family: var(--font-nunito);
   font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-m);
-  color: var(--color-brown);
-  text-decoration: none;
-  transition: color 0.25s, background-color 0.2s ease, transform 0.15s ease;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 6px 10px 6px 20px;
-  height: 40px;              /* CỐ ĐỊNH CHIỀU CAO */
-  box-sizing: border-box;
-  white-space: nowrap;       /* Không cho xuống dòng */
-  overflow: hidden;
-  text-overflow: ellipsis;   /* Dài quá thì '...' */
-
-  border-radius: var(--radius-md);
-}
-
-@media (max-width: 768px) {
-  .menu-list a {
-    font-size: var(--font-size-mm);
-  }
-}
-
-/* HOVER BACKGROUND cho item trong menu */
-.menu-list a:hover {
-  color: var(--color-red);
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* ===================================
-   MEMBERSHIP
-=================================== */
-
-.membership-status {
-  font-family: var(--font-nunito);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-m);
-  color: var(--color-red);
-  padding-left: 20px;
-  margin: 25px 0;
-}
-
-@media (max-width: 768px) {
-  .membership-status {
-    font-size: var(--font-size-mm);
-  }
-}
-
-/* ===================================
-   LINK (Danh mục yêu thích / Mã giảm giá)
-=================================== */
-
-/* ==== UPDATED: cũng 1 dòng, cùng chiều cao với menu-list a ==== */
-.group-title-link {
-  font-family: var(--font-nunito);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-ml); /* đồng bộ với user-name */
   color: var(--color-brown);
   text-decoration: none;
 
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
 
-  padding: 6px 10px 6px 20px;
-  height: 40px;
+  padding: 6px 20px;
+  min-height: 34px;
+  width: 100%;
   box-sizing: border-box;
+
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
   border-radius: var(--radius-md);
-  transition: color 0.25s, background-color 0.2s ease, transform 0.15s ease;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+
+  position: relative;
+  transform: translateY(0);
+  transition:
+    color 0.25s,
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* Hồ Sơ (cha) đậm hơn nhẹ */
+.menu-item.has-children > .parent-link span {
+  font-weight: var(--font-weight-medium);
+}
+
+/* Icon mũi tên nhỏ bên phải Hồ Sơ */
+.chevron {
+  font-size: 10px;
+  margin-left: 8px;
+  color: var(--color-brown);
 }
 
 @media (max-width: 768px) {
-  .group-title-link {
-    font-size: var(--font-size-mm);
+  .group-title-link,
+  .menu-list > .menu-item > a,
+  .parent-link {
+    font-size: calc(var(--font-size-mm) - 2px);
+    padding: 6px 18px;
+    min-height: 32px;
   }
 }
 
-.group-title-link:hover {
-  color: var(--color-red);
-  /* background-color: rgba(255, 255, 255, 0.8); */
+/* ========== SUBMENU CỦA HỒ SƠ ========== */
+
+.submenu {
+  list-style: none;
+  padding-left: 20px; /* thụt submenu, Hồ Sơ vẫn thẳng hàng với cấp 1 */
+  margin: 2px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-/* Divider */
-.divider {
-  height: 1px;
-  background-color: var(--color-grey);
-  margin: var(--space-5) 0;
+.submenu li {
+  margin: 0;
+}
+
+/* Link cấp 2 – nhỏ hơn và thụt vào */
+
+.submenu a {
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-mm); /* 14px, thay cho calc(m - 3px) */
+  color: var(--color-brown);
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+
+  padding: 3px 4px 3px 8px;
+  min-height: 26px;
+  width: 100%;
+  box-sizing: border-box;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  border-radius: var(--radius-md);
+  position: relative;
+  transform: translateY(0);
+  box-shadow: none;
+  transition:
+    color 0.25s,
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+/* ========== HOVER & ACTIVE ========== */
+
+.group-title-link:hover,
+.menu-list > .menu-item > a:hover,
+.parent-link:hover {
+  background-color: var(--color-white);
+  color: var(--color-red);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Submenu hover */
+
+.submenu a:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-red);
+  transform: translateY(-1px);
+}
+
+/* routerLinkActive="is-active" */
+
+.is-active {
+  background-color: var(--color-white);
+  color: var(--color-red) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transform: translateY(0); /* không nhô lên thêm để đỡ tạo khe hở */
 }

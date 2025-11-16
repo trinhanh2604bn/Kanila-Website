@@ -1,12 +1,20 @@
+<!-- src/app/layouts/main-layout/main-layout.html -->
 <app-header></app-header>
 
-<div class="frame-1920">
-  <div class="content-rail">
-    <main class="content-inner">
-      <!-- Các trang con sẽ hiển thị ở đây -->
-      <router-outlet></router-outlet>
-    </main>
-  </div>
-</div>
+<main class="main-layout-content">
+  <!-- DANH SÁCH BLOG -->
+  <section *ngIf="!showPostDetail">
+    <app-post (readMore)="openPostDetail($event)"></app-post>
+  </section>
+
+  <!-- CHI TIẾT BLOG -->
+  <section *ngIf="showPostDetail">
+    <app-postdetail
+      [detailId]="currentDetailId"
+      (back)="backToList()"
+      (openOther)="openPostDetail($event)"
+    ></app-postdetail>
+  </section>
+</main>
 
 <app-footer></app-footer>
