@@ -1,0 +1,370 @@
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center justify;
+}
+
+.container1{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+
+}
+
+.container1 div{
+  margin-bottom: 30px;
+}
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Container ngoài cùng: 1920, canh giữa */
+.frame-1920 {
+  max-width: 1920px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+/* Hai bên: 320 khi đủ rộng, co dần nhưng không < 16 */
+.content-rail {
+  padding-inline: clamp(16px, calc((100vw - 1280px) / 2), 320px);
+}
+
+/* Nội dung chính: 1280 + padding 16 */
+.content-inner {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 8px;
+}
+
+.product-card1 {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-pink1);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(250, 179, 179, 0.1);
+  font: var(--font-beVietnamPro);
+  width: 500px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.product-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-pink1);
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--color-pink3);
+  margin-bottom: 0px;
+  width: 400px;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-brown);
+  margin: 0;
+  text-align: left;
+}
+
+.product-variant {
+  font-size: 14px;
+  color: var(--color-brown);
+  margin: 4px 0;
+  text-align: left;
+}
+
+.product-price {
+  font-size: 16px;
+  color: var(--color-red);
+  font-weight: bold;
+  text-align: left;
+}
+
+.product-container{
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media (max-width: 768px) {
+  .container{
+    flex-direction: column;
+    justify-items: center;
+  }
+  .container1{
+    margin-top: 20px;
+    justify-self: center;
+    margin-left: 0;
+  }
+  }
+
+  .anhbg{
+    background-image: url('/images/mainpage/Anh0.png');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 800px;
+    justify-self: center;
+    margin-top: 20px;
+  }
+#s1{
+  position: relative;
+  margin-top: 160px;
+  margin-left: 100px;
+}
+
+#s2{
+  position: relative;
+  margin-top: 120px;
+  margin-left: 160px;
+
+}
+#s3{
+  position: relative;
+  margin-bottom: -10px;
+  margin-top: -260px;
+  margin-left: 250px;
+}
+
+.anh_item img:hover{
+  transform: scale(1.3);
+}
+
+.product-card img:hover{
+  transform: scale(1.1);
+  }
+
+
+/* Màu nền mặc định và hiệu ứng chuyển đổi */
+.product-card {
+    background-color: var(--color-pink1);
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển màu mượt mà */
+    border: 1px solid #ccc; /* Ví dụ: border */
+    padding: 10px;
+    font: var(--font-beVietnamPro);
+}
+
+/* Class sẽ được thêm vào khi hover */
+.product-card.highlight {
+    background-color: var(--color-pink2); /* Thay đổi màu nền */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng để nổi bật */
+}
+
+/* Đặt .product-card màu nền ban đầu */
+.product-card {
+  background-color: white; /* Ví dụ màu ban đầu */
+  transition: background-color 0.3s ease; /* Thêm chuyển động mượt mà */
+}
+
+/* Khi hover vào bất kỳ phần tử nào bên trong .anh1, ta sẽ chọn .product-card */
+.anh_item1:hover ~ .s1 {
+  background-color: var(--color-pink2);
+  transform: scale(1.02);/* Thay đổi màu nền khi hover */
+}
+
+.item1{
+  /* position: relative; */
+  margin-left: 400px;
+  margin-top: -182px;
+}
+
+.item2{
+  /* position: relative; */
+  margin-left: 400px;
+  margin-top: -140px;
+}
+
+.item3{
+  position: relative;
+  margin-left: 400px;
+  margin-top: -2px;
+}
+.anh_item2:hover ~ .s2 {
+  background-color: var(--color-pink2); /* Thay đổi màu nền khi hover */
+  transform: scale(1.02);
+}
+
+.anh_item3:hover ~ .s3 {
+  background-color: var(--color-pink2);
+  transform: scale(1.02); /* Thay đổi màu nền khi hover */
+}
+
+button {
+  font-family: inherit;
+  font-size: 12px;
+  background: linear-gradient(to bottom, #d4a5c2 0%,#ed98c1 100%);
+  color: white;
+  padding: 0.5em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  font: var(--font-beVietnamPro);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+}
+
+button svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  transition: all 0.3s;
+}
+
+button .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: 0.5em;
+  transition: all 0.3s;
+}
+
+button:hover .svg-wrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+button:hover svg {
+  transform: rotate(45deg);
+}
+
+.section1{
+  max-width: 1280;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/images/mainpage/bg.jpg);
+  display: flex;
+  max-width: 1200px;
+  margin: 0;
+  font: var(--font-beVietnamPro);
+
+
+}
+
+.section-item{
+  /* margin-right: 10px; */
+  /* justify-self: center; */
+  text-align: center;
+  /* margin: 10px; */
+  padding: 0 0;
+  flex: 1;
+
+}
+
+p{
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+  }
+}
+
+.section-item:nth-child(1){
+  margin-left: 60px;
+  text-align: left;
+
+
+
+
+}
+
+.btn {
+  border: none;
+  width: 11em;
+  height: 2em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #ec99b1;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+  padding: 10px 10px;
+  margin: 8px 5px;
+}
+
+.sparkle {
+  fill:var( --color-beige);
+  transition: all 800ms ease;
+}
+
+.text {
+  font-weight: 100;
+  color: var( --color-beige);
+  font-size: 10px;
+  font: var(--font-beVietnamPro);
+}
+
+.btn:hover {
+  background: linear-gradient(0deg,#F5A3B7,#e67aa5);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 227, 250, 0.4),
+  inset 0px -4px 0px 0px rgba(247, 170, 192, 0.2),
+  0px 0px 0px 4px #ffdbf333,
+  0px 0px 180px 0px #febfcc;
+  transform: translateY(-2px);
+}
+
+.btn:hover .text {
+  color: white;
+}
+
+.btn:hover .sparkle {
+  fill: white;
+  transform: scale(1.2);
+}
+
+.section-item:nth-child(1) button{
+  justify-self: right;
+}
+
+#title{
+  font:var(--font-nunito);
+  font-weight: var(--font-weight-black);
+  font-size: var(  --font-size-m);
+}
