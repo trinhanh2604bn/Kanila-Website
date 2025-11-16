@@ -8,6 +8,7 @@ import { CheckOutPage } from './features/check-out/check-out-page/check-out-page
 import { ThankYouPage } from './features/check-out/thank-you-page/thank-you-page';
 import { Cart } from './features/cart-module/cart/cart';
 import { ItemCart } from './features/cart-module/item-cart/item-cart';
+import { DetailOrder } from './features/check-out/detail-order/detail-order';
 
 
 export const routes: Routes = [
@@ -32,6 +33,10 @@ export const routes: Routes = [
       {
         path: 'thanks',
         component: ThankYouPage
+      },
+      {
+        path: 'detail',
+        component: DetailOrder
       },
     ]
   },
