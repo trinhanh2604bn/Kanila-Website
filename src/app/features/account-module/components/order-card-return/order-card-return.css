@@ -1,0 +1,83 @@
+:host {
+  display: block;
+}
+
+/* khối 1 đơn */
+.order-card {
+  background-color: var(--color-beige);
+  padding: var(--space-2) ;
+  border-radius: 10px;
+  margin: 10px;
+  position: relative;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.order-card:hover{
+  box-shadow: 0 5px 10px rgba(171, 19, 19, 0.1);
+}
+
+/* Tổng tiền */
+.order-summary {
+  margin-top: var(--space-2);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.order-summary-label,
+.body-text {
+  font-family: var(--font-beVietnamPro);
+  color: var(--color-brown);
+  font-size: 14px;
+}
+
+.order-summary-value {
+  font-family: var(--font-beVietnamPro);
+  color: var(--color-brown);
+}
+
+/* Nút */
+.order-actions {
+  margin-top: var(--space-2);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.order-detail-btn {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-sm);
+  border: var(--border-1) solid var(--color-brown);
+  background-color: var(--color-pink2);
+  color: var(--color-brown);
+  cursor: pointer;
+  max-width: 250px;
+  box-shadow: 0 5px 10px rgba(171, 19, 19, 0.2);
+  margin-left: 10px;
+}
+
+.order-detail-btn:hover {
+  background-color: var(--color-pink3);
+  box-shadow: none;
+}
+
+.order-detail-btn:active{
+  opacity: 0.8;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .order-card {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .order-detail-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .body-text{
+    font-size: 11px;
+  }
+}
