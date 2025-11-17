@@ -1,26 +1,19 @@
 <div class="discount-page">
-  <!-- Tiêu đề của trang -->
+  <!-- Tiêu đề phần Khuyến Mãi/Giảm Giá -->
   <h2 class="page-title">KHUYẾN MÃI/ GIẢM GIÁ</h2>
 
-  <!-- Lưới khuyến mãi -->
+  <!-- Các khung mã giảm giá -->
   <div class="voucher-grid">
     <div class="voucher-card" *ngFor="let v of vouchers">
-      <!-- Biểu tượng voucher -->
       <div class="voucher-icon">🎁</div>
-
-      <!-- Tiêu đề voucher -->
       <h3 class="voucher-title">Giảm {{v.percent}}%</h3>
-
-      <!-- Mô tả voucher -->
       <p class="voucher-sub">Cho toàn bộ hóa đơn.</p>
 
-      <!-- Mã khuyến mãi -->
       <div class="voucher-code-box">
         <p class="label">Mã khuyến mãi</p>
         <p class="code">{{v.code}}</p>
       </div>
 
-      <!-- Nút tạo mã giảm giá -->
       <button class="generate-btn">Tạo mã giảm giá</button>
     </div>
   </div>

@@ -1,123 +1,7 @@
+
+
+
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<div class="community-container">
-
-  <h2 class="main-title">TÌM KIẾM TRONG COMMUNITY</h2>
-
-  <div class="search-area">
-    <div class="search-box">
-      <input type="text" placeholder="Tìm kiếm theo từ khóa, người dùng...">
-      <button>
-        <span ><i class="fa-solid fa-magnifying-glass"></i></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="content-wrapper">
-    <div class="main-content-area">
-        
-        <div class="filter-tabs">
-            
-            <button class="filter-item"
-                    [class.active]="activeTab === 'posts'"
-                    (click)="switchTab('posts')">
-                Bài đăng
-            </button>
-            
-            <button class="filter-item"
-                    [class.active]="activeTab === 'users'"
-                    (click)="switchTab('users')">
-                Người dùng
-            </button>
-        </div>
-        
-        <div class="posts-list">
-        
-            
-            <div class="post-card">
-                <div class="post-header">
-                    <span class="avatar">J</span>
-                    <span class="username">Jasmine Nguyen</span>
-                </div>
-                <div class="post-content">
-                    <p>✨ **Vẻ đẹp là gì?** Nó đến từ những điều nhỏ bé – như một sản phẩm khiến bạn tự tin hơn mỗi ngày. Sáng nay tôi đã thử kem nền mới, cảm giác nhẹ tênh mà cover lại tốt. Ai có routine dưỡng da ban đêm siêu hiệu quả không? Chia sẻ với tôi nhé!</p>
-                </div>
-                <div class="post-images">
-                    <img src="assets/images/product-A.png" alt="Kem nền"> 
-                    <img src="assets/images/product-B.png" alt="Son môi">
-                </div>
-                <div class="post-actions">
-                    <span class="action-item">❤️ 125</span>
-                    <span class="action-item">💬 78</span>
-                </div>
-            </div>
-            <div class="post-card">
-                <div class="post-header">
-                    <span class="avatar">J</span>
-                    <span class="username">Jasmine Nguyen</span>
-                </div>
-                <div class="post-content">
-                    <p>✨ **Vẻ đẹp là gì?** Nó đến từ những điều nhỏ bé – như một sản phẩm khiến bạn tự tin hơn mỗi ngày. Sáng nay tôi đã thử kem nền mới, cảm giác nhẹ tênh mà cover lại tốt. Ai có routine dưỡng da ban đêm siêu hiệu quả không? Chia sẻ với tôi nhé!</p>
-                </div>
-                <div class="post-images">
-                    <img src="assets/images/product-A.png" alt="Kem nền"> 
-                    <img src="assets/images/product-B.png" alt="Son môi">
-                </div>
-                <div class="post-actions">
-                    <span class="action-item">❤️ 125</span>
-                    <span class="action-item">💬 78</span>
-                </div>
-            </div>
-            <div class="post-card">
-                <div class="post-header">
-                    <span class="avatar">J</span>
-                    <span class="username">Jasmine Nguyen</span>
-                </div>
-                <div class="post-content">
-                    <p>✨ **Vẻ đẹp là gì?** Nó đến từ những điều nhỏ bé – như một sản phẩm khiến bạn tự tin hơn mỗi ngày. Sáng nay tôi đã thử kem nền mới, cảm giác nhẹ tênh mà cover lại tốt. Ai có routine dưỡng da ban đêm siêu hiệu quả không? Chia sẻ với tôi nhé!</p>
-                </div>
-                <div class="post-images">
-                    <img src="assets/images/product-A.png" alt="Kem nền"> 
-                    <img src="assets/images/product-B.png" alt="Son môi">
-                </div>
-                <div class="post-actions">
-                    <span class="action-item">❤️ 125</span>
-                    <span class="action-item">💬 78</span>
-                </div>
-            </div>
-
-        
-<div class="pagination">
-            
-            <button (click)="prevPage()" [disabled]="currentPage === 1">‹ Trước</button>
-            
-            <button 
-                (click)="goToPage(1)"
-                [class.active]="currentPage === 1">
-                1
-            </button>
-            
-            <button 
-                (click)="goToPage(2)"
-                [class.active]="currentPage === 2">
-                2
-            </button>
-            
-            <button 
-                (click)="goToPage(3)"
-                [class.active]="currentPage === 3">
-                3
-            </button>
-
-            <button (click)="nextPage()" [disabled]="currentPage === totalPages">Sau ›</button>
-        </div>
-            
-        </div>
-        </div>
-  </div>
-</div> -->
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <div class="community-container">
 
     <h2 class="main-title">TÌM KIẾM TRONG COMMUNITY</h2>
@@ -148,10 +32,14 @@
                 </button>
             </div>
             
-            <div *ngIf="activeTab === 'posts'" class="posts-list-wrapper">
+            <!-- ======================================================= -->
+            <!-- KHỐI 1: DANH SÁCH BÀI ĐĂNG (posts) - HÌNH 1 -->
+            <!-- ======================================================= -->
+            <!-- <div *ngIf="activeTab === 'posts'" class="posts-list-wrapper">
                 
                 <div class="posts-list">
-                    <div class="post-card">
+                    <!-- BÀI ĐĂNG 1-3 (Nội dung tĩnh) -->
+                    <!-- <div class="post-card">
                         <div class="post-header">
                             <span class="avatar">J</span>
                             <span class="username">Jasmine Nguyen</span>
@@ -202,7 +90,6 @@
                             <span class="action-item">💬 112</span>
                         </div>
                     </div>
-
                 </div>
                 
                 <div class="pagination">
@@ -214,10 +101,12 @@
                 </div>
             </div>
             
+
             <div *ngIf="activeTab === 'users'" class="users-list-wrapper">
                 
                 <div class="users-list-grid">
                     
+            
                     <div class="user-card" *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
                         <div class="user-avatar-container">
                             <i class="fa-solid fa-face-smile fa-3x user-icon"></i>
@@ -239,6 +128,115 @@
                 </div>
                 
             </div>
-            </div>
+
+        </div>
     </div>
+</div> --> 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="community-container">
+
+    <h2 class="main-title">TÌM KIẾM TRONG COMMUNITY</h2>
+
+    <div class="search-area">
+        <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm theo từ khóa, người dùng...">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="main-content-area">
+
+            <!-- ================== TABS ================== -->
+            <div class="filter-tabs">
+                <button class="filter-item"
+                        [class.active]="activeTab === 'posts'"
+                        (click)="switchTab('posts')">
+                    Bài đăng
+                </button>
+
+                <button class="filter-item"
+                        [class.active]="activeTab === 'users'"
+                        (click)="switchTab('users')">
+                    Người dùng
+                </button>
+            </div>
+
+            <!-- ================== TAB BÀI ĐĂNG ================== -->
+            <div *ngIf="activeTab === 'posts'" class="posts-list-wrapper">
+
+                <div class="posts-list">
+
+                    <!-- BÀI ĐĂNG 1 -->
+                    <div class="post-card">
+                        <div class="post-header">
+                            <span class="avatar">J</span>
+                            <span class="username">Jasmine Nguyen</span>
+                        </div>
+
+                        <div class="post-content">
+                            <p>
+                                ✨ <b>Vẻ đẹp là gì?</b> Nó đến từ những điều nhỏ bé – như một sản phẩm khiến bạn tự tin hơn mỗi ngày.
+                            </p>
+                        </div>
+
+                        <div class="post-images">
+                            <img src="assets/images/product-A.png">
+                            <img src="assets/images/product-B.png">
+                        </div>
+
+                        <div class="post-actions">
+                            <span>❤️ 125</span>
+                            <span>💬 78</span>
+                        </div>
+                    </div>
+
+                    <!-- ...các bài khác -->
+                </div>
+
+                <div class="pagination">
+                    <button (click)="prevPage()" [disabled]="currentPage === 1">‹ Trước</button>
+                    <button (click)="goToPage(1)" [class.active]="currentPage === 1">1</button>
+                    <button (click)="goToPage(2)" [class.active]="currentPage === 2">2</button>
+                    <button (click)="goToPage(3)" [class.active]="currentPage === 3">3</button>
+                    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Sau ›</button>
+                </div>
+
+            </div>
+
+            <!-- ================== TAB NGƯỜI DÙNG ================== -->
+            <div *ngIf="activeTab === 'users'" class="users-list-wrapper">
+
+                <div class="users-list-grid">
+
+                    <div class="user-card" *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
+                        <div class="user-avatar-container">
+                            <i class="fa-solid fa-face-smile fa-3x user-icon"></i>
+                        </div>
+
+                        <div class="user-info">
+                            <h4>Tint</h4>
+                            <p>Là thành viên từ 2 tháng trước</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pagination">
+                    <button (click)="prevPage()" [disabled]="currentPage === 1">‹ Trước</button>
+                    <button (click)="goToPage(1)" [class.active]="currentPage === 1">1</button>
+                    <button (click)="goToPage(2)" [class.active]="currentPage === 2">2</button>
+                    <button (click)="goToPage(3)" [class.active]="currentPage === 3">3</button>
+                    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Sau ›</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 </div>

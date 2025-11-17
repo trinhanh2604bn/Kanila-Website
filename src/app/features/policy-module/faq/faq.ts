@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// Định nghĩa Interface cho cấu trúc dữ liệu FAQ
 interface FaqItem {
   question: string;
   answer: string;

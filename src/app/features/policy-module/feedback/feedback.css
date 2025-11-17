@@ -1,6 +1,5 @@
 .feedback-page {
     font-family: var(--font-nunito);
-    /* Dùng var(--space-7) cho padding trên dưới */
     padding: var(--space-7) 0;
     max-width: 900px; 
     width: 100%;
@@ -30,7 +29,6 @@
     margin: 0;
 }
 
-/* --- FORM STYLES --- */
 .feedback-form {    
     padding: var(--space-6);
     border: var(--border-1) solid var(--color-grey);
@@ -55,12 +53,11 @@
 .form-label {
     display: block;
     font-size: var(--font-size-s);
-    font-weight: 600; /* Không có biến, giữ giá trị cứng 600 */
+    font-weight: 600; 
     color: var(--color-brown);
     margin-bottom: var(--space-3);
 }
 
-/* Input, Select, Textarea (Sử dụng biến Form System) */
 .form-input, .form-select, .form-textarea {
     width: 100%;
     height: var(--form-height); 
@@ -84,7 +81,7 @@
     outline: none;
 }
 
-/* Radio buttons */
+
 .radio-group {
     display: flex;
     gap: var(--space-7);
@@ -105,7 +102,6 @@
     flex-shrink: 0;
 }
 
-/* File Upload Area */
 .file-upload-group {
     margin-top: var(--space-6);
 }
@@ -138,7 +134,7 @@
     color: var(--color-grey);
 }
 
-/* SUBMIT BUTTON */
+
 .form-actions {
     display: flex;
     justify-content: center;
@@ -147,7 +143,6 @@
 
 .btn-submit {
     background-color: var(--color-pink3);
-    /* Dùng border 2px (var(--border-2)) thay vì giá trị cứng 2px */
     border: var(--border-2) solid var(--color-pink3);
     padding: 12px 40px;
     font-size: var(--font-size-m);
@@ -162,7 +157,6 @@
     color: var(--color-white);
 }
 
-/* --- XỬ LÝ RESPONSIVE (DƯỚI 600PX) --- */
 @media (max-width: 600px) {
     .radio-group {
         flex-direction: column;

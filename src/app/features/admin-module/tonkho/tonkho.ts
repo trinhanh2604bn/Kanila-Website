@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class TonKhoComponent {
 
-  // Dữ liệu mẫu (tăng lên 30 để test phân trang)
   products = Array.from({ length: 30 }, (_, i) => ({
     id: 10000 + i,
     name: `Sản phẩm ${i + 1}`,
@@ -22,16 +21,16 @@ export class TonKhoComponent {
     status: i % 2 === 0 ? 'Còn hàng' : 'Hết hàng'
   }));
 
-  /** FILTER STATE */
+
   filterId: string = "";
   filterName: string = "";
   filterStatus: string = "";
 
-  /** PAGINATION STATE */
+
   itemsPerPage = 10;
   currentPage = 1;
 
-  /** GET FILTERED DATA */
+
   get filteredData() {
     return this.products.filter(item => {
       const matchId = this.filterId === "" || item.id.toString().includes(this.filterId);

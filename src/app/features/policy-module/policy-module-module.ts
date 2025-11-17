@@ -12,12 +12,12 @@ import { ReturnPolicy } from './return-policy/return-policy';
 import { SecurityPolicy } from './security-policy/security-policy';
 import { ShippingPolicy } from './shipping-policy/shipping-policy';
 import { Introduction } from './introduction/introduction';
-import { RouterModule } from '@angular/router';  // Import RouterModule
+import { RouterModule } from '@angular/router';  
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,  // Đảm bảo RouterModule được import
+    RouterModule, 
     Agent,
     Contact,
     CookiePolicy,

@@ -12,7 +12,7 @@
   color: #6B1E2E;
 }
 
-/* Thanh lọc */
+
 .filter-bar {
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@
   width: 240px;
 }
 
-/* Bảng sản phẩm */
+
 .product-table {
   width: 100%;
   border-collapse: collapse;
@@ -67,7 +67,6 @@
   transition: 0.2s ease;
 }
 
-/* Responsive (khi thu nhỏ màn hình) */
 @media (max-width: 1024px) {
   .filter-bar {
     flex-direction: column;

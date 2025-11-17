@@ -1,11 +1,10 @@
-/* Sử dụng các biến CSS Kanila */
+
 .policy-page {
  font-family: var(--font-nunito);
  padding: var(--space-4)
 }
 
 .policy-content-wrapper {
-  /* Giới hạn độ rộng nội dung để dễ đọc */
   max-width: 850px; 
   width: 100%;
   margin-inline: auto;
@@ -22,7 +21,6 @@
  margin-left: 170px;
 }
 
-/* Tiêu đề phương thức thanh toán (H2) */
 .payment-method-title {
   font-size: var(--font-size-l, 25px);
   font-weight: var(--font-weight-extraBold, 800);

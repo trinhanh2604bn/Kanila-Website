@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// 1. Định nghĩa Interface cho cấu trúc dữ liệu
 interface ReviewPost {
   user: string;
   content: string;
-  productName: string; // Tên sản phẩm được đánh giá
-  rating: number;      // Số sao (ví dụ: 1 đến 5)
+  productName: string; 
+  rating: number;      
 }
 
 @Component({
@@ -17,7 +16,6 @@ interface ReviewPost {
   styleUrls: ['./review.css']
 })
 export class ReviewComponent {
-  // 2. Cập nhật posts với kiểu dữ liệu ReviewPost[] và thêm dữ liệu mẫu
   posts: ReviewPost[] = [
     { 
       user: 'Bảo Nguyễn', 
