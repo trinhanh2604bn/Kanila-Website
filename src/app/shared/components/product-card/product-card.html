@@ -1,7 +1,11 @@
 <div class="card" (mouseenter)="hover = true" (mouseleave)="hover = false">
   <!-- IMAGE + ICONS -->
   <div class="img-wrapper">
+<<<<<<< HEAD
     <img [src]="image" [alt]="name" class="product-img"  />
+=======
+    <img [src]="image" [alt]="name" class="product-img" />
+>>>>>>> 7e165251fb8c7aaa822f32a890d5f8767edf019e
 
     <!-- ICON GROUP -->
     <div class="icon-group">
@@ -32,9 +36,15 @@
       </ng-container>
     </div>
 
+<<<<<<< HEAD
     <p class="price">{{ price | currency }}</p>
 
     <button class="cart-btn" (click)="goToDetail($event)">Thêm Vào Giỏ Hàng</button>
+=======
+    <p class="price">{{ price }}</p>
+
+    <button class="cart-btn">Thêm Vào Giỏ Hàng</button>
+>>>>>>> 7e165251fb8c7aaa822f32a890d5f8767edf019e
   </div>
 
   <!-- OVERLAY PREVIEW -->
