@@ -1,0 +1,17 @@
+.container{
+    font-family: var(--font-nunito);
+    padding: 10px;
+}
+
+h1{
+    font-size: var(--font-size-xl);
+    color: var(--color-red);
+    font-weight: var(--font-weight-extraBold, 800);
+    padding-bottom: 20px;
+
+}
+p{
+    padding: 10px;
+    background-color: var(--color-pink1);
+    font-size: medium;
+}

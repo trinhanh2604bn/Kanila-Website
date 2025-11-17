@@ -1,0 +1,216 @@
+/* Sử dụng các biến CSS Kanila */
+.faq-page {
+  font-family: var(--font-nunito);
+  padding: var(--space-7, 48px) 0;
+  max-width: 1000px; 
+  width: 100%;
+  margin-inline: auto;
+  padding: 0 var(--space-4, 16px);
+}
+
+.page-title {
+  font-size: var(--font-size-xl, 35px);
+  font-weight: var(--font-weight-extraBold, 800);
+  color: var(--color-red, #6b1e2e);
+  margin-bottom: var(--space-7, 48px);
+  text-align: left;
+
+}
+
+/* ... (Style Thanh tìm kiếm giữ nguyên) ... */
+
+
+/* --- ACCORDION LIST --- */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-pink3, #FFADBE);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-pink3, #FFADBE);
+    background-color: var(--color-white);
+    transition: background-color 0.2s ease;
+}
+
+.faq-question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4, 16px) var(--space-5, 24px);
+    cursor: pointer;
+    
+    /* 1. THU NHỎ CHỮ (TỪ 20PX -> 18PX) */
+    font-size: var(--font-size-ml, 18px); 
+    
+    font-weight: 600;
+    color: var(--color-brown, #372b2b);
+    transition: color 0.2s ease, background-color 0.2s ease; /* Thêm transition cho background */
+}
+
+/* 2. HIỆU ỨNG HIGHLIGHT KHI HOVER/EXPAND */
+.faq-item:hover .faq-question-header,
+.faq-item.expanded .faq-question-header { /* Áp dụng highlight khi mở */
+    background-color: var(--color-pink1, #FFE8EC); /* Đổi màu nền */
+    color: var(--color-red); /* Đổi màu chữ */
+}
+
+.expand-icon {
+    font-size: 24px;
+    color: var(--color-red);
+    transition: transform 0.3s ease-in-out;
+}
+
+.faq-item.expanded .expand-icon {
+    transform: rotate(180deg);
+}
+
+/* --- NỘI DUNG TRẢ LỜI (ANSWER) --- */
+.faq-answer-content {
+    background-color: var(--color-pink1, #FFE8EC);
+    padding: 0 var(--space-5, 24px);
+    overflow: hidden;
+    
+    /* 3. TỐI ƯU ANIMATION (Chậm hơn một chút để mượt hơn) */
+    max-height: 0;
+    transition: max-height 0.6s ease-in-out; /* Tăng thời gian từ 0.4s lên 0.6s */
+}
+
+.faq-item.expanded .faq-answer-content {
+    max-height: 500px; 
+    padding-top: var(--space-4, 16px);
+    padding-bottom: var(--space-4, 16px);
+}
+
+.faq-answer-content p {
+    /* 1. THU NHỎ CHỮ (TỪ 16PX -> 15PX) */
+    font-size: 15px; 
+    color: var(--color-brown);
+    line-height: var(--line-height-relaxed, 1.75);
+    margin: 0;
+}
+
+/* Sử dụng các biến CSS Kanila */
+.faq-page {
+  font-family: var(--font-nunito);
+  padding: var(--space-7, 48px) 0;
+  
+  /* Container giới hạn độ rộng nội dung */
+  max-width: 1000px; 
+  width: 100%;
+  margin-inline: auto;
+  padding: 0 var(--space-4, 16px);
+}
+
+.page-title {
+  font-size: var(--font-size-xl, 35px);
+  font-weight: var(--font-weight-extraBold, 800);
+  color: var(--color-red, #6b1e2e);
+  margin-bottom: var(--space-7, 48px);
+  text-align: center;
+}
+
+/* --- THANH TÌM KIẾM --- */
+.faq-search-bar {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto var(--space-7, 48px);
+    border: 1px solid var(--color-pink2, #FFD6DE);
+    border-radius: var(--radius-xl, 10px);
+    padding: 0 var(--space-3, 12px);
+    background-color: var(--color-white);
+}
+
+.faq-search-bar input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: var(--space-3, 12px) 0;
+    font-size: var(--font-size-s, 16px);
+    font-family: var(--font-nunito);
+    color: var(--color-brown);
+}
+
+.faq-search-bar i {
+    color: var(--color-red);
+    font-size: 20px;
+    margin-left: var(--space-2);
+}
+
+
+/* --- ACCORDION LIST --- */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-pink3, #FFADBE);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-pink3, #FFADBE);
+    background-color: var(--color-white);
+    transition: background-color 0.2s ease;
+}
+
+.faq-question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4, 16px) var(--space-5, 24px);
+    cursor: pointer;
+    
+    /* Thu nhỏ chữ: từ 20px -> 18px */
+    font-size: var(--font-size-ml, 18px); 
+    
+    font-weight: 600;
+    color: var(--color-brown, #372b2b); /* Màu chữ mặc định */
+    transition: all 0.2s ease;
+}
+
+/* HIỆU ỨNG HIGHLIGHT KHI HOVER/EXPAND */
+.faq-item:hover .faq-question-header,
+.faq-item.expanded .faq-question-header { 
+    background-color: var(--color-pink1, #FFE8EC); /* Nền hồng nhạt */
+    color: var(--color-pink3, #FFADBE); /* Chữ đổi sang màu highlight */
+}
+
+.expand-icon {
+    font-size: 24px;
+    color: var(--color-red); /* Icon mặc định màu đỏ */
+    transition: transform 0.3s ease-in-out, color 0.2s ease;
+}
+
+/* ĐỔI MÀU ICON KHI EXPANDED/HOVER */
+.faq-item.expanded .expand-icon,
+.faq-item:hover .expand-icon {
+    color: var(--color-pink3, #FFADBE); /* Icon chuyển sang màu highlight */
+}
+
+.faq-item.expanded .expand-icon {
+    transform: rotate(180deg);
+}
+
+/* --- NỘI DUNG TRẢ LỜI (ANSWER) --- */
+.faq-answer-content {
+    background-color: var(--color-pink1, #FFE8EC);
+    padding: 0 var(--space-5, 24px);
+    overflow: hidden;
+    
+    /* TỐI ƯU ANIMATION: Chậm và mượt hơn */
+    max-height: 0;
+    transition: max-height 0.6s ease-in-out; 
+}
+
+.faq-item.expanded .faq-answer-content {
+    max-height: 500px; /* Giá trị lớn hơn nội dung tối đa */
+    padding-top: var(--space-4, 16px);
+    padding-bottom: var(--space-4, 16px);
+}
+
+.faq-answer-content p {
+    /* Thu nhỏ chữ: từ 16px -> 15px */
+    font-size: 15px; 
+    color: var(--color-brown);
+    line-height: var(--line-height-relaxed, 1.75);
+    margin: 0;
+}

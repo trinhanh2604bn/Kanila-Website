@@ -1,0 +1,47 @@
+/* Sử dụng các biến CSS Kanila */
+.policy-page {
+ font-family: var(--font-nunito);
+ padding: var(--space-4)
+}
+
+.policy-content-wrapper {
+  /* Giới hạn độ rộng nội dung để dễ đọc */
+  max-width: 850px; 
+  width: 100%;
+  margin-inline: auto;
+  padding: 10px;
+  background-color: var(--color-pink1);
+
+}
+
+.page-title {
+ font-size: var(--font-size-xl, 35px);
+ font-weight: var(--font-weight-extraBold, 800);
+ color: var(--color-red, #6b1e2e);
+ margin-bottom: 20px;
+ margin-left: 170px;
+}
+
+/* Tiêu đề phương thức thanh toán (H2) */
+.payment-method-title {
+  font-size: var(--font-size-l, 25px);
+  font-weight: var(--font-weight-extraBold, 800);
+  color: var(--color-red, #6b1e2e);
+  margin-top: var(--space-7, 48px);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.policy-content-wrapper p {
+  font-size: var(--font-size-s, 16px);
+  line-height: var(--line-height-relaxed, 1.75);
+  color: var(--color-brown, #372b2b);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.note-attention {
+    font-style: italic;
+    color: var(--color-red, #6b1e2e);
+    border-left: 3px solid var(--color-pink3, #FFADBE);
+    padding-left: var(--space-3, 12px);
+    margin-top: var(--space-5, 24px);
+}

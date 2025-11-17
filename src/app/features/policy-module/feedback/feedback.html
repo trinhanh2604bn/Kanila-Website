@@ -1,0 +1,103 @@
+
+<div class="feedback-page">
+    <h1 class="page-title">GÓP Ý VÀ KHIẾU NẠI</h1>
+
+    <div class="container">
+        <div class="intro-box">
+        <p>Phản hồi của bạn giúp chúng tôi cải thiện chất lượng dịch vụ và sản phẩm mỗi ngày. Chúng tôi cam kết xử lý khiếu nại một cách minh bạch và nhanh chóng.</p>
+    </div>
+
+    <form class="feedback-form" (ngSubmit)="submitForm()">
+        <h2 class="form-title">Gửi phản hồi trực tiếp</h2>
+
+        <div class="form-group">
+            <label class="form-label">1. Loại phản hồi</label>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input 
+                        type="radio" 
+                        name="type" 
+                        value="feedback" 
+                        [(ngModel)]="formData.type"
+                        required
+                    />
+                    Góp ý / đề xuất
+                </label>
+                <label class="radio-label">
+                    <input 
+                        type="radio" 
+                        name="type" 
+                        value="complaint" 
+                        [(ngModel)]="formData.type"
+                        required
+                    />
+                    Khiếu nại / vấn đề
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="form-label">2. Họ và tên</label>
+            <input 
+                id="name" 
+                type="text" 
+                class="form-input" 
+                name="name"
+                [(ngModel)]="formData.name"
+                required
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="form-label">3. Email của bạn</label>
+            <input 
+                id="email" 
+                type="email" 
+                class="form-input" 
+                name="email"
+                [(ngModel)]="formData.email"
+                required
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="subject" class="form-label">4. Chủ đề phản hồi</label>
+            <select 
+                id="subject" 
+                class="form-select" 
+                name="subject"
+                [(ngModel)]="formData.subject"
+                required
+            >
+                <option *ngFor="let option of subjectOptions" [value]="option">{{ option }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description" class="form-label">5. Mô tả chi tiết vấn đề</label>
+            <textarea 
+                id="description" 
+                class="form-textarea" 
+                name="description"
+                rows="6"
+                [(ngModel)]="formData.description"
+                required
+            ></textarea>
+        </div>
+
+        <div class="form-group file-upload-group">
+            <label class="form-label">6. Ảnh/Clip bằng chứng (nếu là khiếu nại)</label>
+            <div class="file-area">
+                <button type="button" class="btn-upload">Chọn Tệp Tin</button>
+                <span class="file-note">Tối đa 2MB (chỉ chấp nhận ảnh hoặc video ngắn)</span>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-submit">Gửi Phản Hồi</button>
+        </div>
+    </form>
+    </div>
+
+    
+</div>

@@ -1,0 +1,105 @@
+/* Sử dụng các biến CSS Kanila */
+.policy-page {
+ font-family: var(--font-nunito);
+ padding: var(--space-7, 48px) 0;
+}
+
+.policy-content-wrapper {
+  /* Giới hạn độ rộng nội dung để dễ đọc */
+  max-width: 850px; 
+  width: 100%;
+  margin-inline: auto;
+  padding: 15px;
+  background-color: var(--color-pink1);
+  
+}
+
+.page-title {
+ font-size: var(--font-size-xl, 35px);
+ font-weight: var(--font-weight-extraBold, 800);
+ color: var(--color-red, #6b1e2e);
+ margin-bottom: 25px;
+ padding-left: 185px;
+}
+
+.policy-section {
+    margin-bottom: var(--space-7, 48px);
+}
+
+/* Tiêu đề mục (H2) */
+.section-subtitle {
+    font-size: var(--font-size-m, 20px);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-red, #6b1e2e);
+    margin-top: 0;
+    margin-bottom: var(--space-4, 16px);
+}
+
+/* --- ĐỊNH DẠNG NỘI DUNG LIST --- */
+.return-conditions {
+    list-style: none; /* Bỏ bullet mặc định */
+    padding-left: 0;
+}
+
+.return-conditions > li {
+    font-size: var(--font-size-s, 16px);
+    line-height: var(--line-height-relaxed, 1.75);
+    color: var(--color-brown, #372b2b);
+    margin-bottom: var(--space-4, 16px);
+    
+    /* Thêm bullet tùy chỉnh cho list cấp 1 */
+    position: relative;
+    padding-left: var(--space-4, 16px);
+}
+
+.return-conditions > li::before {
+    content: '•'; /* Dấu chấm tròn */
+    color: var(--color-red);
+    font-weight: 900;
+    display: inline-block;
+    width: var(--space-4, 16px);
+    margin-left: calc(-1 * var(--space-4, 16px));
+}
+
+.return-conditions li ul {
+    /* List cấp 2 (ví dụ: dưới "Đối với sản phẩm nhầm lẫn") */
+    list-style: disc; 
+    padding-left: var(--space-6, 32px);
+    margin-top: var(--space-3, 12px);
+}
+
+.return-conditions strong {
+    font-weight: var(--font-weight-extraBold, 800);
+    color: var(--color-red);
+}
+
+/* --- PHẦN LƯU Ý (ATTENTION BOX) --- */
+.note-section .section-subtitle {
+    /* Tối ưu hóa tiêu đề Lưu ý */
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-m, 20px);
+    color: var(--color-red);
+}
+
+.note-section {
+    /* background-color: var(--color-pink1);  */
+    /* border: 2px solid var(--color-pink3); 
+    border-radius: var(--radius-lg); */
+    padding: var(--space-5);
+    margin-top: var(--space-7);
+}
+
+.note-section .return-conditions li::before {
+    content: '!'; /* Đổi bullet thành dấu chấm than */
+    color: var(--color-red);
+}
+
+.closing-remark {
+    font-size: var(--font-size-s, 16px);
+    font-weight: bold;
+    font-style: bold;
+    color: var(--color-red);
+  
+}
