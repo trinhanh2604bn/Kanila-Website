@@ -9,6 +9,7 @@ import { ThankYouPage } from './features/check-out/thank-you-page/thank-you-page
 import { Cart } from './features/cart-module/cart/cart';
 import { ItemCart } from './features/cart-module/item-cart/item-cart';
 import { DetailOrder } from './features/check-out/detail-order/detail-order';
+import { ReturnRequestDetail } from './features/account-module/pages/return-request-detail/return-request-detail';
 
 
 export const routes: Routes = [
@@ -37,6 +38,14 @@ export const routes: Routes = [
       {
         path: 'detail',
         component: DetailOrder
+      },
+      {
+        path: 'returnrequest',
+        component: ReturnRequest
+      },
+      {
+        path: 'returndetail',
+        component: ReturnRequestDetail
       },
     ]
   },

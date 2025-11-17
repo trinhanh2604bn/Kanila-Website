@@ -13,6 +13,7 @@ import { OrdersShipping } from './pages/order-management/orders-shipping/orders-
 import { OrdersDelivered } from './pages/order-management/orders-delivered/orders-delivered';
 import { OrdersReturn } from './pages/order-management/orders-return/orders-return';
 import { OrdersCancelled } from './pages/order-management/orders-cancelled/orders-cancelled';
+import { ReturnRequestDetail } from './pages/return-request-detail/return-request-detail';
 
 
 export const AccountModuleModule: Routes = [
@@ -26,7 +27,8 @@ export const AccountModuleModule: Routes = [
       {path: 'wishlist', component: Favorite},
       {path: 'discount', component: Discount},
       {path: 'points', component: Points},
-      {path: 'return', component: ReturnRequest},
+      {path: 'returnrequest',component: ReturnRequest},
+      {path: 'returndetail',component: ReturnRequestDetail},
 
       {
         path: 'ordershell',
