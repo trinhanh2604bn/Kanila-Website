@@ -1,22 +1,47 @@
-/* ===== DESKTOP FILTER ===== */
 .desktop-filter {
   width: 100%;
-  max-width: 230px;
   background-color: var(--color-pink1);
   padding: 8px;
-  border-radius: 20px;
+  border-radius: 0px;
 }
 
-.mobile-filter-btn {
-  display: none;
-}
-
-.filter {
+.filter-desktop-title {
   font-family: var(--font-nunito);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-extraBold);
   color: var(--color-red);
-  padding-left: 5px;
+  padding: 8px 8px 8px 16px; /* Để khớp padding với filter-block */
+}
+
+.main-filter-header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: 5px;
+  font-family: var(--font-nunito);
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-black);
+  color: var(--color-red);
+}
+
+.main-filter-arrow {
+  transition: transform 0.3s ease;
+}
+
+.main-filter-arrow.open {
+  transform: rotate(180deg);
+}
+
+.filter-content-wrapper {
+  max-height: 10000px;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.filter-content-wrapper.closed {
+  max-height: 0;
 }
 
 /* Arrow */
@@ -35,14 +60,14 @@
 
 /* Filter blocks */
 .filter-block {
-  border-radius: 12px;
+  border-radius: 0px;
   padding: 16px;
-  margin-bottom: 8px;
-  border-bottom: 2px solid var(--color-brown);
+  margin-bottom: 0px;
+  border-bottom: 1px solid var(--color-brown);
 }
 
 .filter-block.active {
-  border-top: 2px solid var(--color-brown); /* Viền trên khi mở */
+  border-top: 1px solid var(--color-brown); /* Viền trên khi mở */
   border-bottom: none; /* Loại bỏ viền dưới khi mở */
 }
 
@@ -167,4 +192,32 @@
 /* Các kiểu khác cho container */
 .color-container.active {
   background-color: var(--color-pink3); /* Màu nền khi được chọn */
+}
+
+@media (max-width: 768px) {
+  .filter-desktop-title {
+    display: none;
+  }
+  .main-filter-header {
+    display: flex;
+    padding: 6px 8px;
+    font-size: var(--font-size-m);
+  }
+
+  .filter-content-wrapper {
+    max-height: 0;
+  }
+
+  .filter-content-wrapper.closed {
+    max-height: 0;
+  }
+
+  .filter-block {
+    padding: 10px 12px;
+    margin-bottom: 5px;
+  }
+
+  .filter-content-wrapper:not(.closed) {
+    max-height: 10000px;
+  }
 }

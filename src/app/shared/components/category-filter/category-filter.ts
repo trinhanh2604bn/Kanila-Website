@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface FilterItem {
@@ -17,17 +17,33 @@ interface FilterItem {
   styleUrls: ['./category-filter.css'],
 })
 export class CategoryFilterComponent {
-  /** ⭐ Tuỳ chọn giá */
+  private readonly DESKTOP_BREAKPOINT = 768;
+  isExpanded: boolean = true;
+  constructor() {
+    this.setInitialExpansionState();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.setInitialExpansionState();
+  }
+
+  setInitialExpansionState() {
+    if (typeof window !== 'undefined' && window.innerWidth > this.DESKTOP_BREAKPOINT) {
+      this.isExpanded = true;
+    } else if (typeof window !== 'undefined' && window.innerWidth <= this.DESKTOP_BREAKPOINT) {
+    }
+  }
+
   priceOptions = ['Dưới 150.000đ', '150.000đ - 500.000đ', '500.000đ - 1.000.000đ'];
 
-  /** ⭐ Toàn bộ filter */
   filters: FilterItem[] = [
     {
       title: 'Theo Làn Da Bạn',
       type: 'checkbox',
       open: false,
       active: false,
-      options: ['Loại Da', 'Mụn Da', 'Màu Mắt', 'Nguyên Liệu', 'Thương Hiệu'],
+      options: ['Loại Da', 'Màu Da', 'Màu Mắt', 'Nguyên Liệu', 'Thương Hiệu'],
     },
     {
       title: 'Thương Hiệu',
@@ -96,19 +112,7 @@ export class CategoryFilterComponent {
     item.active = item.open;
   }
 
-  /** ⭐ Trạng thái mobile filter panel */
-  isMobileOpen = false;
-
-  /** ⭐ Toggle icon filter (mobile) */
-  toggleMobile() {
-    this.isMobileOpen = !this.isMobileOpen;
-
-    if (!this.isMobileOpen) {
-      // đóng panel → reset các mục con
-      this.filters.forEach((f) => {
-        f.open = false;
-        f.active = false;
-      });
-    }
+  toggleFilter() {
+    this.isExpanded = !this.isExpanded;
   }
 }

@@ -1,0 +1,28 @@
+<div class="form-wrapper">
+  <app-login
+    *ngIf="showLogin && !showForgotPassword"
+    [notification]="notification"
+    (clientError)="handleClientError($event)"
+    (submitLogin)="onLogin($event)"
+    (navigateToSignup)="onNavigateToSignup()"
+    (navigateToForgotPassword)="onNavigateToForgotPassword()"
+  >
+  </app-login>
+
+  <app-signup
+    *ngIf="!showLogin && !showForgotPassword"
+    [notification]="notification"
+    (clientError)="handleClientError($event)"
+    (submitSignup)="onSignup($event)"
+    (navigateToLogin)="onNavigateToLogin()"
+  >
+  </app-signup>
+
+  <app-forgot-password
+    *ngIf="showForgotPassword"
+    [notification]="notification"
+    (clientError)="handleClientError($event)"
+    (navigateToLogin)="onNavigateToLogin()"
+  >
+  </app-forgot-password>
+</div>

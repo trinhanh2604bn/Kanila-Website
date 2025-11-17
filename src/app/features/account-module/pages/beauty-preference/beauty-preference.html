@@ -1,0 +1,117 @@
+<div class="beauty-preference-container">
+  <p class="title">LÀN DA CỦA BẠN</p>
+
+  <p class="des">
+    Hãy cho KANILA biết đặc điểm làn da của bạn để nhận được gợi ý sản phẩm phù hợp nhất
+  </p>
+
+  <div class="divider-row">
+    <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="25" /></span>
+    <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="25" /></span>
+    <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="25" /></span>
+    <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="25" /></span>
+    <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="25" /></span>
+    <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="25" /></span>
+    <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="25" /></span>
+    <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="25" /></span>
+    <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="25" /></span>
+  </div>
+
+  <div
+    class="filter-group"
+    *ngFor="let group of filterGroups"
+    [class.is-expanded]="group.isExpanded"
+  >
+    <div class="filter-header" (click)="toggleExpand(group, $event)">
+      <span class="filter-label">{{ group.label }}</span>
+
+      <span class="filter-selected-display" *ngIf="group.selectedDisplay">{{
+        group.selectedDisplay
+      }}</span>
+
+      <span class="arrow-icon">
+        <img src="/images/arrow-down.png" alt="arrow-down" width="20px" />
+      </span>
+    </div>
+
+    <div class="filter-content" *ngIf="group.isExpanded && group.type !== 'brand-search'">
+      <div class="option-buttons">
+        <button
+          *ngFor="let option of group.options"
+          class="option-button"
+          [class.is-selected]="option.selected"
+          (click)="selectOption(group, option)"
+        >
+          {{ option.label }}
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="filter-content brand-search-input"
+      *ngIf="group.isExpanded && group.type === 'brand-search'"
+    >
+      <div class="search-input-wrapper" (click)="openBrandOverlay(); $event.stopPropagation()">
+        <input
+          type="text"
+          placeholder="Tìm kiếm"
+          readonly="true"
+          [value]="selectedBrands.length > 0 ? selectedBrands.join(', ') : ''"
+        />
+      </div>
+    </div>
+  </div>
+  <button class="apply-button global-apply-btn" (click)="onSaveAllPreferences()">Áp Dụng</button>
+  <div class="brand-overlay" [class.is-open]="isBrandOverlayOpen">
+    <div class="overlay-header">
+      <span class="overlay-title">THƯƠNG HIỆU YÊU THÍCH</span>
+
+      <button class="close-overlay-btn" (click)="closeBrandOverlay()">
+        <img
+          src="https://files.svgcdn.io/pajamas/close.svg"
+          alt="đóng"
+          width="20px"
+          height="20px"
+        />
+      </button>
+    </div>
+
+    <div class="overlay-search-bar">
+      <input
+        type="text"
+        placeholder="Tìm kiếm thương hiệu..."
+        [(ngModel)]="brandSearchQuery"
+        (input)="filterBrands()"
+      />
+    </div>
+
+    <div class="brand-list-content">
+      <ng-container *ngFor="let group of filteredBrands | keyvalue">
+        <div class="brand-section">
+          <h3 class="brand-section-letter">{{ group.key }}</h3>
+
+          <div class="brand-buttons-grid">
+            <button
+              *ngFor="let brand of group.value"
+              class="brand-button"
+              [class.is-selected]="selectedBrands.includes(brand)"
+              (click)="toggleSelectBrand(brand)"
+            >
+              {{ brand }}
+            </button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="overlay-footer">
+      <button class="apply-button" (click)="applyBrandSelection()">Lưu</button>
+    </div>
+  </div>
+
+  <div
+    class="overlay-backdrop"
+    [class.is-open]="isBrandOverlayOpen"
+    (click)="closeBrandOverlay()"
+  ></div>
+</div>

@@ -6,10 +6,10 @@
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-m);
   letter-spacing: 0;
-  cursor: pointer;
   padding: var(--space-1) var(--space-2);
   color: var(--color-brown);
   transition: color 0.2s ease;
+  cursor: pointer;
 }
 
 /* Hiệu ứng hover mặc định (nếu không bị override) */

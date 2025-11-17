@@ -1,43 +1,49 @@
 <!-- ⭐ DESKTOP SIDEBAR -->
 <div class="desktop-filter">
-  <div class="filter">Bộ Lọc</div>
+  <div class="filter-desktop-title">Bộ Lọc</div>
+  <div class="main-filter-header" (click)="toggleFilter()">
+    <span>Bộ Lọc</span>
+    <i class="fas fa-chevron-down main-filter-arrow" [class.open]="isExpanded"></i>
+  </div>
 
-  <div class="filter-block" *ngFor="let item of filters" [class.active]="item.open">
-    <div class="filter-header" (click)="toggle(item)">
-      <span class="filter-title">{{ item.title }}</span>
-      <span class="arrow" [class.open]="item.open"></span>
-    </div>
+  <div class="filter-content-wrapper" [class.closed]="!isExpanded">
+    <div class="filter-block" *ngFor="let item of filters" [class.active]="item.open">
+      <div class="filter-header" (click)="toggle(item)">
+        <span class="filter-title">{{ item.title }}</span>
+        <span class="arrow" [class.open]="item.open"></span>
+      </div>
 
-    <div class="filter-content" *ngIf="item.open">
-      <ng-container *ngIf="item.type === 'checkbox'">
-        <label class="option" *ngFor="let opt of item.options">
-          <input type="checkbox" />
-          {{ opt }}
-        </label>
-      </ng-container>
+      <div class="filter-content" *ngIf="item.open">
+        <ng-container *ngIf="item.type === 'checkbox'">
+          <label class="option" *ngFor="let opt of item.options">
+            <input type="checkbox" />
+            {{ opt }}
+          </label>
+        </ng-container>
 
-      <ng-container *ngIf="item.type === 'price'">
-        <label class="option" *ngFor="let opt of priceOptions">
-          <input type="radio" name="price-range" />
-          {{ opt }}
-        </label>
+        <ng-container *ngIf="item.type === 'price'">
+          <label class="option" *ngFor="let opt of priceOptions">
+            <input type="radio" name="price-range" />
+            {{ opt }}
+          </label>
 
-        <div class="manual-price-row">
-          <div class="option1">
-            <label class="radio-circle">
-              <input type="radio" name="price-range" />
-            </label>
+          <div class="manual-price-row">
+            <div class="option1">
+              <label class="radio-circle">
+                <input type="radio" name="price-range" />
+              </label>
+            </div>
+
+            <div class="price-boxes">
+              <input type="number" placeholder="Min" class="price-box" />
+              <span style="color: #372b2b">-</span>
+              <input type="number" placeholder="Max" class="price-box" />
+            </div>
           </div>
 
-          <div class="price-boxes">
-            <input type="number" placeholder="Min" class="price-box" />
-            <span style="color: #372b2b">-</span>
-            <input type="number" placeholder="Max" class="price-box" />
-          </div>
-        </div>
-
-        <button class="apply-btn" style="margin-left: 55px">Áp dụng</button>
-      </ng-container>
+          <button class="apply-btn" style="margin-left: 55px">Áp dụng</button>
+        </ng-container>
+      </div>
     </div>
   </div>
 </div>

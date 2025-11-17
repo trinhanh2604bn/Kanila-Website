@@ -17,7 +17,6 @@ export class BrandListComponent implements AfterViewInit {
   constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit(): void {
-    // ❗ CHỈ CHẠY TRÊN TRÌNH DUYỆT — KHÔNG CHẠY KHI SSR
     if (!isPlatformBrowser(this.platformId)) return;
 
     const headerEl = document.querySelector('app-header') as HTMLElement | null;
@@ -31,7 +30,6 @@ export class BrandListComponent implements AfterViewInit {
     document.documentElement.style.setProperty('--brand-scroll-offset', `${offset}px`);
   }
 
-  /** ⭐ Dữ liệu brand */
   brands: { [key: string]: string[] } = {
     A: ['Ami Cole', 'Armani Beauty', 'ABH', 'Artist Couture'],
     B: ['Basma', 'Beautyblender', 'Bobbi Brown'],
@@ -51,7 +49,6 @@ export class BrandListComponent implements AfterViewInit {
     Y: ['Yves Saint Laurent'],
   };
 
-  /** ⭐ Scroll */
   onSelectLetter(letter: string) {
     this.activeLetter = letter;
 
@@ -72,7 +69,6 @@ export class BrandListComponent implements AfterViewInit {
     });
   }
 
-  /** ⭐ Chuyển qua brand catalog */
   goToBrandCatalog(brandName: string) {
     const slug = brandName.toLowerCase().replace(/\s+/g, '-');
     this.router.navigate(['/brand-catalog', slug]);

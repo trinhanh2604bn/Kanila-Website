@@ -1,7 +1,11 @@
 <div class="card" (mouseenter)="hover = true" (mouseleave)="hover = false">
   <!-- IMAGE + ICONS -->
   <div class="img-wrapper">
-    <img [src]="image" [alt]="name" class="product-img" />
+    <img
+      [src]="'https://www.sephora.com/productimages/sku/s2737187-main-zoom.jpg?imwidth=3000'"
+      [alt]="name"
+      class="product-img"
+    />
 
     <!-- ICON GROUP -->
     <div class="icon-group">
@@ -21,8 +25,8 @@
 
   <!-- TEXT CONTENT -->
   <div class="content">
-    <h3 class="product-brand">{{ brand }}</h3>
-    <p class="product-name">{{ name }}</p>
+    <h3 class="product-brand">Charlotte Tilbury</h3>
+    <p class="product-name">Charlotte Tilbury Magic Cream</p>
 
     <!-- RATING -->
     <div class="stars">
@@ -32,10 +36,17 @@
       </ng-container>
     </div>
 
-    <p class="price">{{ price }}</p>
+    <p class="price">1.200.000đ</p>
 
     <button class="cart-btn">
-      <span>Thêm Vào Giỏ Hàng </span>
+      <span
+        style="
+          font-size: var(--font-size-s);
+          font-weight: var(--font-weight-medium);
+          font-family: var(--font-nunito);
+        "
+        >Thêm Vào Giỏ Hàng
+      </span>
       <svg
         width="20"
         height="20"
@@ -73,22 +84,23 @@
 
         <!-- RIGHT: TEXT -->
         <div class="overlay-right">
-          <h2 class="overlay-name">{{ name }}</h2>
+          <h2 class="overlay-name">Charlotte Tilbury Magic Cream</h2>
 
           <!-- SOLD + STATUS -->
           <div class="overlay-top-row">
-            <span class="sold">Đã bán {{ bought }} sản phẩm</span>
+            <span class="sold">Đã bán 124 sản phẩm</span>
             <span class="status">
               Trạng thái:
               <span class="status-value" [class.out-of-stock]="status === 'Hết hàng'">
-                {{ status }}
+                Hết Hàng
               </span>
             </span>
           </div>
 
           <!-- DESCRIPTION -->
           <div class="overlay-desc">
-            {{ description }}
+            Tiền lợi khuẩn Porèves Advanced Prebiotic Serum là tinh chất chuyên biệt giúp làm dịu và
+            cân bằng hệ vi sinh da, khôi phục sức khỏe làn da từ sâu bên trong
           </div>
 
           <!-- LINK -->
@@ -101,7 +113,7 @@
           <!-- PRICE -->
           <div class="overlay-price-row">
             <span class="price-label">Giá sản phẩm</span>
-            <span class="price-value">{{ price }}</span>
+            <span class="price-value">1.200.000đ</span>
           </div>
 
           <!-- BUTTONS -->

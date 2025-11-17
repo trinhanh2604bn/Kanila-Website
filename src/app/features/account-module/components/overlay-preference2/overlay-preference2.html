@@ -1,0 +1,48 @@
+<div class="overlay-container">
+  <div class="preference-popup">
+    <div>
+      <button class="close-btn" (click)="closeOverlay()">
+        <img
+          src="https://files.svgcdn.io/pajamas/close.svg"
+          alt="đóng"
+          width="20px"
+          height="20px"
+        />
+      </button>
+      <p class="title">Thêm đặc điểm cho Làn Da Của Bạn</p>
+    </div>
+
+    <div class="divider-row">
+      <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="20" /></span>
+      <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="20" /></span>
+      <span class="flower"><img src="/images/flower.png" alt="Provider divider" width="20" /></span>
+    </div>
+
+    <p class="subtitle">Chúc mừng bạn! Bạn đã trở thành Beauty Insider</p>
+    <p class="subtitle1">
+      Hãy trả lời nhanh 2 câu hỏi để có trải nghiệm mua sắm được cá nhân hóa hơn nhé
+    </p>
+
+    <div class="divider-row">
+      <img src="/images/divider/Provider1_l.png" alt="Provider divider" width="350" />
+      <img src="/images/divider/Provider1_r.png" alt="Provider divider" width="350" />
+    </div>
+
+    <div>
+      <p class="subtitle">Loại Da</p>
+      <p class="subtitle1">Chọn tất cả những gì phù hợp với bạn</p>
+      <div class="button-group">
+        <button>Tông Da Tối</button>
+        <button>Tông Da Trung Bình</button>
+        <button>Tông Da Sáng</button>
+        <button>Không Chắc</button>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <button (click)="prevPage()"><img src="/images/back.png" width="20" /></button>
+      <span>2 trên 2</span>
+      <button (click)="nextPage()"><img src="/images/next.png" width="15" /></button>
+    </div>
+  </div>
+</div>
