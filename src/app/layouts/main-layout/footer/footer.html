@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-
+ 
 
         <!-- HÀNG 2: 4 cột (1 cột logo nhỏ nhất + 3 cột thông tin) -->
         <div class="row g-4 align-items-start">
@@ -26,9 +26,18 @@
             <div class="col-12 col-md">
                 <h6 class="sect-title">THÔNG TIN VỀ CHÚNG TÔI</h6>
                 <ul class="list-unstyled footer-links">
-                <li><a routerLink="/about">Giới Thiệu</a></li>
-                <li><a routerLink="/contact">Liên Hệ KANILA</a></li>
-                <li><a routerLink="/agency-certificate">Giấy Chứng Nhận Đại Lý</a></li>
+                <li>
+                    <!-- <a routerLink="/about" >Giới Thiệu</a> -->
+                    <a (click)="goIntro()" >Giới Thiệu</a>
+                </li>
+                <li>
+                    <!-- <a routerLink="/contact">Liên Hệ KANILA</a> -->
+                    <a (click)="goContact()">Liên Hệ KANILA</a>
+                </li>
+                <li>
+                    <!-- <a routerLink="/agency-certificate">Giấy Chứng Nhận Đại Lý</a> -->
+                    <a (click)="goAgent()">Giấy Chứng Nhận Đại Lý</a>
+                </li>
                 </ul>
             </div>
 
@@ -36,13 +45,26 @@
             <div class="col-12 col-md">
                 <h6 class="sect-title">DỊCH VỤ KHÁCH HÀNG</h6>
                 <ul class="list-unstyled footer-links">
-                <li><a routerLink="/support">Trung Tâm Hỗ Trợ KANILA</a></li>
-                <li><a routerLink="/return-policy">Chính Sách Đổi Trả</a></li>
-                <li><a routerLink="/privacy">Chính Sách Bảo Mật</a></li>
-                <li><a routerLink="/payment-policy">Chính Sách Thanh Toán</a></li>
-                <li><a routerLink="/shipping-policy">Chính Sách Vận Chuyển</a></li>
-                <li><a routerLink="/cookie-policy">Chính Sách Cookie</a></li>
-                <li><a routerLink="/feedback">Góp Ý Và Khiếu Nại</a></li>
+                <!-- <li><a routerLink="/support">Trung Tâm Hỗ Trợ KANILA</a></li> -->
+                <li><a (click)="goFaq()">Trung Tâm Hỗ Trợ KANILA</a></li>
+
+                <!-- <li><a routerLink="/return-policy">Chính Sách Đổi Trả</a></li> -->
+                <li><a (click)="goReturnPolicy()">Chính Sách Đổi Trả</a></li>
+
+                <!-- <li><a routerLink="/privacy">Chính Sách Bảo Mật</a></li> -->
+                <li><a (click)="goSecurity()">Chính Sách Bảo Mật</a></li>
+
+                <!-- <li><a routerLink="/payment-policy">Chính Sách Thanh Toán</a></li> -->
+                <li><a (click)="goPayPolicy()">Chính Sách Thanh Toán</a></li>
+                
+                <!-- <li><a routerLink="/shipping-policy">Chính Sách Vận Chuyển</a></li> -->
+                <li><a (click)="goShip()">Chính Sách Vận Chuyển</a></li>
+
+                <!-- <li><a routerLink="/cookie-policy">Chính Sách Cookie</a></li> -->
+                <li><a (click)="goCookie()">Chính Sách Cookie</a></li>
+                
+                <!-- <li><a routerLink="/feedback">Góp Ý Và Khiếu Nại</a></li> -->
+                <li><a (click)="goPB()">Góp Ý Và Khiếu Nại</a></li>
                 </ul>
             </div>
 

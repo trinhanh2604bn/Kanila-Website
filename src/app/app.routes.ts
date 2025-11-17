@@ -11,6 +11,16 @@ import { ItemCart } from './features/cart-module/item-cart/item-cart';
 import { DetailOrder } from './features/check-out/detail-order/detail-order';
 import { ReturnRequestDetail } from './features/account-module/pages/return-request-detail/return-request-detail';
 import { CommunityPage } from './features/find-module/community-page/community-page';
+import { Contact } from './features/policy-module/contact/contact';
+import { Agent } from './features/policy-module/agent/agent';
+import { ReturnPolicy } from './features/policy-module/return-policy/return-policy';
+import { Faq } from './features/policy-module/faq/faq';
+import { CookiePolicy } from './features/policy-module/cookie-policy/cookie-policy';
+import { Feedback } from './features/policy-module/feedback/feedback';
+import { Introduction } from './features/policy-module/introduction/introduction';
+import { PaymentPolicy } from './features/policy-module/payment-policy/payment-policy';
+import { SecurityPolicy } from './features/policy-module/security-policy/security-policy';
+import { ShippingPolicy } from './features/policy-module/shipping-policy/shipping-policy';
 
 
 export const routes: Routes = [
@@ -44,9 +54,49 @@ export const routes: Routes = [
         path: 'communitypage',
         component: CommunityPage
       },
+      {
+        path: 'contact',
+        component: Contact
+      },
+      {
+        path: 'agent',
+        component: Agent
+      },
+      {
+        path: 'returnpolicy',
+        component: ReturnPolicy
+      },
+      {
+        path: 'faq',
+        component: Faq
+      },
+      {
+        path: 'cookie',
+        component: CookiePolicy
+      },
+      {
+        path: 'feedback',
+        component: Feedback
+      },
+      {
+        path: 'intro',
+        component: Introduction
+      },
+      {
+        path: 'paymentpolicy',
+        component: PaymentPolicy
+      },
+      {
+        path: 'security',
+        component: SecurityPolicy
+      },
+      {
+        path: 'shippolicy',
+        component: ShippingPolicy
+      },
     ]
   },
 
-  // { path: '**', redirectTo: '' }
-];
+  { path: '**', redirectTo: '' }
+]; 
 
