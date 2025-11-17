@@ -21,6 +21,8 @@ import { Introduction } from './features/policy-module/introduction/introduction
 import { PaymentPolicy } from './features/policy-module/payment-policy/payment-policy';
 import { SecurityPolicy } from './features/policy-module/security-policy/security-policy';
 import { ShippingPolicy } from './features/policy-module/shipping-policy/shipping-policy';
+import { Post } from './features/find-module/post/post';
+import { Postdetail } from './features/find-module/postdetail/postdetail';
 
 
 export const routes: Routes = [
@@ -94,6 +96,11 @@ export const routes: Routes = [
         path: 'shippolicy',
         component: ShippingPolicy
       },
+      // Trang danh sách blog
+      { path: 'blog', component: Post },
+
+      // Trang chi tiết – có id
+      { path: 'postdetail/:id', component: Postdetail },
     ]
   },
 
