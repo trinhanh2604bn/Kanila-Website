@@ -132,13 +132,11 @@
   --primary-color: #6b1e2e;
   --secondary-color: #ffffff;
   --primary-hover-color: #372b2b;
-  /* checkbox */
   --checkbox-diameter: 20px;
   --checkbox-border-radius: 5px;
   --checkbox-border-color: #372b2b;
   --checkbox-border-width: 1px;
   --checkbox-border-style: solid;
-  /* checkmark */
   --checkmark-size: 1.2;
 }
 
