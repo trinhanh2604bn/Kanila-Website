@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ItemCart } from "../item-cart/item-cart";
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +13,7 @@ export class Cart {
 // Biến trạng thái để kiểm soát việc hiển thị khối hóa đơn
     showOrderRight: boolean = false;
 
-    constructor() {}
+
 
     /**
      * Hàm được gọi khi trạng thái checkbox thay đổi
@@ -22,4 +23,10 @@ export class Cart {
         // Cập nhật trạng thái hiển thị dựa trên trạng thái checked của checkbox
         this.showOrderRight = event.target.checked;
     }
+
+      constructor(private router: Router) {}
+
+  goToDetail() {
+    this.router.navigate(['checkout']);
+  }
 }

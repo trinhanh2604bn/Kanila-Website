@@ -17,7 +17,7 @@ export const routes: Routes = [
     path: '',
     component: MainLayout, 
     children: [
-      { path: '', redirectTo: 'profile', pathMatch: 'full'},
+      // { path: '', redirectTo: 'profile', pathMatch: 'full'},
       {
         path: 'account',
         loadChildren: () =>
@@ -38,14 +38,6 @@ export const routes: Routes = [
       {
         path: 'detail',
         component: DetailOrder
-      },
-      {
-        path: 'returnrequest',
-        component: ReturnRequest
-      },
-      {
-        path: 'returndetail',
-        component: ReturnRequestDetail
       },
     ]
   },

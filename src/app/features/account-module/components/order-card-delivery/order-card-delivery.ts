@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OrderItem } from '../order-item/order-item';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-card-delivery',
@@ -9,5 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './order-card-delivery.css',
 })
 export class OrderCardDelivery {
+  constructor(private router: Router) {}
 
+  goToDetail() {
+    this.router.navigate(['account/returnrequest']);
+  }
 }

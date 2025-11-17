@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { OrderItem } from '../order-item/order-item';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-card',
@@ -10,15 +11,9 @@ import { OrderItem } from '../order-item/order-item';
   styleUrl: './order-card.css',
 })
 export class OrderCard {
-  @Input() items: OrderItemData[] = [];
-  @Input() total = 0;
-  @Input() orderCode = 'DH0001';
-}
+    constructor(private router: Router) {}
 
-export interface OrderItemData {
-  image: string;
-  brand: string;
-  name: string;
-  quantity: number;
-  price: number;
+  goToDetail() {
+    this.router.navigate(['detail']);
+  }
 }
