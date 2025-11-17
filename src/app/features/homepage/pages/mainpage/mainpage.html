@@ -1,10 +1,27 @@
+<app-header></app-header>
+
 <app-silder></app-silder>
-<app-divider></app-divider>
 
 <!--  -->
 <div class="frame-1920">
     <div class="content-rail">
     <main class="content-inner">
+<!--  -->
+      <div class="mt-3"><app-divider [title] = " 'DÀNH CHO BẠN' "
+        [buttonText] = "'Xem tất cả'"> </app-divider></div>
+    <div class="mt-3 my-5"><app-product-slider ></app-product-slider></div>
+<!--  -->
+      <div class="mt-5"><app-divider [title] = " 'SẢN PHẨM MỚI' "
+        [buttonText] = "'Xem tất cả'"> </app-divider></div>
+      <div class="mt-3 my-5"><app-product-slider ></app-product-slider></div>
+<!--  -->
+       <div class="mt-5"><app-divider [title] = "'BEST SELLER'"
+        [buttonText] = "'Xem tất cả'">
+
+       </app-divider></div>
+      <div class="mt-3 my-5"><app-product-slider ></app-product-slider></div>
+
+<!--  -->
       <div class="container">
       <div class="anhbg">
           <div style="width:fit-content" class="anh_item1 anh_item"><img id="s1" src="images/mainpage/location1.png" alt="location2" width="40px"></div>
@@ -52,7 +69,11 @@
             <span>Khám phá thêm</span>
           </button>
           </div>
+<!--  -->
 
+<div class="mt-5">
+  <app-product-slider ></app-product-slider>
+</div>
 
 <!--  -->
       <div class="container mt-5 section1">
@@ -73,12 +94,20 @@
 
 
 <!--  -->
-<app-brand></app-brand>
-<app-roya></app-roya>
+<div class="mt-5">
+  <app-brand></app-brand>
+</div>
+<div class="mt-5 my-5">
+
+  <app-roya></app-roya>
+</div>
 
     </main>
   </div>
 </div>
+
+<app-footer></app-footer>
+
 
 
 

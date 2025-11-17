@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { ProductService } from '../../../features/product/service/product';
 
 @Component({
   selector: 'app-product-card',
@@ -9,21 +10,53 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './product-card.html',
   styleUrls: ['./product-card.css'],
 })
-export class ProductCardComponent {
+export class ProductCardComponent implements OnInit {
   @Input() brand = '';
   @Input() name = '';
-  @Input() price = '';
+  @Input() price: number = 0;
   @Input() image = '';
   @Input() description = '';
   @Input() stock: number = 0;
-  @Input() bought = '';
+  @Input() bought: number = 0;
   @Input() rating = 0;
 
   hover = false;
   wishlist = false;
   showPreview = false;
 
-  constructor(private router: Router) {}
+  // Dữ liệu sản phẩm sẽ được lấy từ API qua service
+  product: any;
+
+  constructor(private router: Router, private productService: ProductService) {}
+
+  ngOnInit(): void {
+    // Nếu không có dữ liệu đầu vào qua @Input(), chúng ta sẽ gọi API để lấy dữ liệu.
+    if (!this.name) {
+      this.fetchProductData();
+    }
+  }
+
+  fetchProductData() {
+    // Đây là ví dụ về cách gọi API để lấy dữ liệu sản phẩm theo ID hoặc slug.
+    // Bạn có thể thay đổi URL hoặc cách lấy dữ liệu tùy thuộc vào API của bạn.
+    const productSlug = this.name.toLowerCase().replace(/\s+/g, '-');
+    this.productService.getProductBySlug(productSlug).subscribe(
+      (data: { brand: string; productName: string; price: number; imageUrl: string; description: string; stock: number; bought: number; averageRating: number; }) => {
+        this.product = data;  // Lưu dữ liệu vào biến `product`
+        this.brand = data.brand || '';
+        this.name = data.productName || '';
+        this.price = data.price || 0;
+        this.image = data.imageUrl || '';
+        this.description = data.description || '';
+        this.stock = data.stock || 0;
+        this.bought = data.bought || 0;
+        this.rating = data.averageRating || 0;
+      },
+      (error: any) => {
+        console.error('Lỗi khi lấy dữ liệu sản phẩm:', error);
+      }
+    );
+  }
 
   get status(): string {
     return this.stock > 1 ? 'Còn hàng' : 'Hết hàng';
@@ -45,13 +78,12 @@ export class ProductCardComponent {
 
   goToDetail(e: MouseEvent) {
     e.stopPropagation();
-    const slug = this.name.toLowerCase().replace(/\s+/g, '-'); // simple slug
-    this.router.navigate(['/product-detail', slug]); // route ví dụ
+    const slug = this.name.toLowerCase().replace(/\s+/g, '-');
+    this.router.navigate(['/product-detail', slug]);
   }
 
   openProductDetail(e: MouseEvent) {
     e.stopPropagation();
-    // TODO: Chuyển sang trang chi tiết sản phẩm khi bạn tạo route
     console.log('Đi đến trang chi tiết sản phẩm...');
   }
 }

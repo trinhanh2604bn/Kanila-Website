@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-interface FilterItem {
-  title: string;
-  type: 'checkbox' | 'price' | 'text';
-  open: boolean;
-  options?: string[];
-  active?: boolean;
-}
+import { ProductList } from '../../../features/product/components/product-list/product-list';
 
 @Component({
   selector: 'app-category-filter',
@@ -17,98 +10,71 @@ interface FilterItem {
   styleUrls: ['./category-filter.css'],
 })
 export class CategoryFilterComponent {
-  /** ⭐ Tuỳ chọn giá */
   priceOptions = ['Dưới 150.000đ', '150.000đ - 500.000đ', '500.000đ - 1.000.000đ'];
 
-  /** ⭐ Toàn bộ filter */
-  filters: FilterItem[] = [
+  filters: any[] = [
     {
       title: 'Theo Làn Da Bạn',
       type: 'checkbox',
       open: false,
-      active: false,
       options: ['Loại Da', 'Mụn Da', 'Màu Mắt', 'Nguyên Liệu', 'Thương Hiệu'],
     },
     {
       title: 'Thương Hiệu',
       type: 'checkbox',
       open: false,
-      active: false,
-      options: [
-        'Ami Cole',
-        'Armani Beauty',
-        'ABH',
-        'Basma',
-        'Beautyblender',
-        'Bobbi Brown',
-        'Charlotte Tilbury',
-        'Clinique',
-        'Dior',
-        'Fenty Beauty',
-        'Freck Beauty',
-        'Givenchy',
-        'Glossier',
-        'Grande Cosmetics',
-        'Gucci',
-        'Guerlain',
-        'Haus Labs',
-        'Hourglass',
-        'IT Cosmetics',
-        'Kosas',
-        'Kulfi',
-        'Lancôme',
-        'Make Up For Ever',
-        'Makeup By Mario',
-        'Melt Cosmetics',
-        'Merit',
-        'Milk Makeup',
-        'Nars',
-        'Natasha Denona',
-        'Pat McGrath Labs',
-        'Patrick Ta',
-        'Shiseido',
-        'Shu Uemura',
-        'Sulwhasoo',
-        'Tarte',
-        'Too Faced',
-        'Tower 28 Beauty',
-        'Yves Saint Laurent',
-      ],
+      options: ['Ami Cole', 'Armani Beauty', 'ABH', 'Basma', 'Beautyblender'],
     },
     {
       title: 'Loại Da',
       type: 'checkbox',
       open: false,
-      active: false,
       options: ['Thường', 'Dầu', 'Khô', 'Hỗn hợp'],
     },
     {
       title: 'Khoảng Giá',
       type: 'price',
       open: false,
-      active: false,
     },
   ];
 
-  /** ⭐ Toggle từng mục filter */
-  toggle(item: FilterItem) {
+  selectedFilters: string[] = [];  // Lưu trữ các filter đã chọn
+
+  constructor(private productList: ProductList) {}
+
+  toggle(item: any) {
     item.open = !item.open;
     item.active = item.open;
   }
 
-  /** ⭐ Trạng thái mobile filter panel */
-  isMobileOpen = false;
+  // Hàm gọi khi người dùng thay đổi filter
+  onFilterChange(item: any, option: string) {
+    if (item.type === 'checkbox') {
+      const isSelected = this.selectedFilters.includes(option);
+      if (isSelected) {
+        this.selectedFilters = this.selectedFilters.filter(filter => filter !== option);
+      } else {
+        this.selectedFilters.push(option);
+      }
+    }
 
-  /** ⭐ Toggle icon filter (mobile) */
-  toggleMobile() {
-    this.isMobileOpen = !this.isMobileOpen;
-
-    if (!this.isMobileOpen) {
-      // đóng panel → reset các mục con
-      this.filters.forEach((f) => {
-        f.open = false;
-        f.active = false;
-      });
+    if (item.type === 'price') {
+          if (!this.selectedFilters.includes(option)) {
+      this.selectedFilters.push(option);
     }
   }
+
+    // Cập nhật lại sản phẩm khi thay đổi bộ lọc
+    this.productList.onFilterChange(this.selectedFilters);
+    this.productList.onFilterChange(this.selectedFilters);
+  }
+
+  // Định nghĩa hàm applyPriceFilter bên trong class
+  applyPriceFilter() {
+    console.log('Price filter applied');
+    this.productList.onFilterChange(this.selectedFilters); // Lọc lại sản phẩm khi áp dụng bộ lọc
+  }
+
+
+
 }

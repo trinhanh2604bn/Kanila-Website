@@ -4,7 +4,8 @@
   max-width: 230px;
   background-color: var(--color-pink1);
   padding: 8px;
-  border-radius: 20px;
+
+  /* border-radius: 20px; */
 }
 
 .mobile-filter-btn {
@@ -13,7 +14,7 @@
 
 .filter {
   font-family: var(--font-nunito);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-l);
   font-weight: var(--font-weight-extraBold);
   color: var(--color-red);
   padding-left: 5px;
@@ -35,14 +36,14 @@
 
 /* Filter blocks */
 .filter-block {
-  border-radius: 12px;
+  /* border-radius: 12px; */
   padding: 16px;
-  margin-bottom: 8px;
-  border-bottom: 2px solid var(--color-brown);
+  margin-bottom: 0px;
+  border-bottom: 1px solid var(--color-brown);
 }
 
 .filter-block.active {
-  border-top: 2px solid var(--color-brown); /* Viền trên khi mở */
+  border-top: 1px solid var(--color-brown); /* Viền trên khi mở */
   border-bottom: none; /* Loại bỏ viền dưới khi mở */
 }
 
@@ -167,4 +168,23 @@
 /* Các kiểu khác cho container */
 .color-container.active {
   background-color: var(--color-pink3); /* Màu nền khi được chọn */
+}
+.selected-filters{
+  color: var(--color-beige);
+  font: var(--font-nunito);
+  font-weight: var(--font-size-l);
+  text-align: left;
+  border: 1px solid var(--color-red);
+  background-color: var(--color-red);
+  max-width: 230px;
+  padding-left: 10px;
+
+
+
+
+}
+
+.selected-filters:hover{
+  color: var(--color-pink1);
+
 }

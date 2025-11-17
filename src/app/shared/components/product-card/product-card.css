@@ -3,11 +3,24 @@
   background: var(--color-pink1);
   border-radius: 20px;
   padding: 12px;
-  transition: 0.25s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  gap: 5px;
+  width: 220px;
+  height: 390px;
+  overflow: hidden;
+  margin-bottom: 10px;
+
 }
 
 .img-wrapper {
   position: relative;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.img-wrapper:hover {
+  transform: scale(1.05);
 }
 
 .product-img {
@@ -64,6 +77,36 @@
   color: var(--color-pink3) !important;
 }
 
+.eye-btn {
+  position: relative;
+}
+
+.eye-btn:hover {
+  color: var(--color-pink3);
+}
+
+/* Overlay mở với hiệu ứng bung ra */
+.overlay-content {
+  transform: scale(0.7);
+  opacity: 0;
+  animation: overlay-bounce 0.45s cubic-bezier(0.68, -0.165, 0.265, 1.55) forwards;
+}
+
+@keyframes overlay-bounce {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* Product info */
 .content {
   margin-top: 10px;
@@ -106,12 +149,15 @@
   margin: 0 auto;
   display: block;
   cursor: pointer;
-  transition: 0.1s;
+  transition: 0.3s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cart-btn:hover {
   background: var(--color-brown);
   color: var(--color-beige);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .cart-btn:active {
@@ -124,7 +170,7 @@
 /* 🎯 Hiệu ứng bật lại (bounce) */
 @keyframes cart-bounce {
   0% {
-    transform: scale(0.9);
+transform: scale(0.9);
   }
   50% {
     transform: scale(1.05);
@@ -283,7 +329,7 @@
   font-family: var(--font-beVietnamPro);
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-extraBold);
-  color: var(--color-red);
+color: var(--color-red);
 }
 
 /* BUTTONS BÊN PHẢI CỘT TEXT */

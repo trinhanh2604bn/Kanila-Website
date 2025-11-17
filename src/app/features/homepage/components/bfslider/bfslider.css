@@ -4,7 +4,7 @@ div#comparison {
   max-width: 500px;
   max-height: 500px;
   overflow: hidden;
-  justify-self: right;
+  justify-self: center;
 }
 
 

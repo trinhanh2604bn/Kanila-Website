@@ -1,7 +1,7 @@
 <div class="card" (mouseenter)="hover = true" (mouseleave)="hover = false">
   <!-- IMAGE + ICONS -->
   <div class="img-wrapper">
-    <img [src]="image" [alt]="name" class="product-img" />
+    <img [src]="image" [alt]="name" class="product-img"  />
 
     <!-- ICON GROUP -->
     <div class="icon-group">
@@ -32,9 +32,9 @@
       </ng-container>
     </div>
 
-    <p class="price">{{ price }}</p>
+    <p class="price">{{ price | currency }}</p>
 
-    <button class="cart-btn">Thêm Vào Giỏ Hàng</button>
+    <button class="cart-btn" (click)="goToDetail($event)">Thêm Vào Giỏ Hàng</button>
   </div>
 
   <!-- OVERLAY PREVIEW -->
@@ -87,7 +87,7 @@
           <!-- PRICE -->
           <div class="overlay-price-row">
             <span class="price-label">Giá sản phẩm</span>
-            <span class="price-value">{{ price }}</span>
+            <span class="price-value">{{ price | currency }}</span>
           </div>
 
           <!-- BUTTONS -->
@@ -100,3 +100,10 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
