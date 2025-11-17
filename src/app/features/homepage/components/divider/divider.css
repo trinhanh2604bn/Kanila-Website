@@ -1,7 +1,8 @@
 .title {
   font: var(--font-beVietnamPro);
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   font-weight: var(--font-weight-medium);
+  color: var(--color-red);
 }
 
 @media (max-width: 768px) {
