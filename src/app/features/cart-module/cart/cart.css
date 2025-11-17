@@ -170,13 +170,13 @@
 /* checkbox settings */
 
 .ui-checkbox {
-  --primary-color: #642d38;
-  --secondary-color: #bea4a4;
-  --primary-hover-color: #ede0e0;
+  --primary-color: #9a9092;
+  --secondary-color: #ffffff;
+  --primary-hover-color: #ffb2b2;
   /* checkbox */
   --checkbox-diameter: 20px;
   --checkbox-border-radius: 5px;
-  --checkbox-border-color: #845b5b;
+  --checkbox-border-color: #9a9696;
   --checkbox-border-width: 1px;
   --checkbox-border-style: solid;
   /* checkmark */
