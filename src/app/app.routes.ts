@@ -23,9 +23,20 @@ import { SecurityPolicy } from './features/policy-module/security-policy/securit
 import { ShippingPolicy } from './features/policy-module/shipping-policy/shipping-policy';
 import { Post } from './features/find-module/post/post';
 import { Postdetail } from './features/find-module/postdetail/postdetail';
+import { AdminLayout } from './layouts/admin-layout/admin-layout';
 
 
 export const routes: Routes = [
+  {
+    path: '',
+    component: AdminLayout,
+    children:[
+      {
+        path:'',
+        loadChildren:() => import ('./features/admin-module/admin.routes').then(m => m.ADMIN_ROUTES)
+      }
+    ]
+  },
   {
     path: '',
     component: MainLayout, 

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'; // THÊM Input
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
