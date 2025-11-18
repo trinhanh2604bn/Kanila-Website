@@ -1,0 +1,190 @@
+<div class="user-page">
+
+  <h2 class="title">QUẢN LÝ NGƯỜI DÙNG</h2>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab"
+            [class.active]="activeTab === 'admin'"
+            [class.disabled]="isEditing()"
+            (click)="switchTab('admin')">
+      Danh sách Quản lý
+    </button>
+
+    <button class="tab"
+            [class.active]="activeTab === 'customer'"
+            [class.disabled]="isEditing()"
+            (click)="switchTab('customer')">
+      Danh sách Khách hàng
+    </button>
+  </div>
+
+  <!-- ==========================
+       DANH SÁCH QUẢN LÝ
+       ========================== -->
+  <div *ngIf="activeTab === 'admin'" class="table-wrapper">
+
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>TÊN ĐĂNG NHẬP</th>
+          <th>HỌ VÀ TÊN</th>
+          <th>GIỚI TÍNH</th>
+          <th>NGÀY SINH</th>
+          <th>SỐ ĐIỆN THOẠI</th>
+          <th>EMAIL</th>
+          <th>ĐỊA CHỈ</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let u of users"
+            (click)="selectUser(u)"
+            [class.selected]="selectedUser?.id === u.id">
+
+          <td>{{u.id}}</td>
+          <td>{{u.username}}</td>
+          <td>{{u.middle}} {{u.first}}</td>
+          <td>{{u.gender}}</td>
+          <td>{{u.dob}}</td>
+          <td>{{u.phone}}</td>
+          <td>{{u.email}}</td>
+          <td>{{u.address}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="btn-row">
+      <button class="btn edit" (click)="editUser()" [disabled]="!selectedUser">Sửa Người Dùng</button>
+      <button class="btn delete" (click)="deleteUser()" [disabled]="!selectedUser">Xóa Người Dùng</button>
+    </div>
+  </div>
+
+  <!-- FORM SỬA QUẢN LÝ -->
+  <div *ngIf="showEditForm" class="edit-box">
+    <h3>Sửa thông tin người dùng</h3>
+
+    <div class="form-grid">
+
+      <label>Họ và tên:
+        <input [(ngModel)]="selectedUser!.middle">
+      </label>
+
+      <label>Tên đăng nhập:
+        <input [(ngModel)]="selectedUser!.username">
+      </label>
+
+      <label>Giới tính:
+        <input [(ngModel)]="selectedUser!.gender">
+      </label>
+
+      <label>Số điện thoại:
+        <input [(ngModel)]="selectedUser!.phone">
+      </label>
+
+      <label>Ngày sinh:
+        <input [(ngModel)]="selectedUser!.dob">
+      </label>
+
+      <label>Email:
+        <input [(ngModel)]="selectedUser!.email">
+      </label>
+
+      <label>Địa chỉ:
+        <input [(ngModel)]="selectedUser!.address">
+      </label>
+
+    </div>
+
+    <div class="save-row">
+      <button class="save-btn" (click)="saveUser()">Lưu Dữ Liệu</button>
+    </div>
+  </div>
+
+  <!-- ==========================
+       DANH SÁCH KHÁCH HÀNG
+       ========================== -->
+  <div *ngIf="activeTab === 'customer'" class="table-wrapper">
+
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tên đăng nhập</th>
+          <th>Họ và tên</th>
+          <th>Giới tính</th>
+          <th>Ngày sinh</th>
+          <th>Số điện thoại</th>
+          <th>Email</th>
+          <th>Địa chỉ</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let c of customers"
+            (click)="selectCustomer(c)"
+            [class.selected]="selectedCustomer?.id === c.id">
+
+          <td>{{c.id}}</td>
+          <td>{{c.username}}</td>
+          <td>{{c.middle}} {{c.first}}</td>
+          <td>{{c.gender}}</td>
+          <td>{{c.dob}}</td>
+          <td>{{c.phone}}</td>
+          <td>{{c.email}}</td>
+          <td>{{c.address}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="btn-row">
+      <button class="btn edit" (click)="openCustomerForm()" [disabled]="!selectedCustomer">Sửa Thông Tin</button>
+      <button class="btn delete" (click)="deleteCustomer()" [disabled]="!selectedCustomer">Xóa Tài Khoản</button>
+    </div>
+  </div>
+
+  <!-- FORM SỬA KHÁCH HÀNG (giống quản lý, không popup) -->
+  <div *ngIf="showCustomerForm" class="edit-box">
+    <h3>Sửa thông tin khách hàng</h3>
+
+    <div class="form-grid">
+
+      <label>Họ và tên:
+        <input [(ngModel)]="selectedCustomer!.middle">
+      </label>
+
+      <label>Tên đăng nhập:
+        <input [(ngModel)]="selectedCustomer!.username">
+      </label>
+
+      <label>Giới tính:
+        <input [(ngModel)]="selectedCustomer!.gender">
+      </label>
+
+      <label>Số điện thoại:
+        <input [(ngModel)]="selectedCustomer!.phone">
+      </label>
+
+      <label>Ngày sinh:
+        <input [(ngModel)]="selectedCustomer!.dob">
+      </label>
+
+      <label>Email:
+        <input [(ngModel)]="selectedCustomer!.email">
+      </label>
+
+      <label>Địa chỉ:
+        <input [(ngModel)]="selectedCustomer!.address">
+      </label>
+
+    </div>
+
+    <div class="save-row">
+      <button class="save-btn" (click)="saveCustomer()">Xác Nhận Chỉnh Sửa</button>
+    </div>
+  </div>
+
+</div>

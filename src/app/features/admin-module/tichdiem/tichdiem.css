@@ -1,0 +1,124 @@
+.loyalty-page {
+  padding: var(--space-6);
+  font-family: var(--font-nunito);
+}
+
+.title {
+font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #6B1E2E;
+}
+
+.box {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--color-grey);
+}
+
+.tier {
+  background: var(--color-pink1);
+  padding: var(--space-5);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-5);
+  border: 1px solid var(--color-pink2);
+}
+
+.tier-name {
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-extraBold);
+  color: var(--color-red);
+  margin-bottom: var(--space-3);
+}
+
+.tier-row {
+  display: grid;
+  grid-template-columns: 1fr 200px 1fr 200px;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.check-area {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-s);
+  gap: var(--space-2);
+  color: var(--color-brown);
+}
+
+.input-area {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.input-area input {
+  width: 100%;
+  height: var(--form-height-sm);
+  padding: var(--form-padding-y) var(--form-padding-x);
+  border-radius: var(--form-border-radius);
+  border: var(--form-border-width) solid var(--form-border-color);
+  font-size: var(--font-size-s);
+  font-family: var(--font-nunito);
+}
+
+.input-area input:disabled {
+  background: var(--form-disabled-bg);
+  opacity: var(--form-disabled-opacity);
+}
+
+.unit {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-brown);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-6);
+}
+
+.save-btn {
+  background: var(--color-pink3);
+  border: none;
+  padding: 10px 30px;
+  font-size: var(--font-size-s);
+  color: var(--color-red);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .tier-row {
+        grid-template-columns: 1fr 1fr; 
+        gap: var(--space-4); 
+
+    }
+}
+
+@media (max-width: 600px) {
+    .tier-row {
+        grid-template-columns: 1fr; 
+        gap: var(--space-5);
+    }
+    
+    .input-area {
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .input-area input {
+        width: 60%;
+    }
+}

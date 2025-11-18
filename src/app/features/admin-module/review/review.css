@@ -1,0 +1,212 @@
+
+.review-page {
+  width: 100%;
+  padding: var(--space-5) var(--space-6); 
+  box-sizing: border-box;
+  font-family: var(--font-nunito);
+}
+
+.page-title {
+  font-size: var(--font-size-l, 28px); 
+  font-weight: var(--font-weight-extraBold, 700);
+  margin-bottom: var(--space-5, 24px);
+  color: var(--color-red, #6B1E2E);
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5, 24px);
+}
+
+.review-card {
+  width: 100%; 
+  background-color: var(--color-pink1, #FFE8EC);
+  border-radius: var(--radius-lg, 8px);
+  padding: var(--space-4) var(--space-5); 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-header {
+  display: flex;
+  gap: var(--space-4, 16px);
+  align-items: flex-start;
+  margin-bottom: var(--space-4, 16px);
+}
+
+.avatar {
+  width: 60px; 
+  height: 60px;
+  border-radius: var(--radius-full, 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.icon-user {
+  font-size: 40px; 
+  color: #b67882;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row-1 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+}
+
+.user-name {
+  font-size: var(--font-size-ml, 18px); 
+  font-weight: var(--font-weight-extraBold, 800);
+  color: var(--color-red, #6b1e2e); 
+  margin: 0;
+}
+
+.text {
+  font-size: var(--font-size-xs, 14px); 
+  color: var(--color-brown, #372B2B);
+  opacity: 0.85;
+  margin: 0;
+}
+
+.content {
+  font-size: var(--font-size-s, 16px); 
+  color: var(--color-brown, #372B2B);
+  margin-top: var(--space-2, 8px);
+}
+
+
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-4, 16px);
+}
+
+.time-box {
+  background-color: var(--color-white); 
+  border: 1px solid var(--color-pink2, #ffd6de); 
+  border-radius: var(--radius-full, 9999px); 
+  padding: 6px 10px; 
+  color: var(--color-red, #6B1E2E); 
+  font-size: var(--font-size-xs, 14px);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-box .time-icon {
+  font-size: 14px; 
+}
+
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: var(--space-3, 12px);
+}
+
+button {
+  font-family: var(--font-nunito);
+  border-radius: var(--radius-md, 6px);
+  /* Giảm padding nút */
+  padding: 8px 20px; 
+  font-size: var(--font-size-xs, 14px);
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 600;
+}
+
+.approve {
+  background-color: var(--color-red, #6b1e2e);
+  border: none;
+  color: var(--color-white);
+}
+
+.reject {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-red, #6b1e2e);
+  color: var(--color-red);
+}
+
+.approve:hover,
+.reject:hover {
+  background-color: var(--color-pink3, #FFADBE);
+  color: var(--color-white);
+  border-color: var(--color-pink3, #FFADBE);
+}
+
+/* --- B. Xử lý Responsive (Mobile/Nhỏ) --- */
+@media (max-width: 600px) {
+    .review-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+    
+    .time-box {
+        width: 100%;
+        text-align: left;
+        padding-left: var(--space-4);
+    }
+    
+    .button-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .button-group button {
+        flex-grow: 1; /* Nút sẽ rộng ra */
+        text-align: center;
+    }
+}
+
+/* Thông tin chi tiết đánh giá */
+.review-details {
+  display: flex;
+  /* Khoảng cách giữa các chi tiết (Sản phẩm | Xếp hạng) */
+  gap: var(--space-6, 32px); 
+  padding: var(--space-3) 0;
+  margin-bottom: var(--space-3);
+  border-top: 1px dashed var(--color-pink2, #ffd6de);
+  border-bottom: 1px dashed var(--color-pink2, #ffd6de);
+  font-size: var(--font-size-xs, 14px);
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+
+.detail-label {
+  font-weight: 500;
+  color: var(--color-brown, #372B2B);
+  opacity: 0.7;
+}
+
+.detail-value {
+  font-weight: 700;
+  color: var(--color-red, #6B1E2E);
+}
+
+.detail-value.stars {
+  color: #ffc107; /* Màu vàng sao */
+}
+
+/* responsive cho review-details */
+@media (max-width: 600px) {
+    .review-details {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+}
