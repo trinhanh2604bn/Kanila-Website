@@ -1,0 +1,92 @@
+.sidebar {
+  width: 240px;
+  height: calc(100vh - 60px);
+  background-color: #FFE8EC;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  font-family: 'Nunito', sans-serif;
+  flex-shrink: 0;
+  position: fixed;
+  top: 60px; 
+  left: 0;
+  z-index: 10; 
+}
+
+
+.sidebar-header {
+  padding: 0 25px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #6B1E2E;
+  object-fit: cover;
+}
+
+.username {
+  color: #6B1E2E;
+  font-weight: 800;
+  font-size: 25px;
+  margin: 0;
+}
+
+
+.divider {
+  border: none;
+  border-top: 2px solid #909090;
+  margin: 15px 0 25px;
+}
+
+
+.menu {
+  padding: 0 25px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  font-size: 20px;
+  font-weight: 500; 
+  color: #372B2B;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  color: #FFADBE;
+}
+
+.menu-item {
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #372B2B;
+  transition: color 0.2s ease;
+}
+
+.menu-item a:hover,
+.menu-item a.active {
+  color: #FFADBE;
+}  
+
+

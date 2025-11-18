@@ -1,0 +1,50 @@
+<div class="loyalty-page">
+
+  <h2 class="title">ĐIỀU KIỆN THĂNG HẠNG THÀNH VIÊN</h2>
+
+  <div class="box">
+
+    <div class="tier" *ngFor="let t of tiers">
+      <div class="tier-name">{{ t.name }}</div>
+
+      <div class="tier-row">
+
+        <label class="check-area">
+          <input type="checkbox" [(ngModel)]="t.minOrdersEnabled" />
+          <span>Thành công mua ít nhất (không đổi, trả hàng)</span>
+        </label>
+
+        <div class="input-area">
+          <input 
+            type="number" 
+            [(ngModel)]="t.minOrders"
+            [disabled]="!t.minOrdersEnabled"
+            placeholder="Số Đơn"
+          />
+          <span class="unit">ĐƠN</span>
+        </div>
+
+        <label class="check-area">
+          <input type="checkbox" [(ngModel)]="t.minSpendEnabled" />
+          <span>Chi tiêu ít nhất</span>
+        </label>
+
+        <div class="input-area">
+          <input 
+            type="number" 
+            [(ngModel)]="t.minSpend"
+            [disabled]="!t.minSpendEnabled"
+            placeholder="Vnd"
+          />
+          <span class="unit">VND</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <button class="save-btn" (click)="saveData()">Lưu Dữ Liệu</button>
+    </div>
+
+  </div>
+</div>
