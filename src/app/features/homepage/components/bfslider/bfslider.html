@@ -1,0 +1,6 @@
+<div id="comparison">
+  <figure >
+    <div id="divisor" [style.width.%]="csliderValue"></div>
+  </figure>
+  <input type="range" min="0" max="100" [value]="csliderValue" (input)="moveDivisor($event)" id="slider">
+</div>
