@@ -36,11 +36,63 @@ import { Authentication } from './features/auth/pages/authentication/authenticat
 
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'auth-page', pathMatch: 'full' },
+
+  // đăng nhập
+  { path: 'auth-page', component: Authentication },
   // trang chính
   {path: 'mainpage',component: Mainpage},
-  // admin
+  
+  // account
   {
     path: '',
+    component: MainLayout, 
+    children: [
+      // hồ sơ
+      {
+        path: 'account',
+        loadChildren: () =>
+          import('./features/account-module/account-module-module').then(m => m.AccountModuleModule)
+      },
+      // giỏ hàng
+      {path: 'cart',component: Cart},
+      {path: 'checkout', component: CheckOutPage},
+      { path: 'thanks', component: ThankYouPage},
+      { path: 'detail', component: DetailOrder },
+      // mxh
+      {path: 'communitypage',component: CommunityPage },
+      //  blog
+      { path: 'blog', component: Post },
+
+      // blog chi tiết 
+      { path: 'postdetail/:id', component: Postdetail },
+
+      // chính sách
+      {path: 'contact',component: Contact },
+      { path: 'agent', component: Agent},
+      { path: 'returnpolicy', component: ReturnPolicy},
+      { path: 'faq', component: Faq },
+      { path: 'cookie', component: CookiePolicy },
+      { path: 'feedback', component: Feedback },
+      { path: 'intro', component: Introduction },
+      { path: 'paymentpolicy', component: PaymentPolicy },
+      { path: 'security', component: SecurityPolicy },
+      
+      // trang chính
+      {path: 'category',component: Category},
+      {path: 'detail/:slug',component: ProductDetail},
+      // brand
+      {path: 'brand-list', component: BrandListComponent,  },
+      { path: 'beauty-preference',component: BeautyPreferenceComponent, },
+      { path: 'overlay-preference1', component: OverlayPreference1Component,  },
+      { path: 'overlay-preference2', component: OverlayPreference2,},
+      { path: 'overlay-preference3', component: OverlayPreference3,  },
+
+    ]
+  },
+  // admin
+  {
+    path: 'admin',
     component: AdminLayout,
     children:[
       {
@@ -49,118 +101,7 @@ export const routes: Routes = [
       }
     ]
   },
-  // account
-  {
-    path: '',
-    component: MainLayout, 
-    children: [
-      { path: '', redirectTo: 'mainpage', pathMatch: 'full'},
-      // hồ sơ
-      {
-        path: 'account',
-        loadChildren: () =>
-          import('./features/account-module/account-module-module').then(m => m.AccountModuleModule)
-      },
-      // giỏ hàng
-      {
-        path: 'cart',
-        component: Cart
-      },
-      {
-        path: 'checkout',
-        component: CheckOutPage
-      },
-      {
-        path: 'thanks',
-        component: ThankYouPage
-      },
-      {
-        path: 'detail',
-        component: DetailOrder
-      },
-      // mxh
-      {
-        path: 'communitypage',
-        component: CommunityPage
-      },
-      //  blog
-      { path: 'blog', component: Post },
 
-      // blog chi tiết 
-      { path: 'postdetail/:id', component: Postdetail },
-
-      // chính sách
-      {
-        path: 'contact',
-        component: Contact
-      },
-      {
-        path: 'agent',
-        component: Agent
-      },
-      {
-        path: 'returnpolicy',
-        component: ReturnPolicy
-      },
-      {
-        path: 'faq',
-        component: Faq
-      },
-      {
-        path: 'cookie',
-        component: CookiePolicy
-      },
-      {
-        path: 'feedback',
-        component: Feedback
-      },
-      {
-        path: 'intro',
-        component: Introduction
-      },
-      {
-        path: 'paymentpolicy',
-        component: PaymentPolicy
-      },
-      {
-        path: 'security',
-        component: SecurityPolicy
-      },
-      {
-        path: 'shippolicy',
-        component: ShippingPolicy
-      },
-      
-      // trang chính
-      {path: 'category',component: Category},
-
-      {path: 'detail/:slug',component: ProductDetail},
-
-      // brand
-      {
-        path: 'brand-list',
-        component: BrandListComponent,
-      },
-      {
-        path: 'beauty-preference',
-        component: BeautyPreferenceComponent,
-      },
-      {
-        path: 'overlay-preference1',
-        component: OverlayPreference1Component,
-      },
-      {
-        path: 'overlay-preference2',
-        component: OverlayPreference2,
-      },
-      {
-        path: 'overlay-preference3',
-        component: OverlayPreference3,
-      },
-
-    ]
-  },
-  { path: 'auth-page', component: Authentication },
-  // { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' }
 ]; 
 

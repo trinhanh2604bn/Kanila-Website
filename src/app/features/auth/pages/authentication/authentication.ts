@@ -46,7 +46,7 @@ export class Authentication implements OnInit {
 
     if (result.success) {
       this.notification = null;
-      this.router.navigate([' ']);
+      this.router.navigate(['/mainpage']);
     } else {
       this.notification = {
         type: 'error',
