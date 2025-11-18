@@ -15,4 +15,6 @@ export class OrderCardReturn {
   goToDetail() {
     this.router.navigate(['account/returndetail']);
   }
+  
+ goProductdetail(){this.router.navigate(['detail/:slug']);}
 }

@@ -1,12 +1,12 @@
 <div class="article-body">
   <main class="article-wrapper">
-    <button class="blog-card-btn" type="button" (click)="goBack()">
+    <button class="blog-card-btn" type="button" (click)="goBlog()">
       ← Quay lại danh sách
     </button>
 
     <article class="article-hero-card">
       <div class="article-hero-content">
-        <div class="article-hero-meta">January 20, 2025 · Bài {{ detailId }}</div>
+        <div class="article-hero-meta">January 20, 2025 · </div>
 
         <h1 class="article-hero-title">
           Bí mật làn da căng bóng ánh hồng như ánh đèn sân khấu
@@ -96,7 +96,7 @@
           <div class="blog-more-title-wrap">
             <h2 class="blog-more-title">BLOG KHÁC</h2>
             <!-- nếu muốn quay lại list tổng -->
-            <a href="javascript:void(0)" class="blog-more-link" (click)="goBack()"
+            <a href="javascript:void(0)" class="blog-more-link" (click)="goBlog()"
               >Xem Tất Cả</a
             >
           </div>
@@ -119,7 +119,7 @@
                 <button
                   class="blog-card-btn"
                   type="button"
-                  (click)="openOtherDetail(2)"
+                  (click)="goBlog()"
                 >
                   Đọc thêm
                 </button>
@@ -141,7 +141,7 @@
                 <button
                   class="blog-card-btn"
                   type="button"
-                  (click)="openOtherDetail(3)"
+                  (click)="goBlog()"
                 >
                   Đọc thêm
                 </button>
@@ -162,7 +162,7 @@
                 <button
                   class="blog-card-btn"
                   type="button"
-                  (click)="openOtherDetail(1)"
+                  (click)="goBlog()"
                 >
                   Đọc thêm
                 </button>

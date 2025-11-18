@@ -44,7 +44,7 @@ export const routes: Routes = [
   // đăng nhập
   // { path: 'auth-page', component: Authentication },
   // trang chính
-  {path: 'mainpage',component: Mainpage},
+  {path: '',component: Mainpage},
   
   // account
   {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CollapsePanel } from '../../../../shared/components/collapse-panel/collapse-panel';
 
 @Component({
@@ -10,5 +10,6 @@ import { CollapsePanel } from '../../../../shared/components/collapse-panel/coll
   styleUrl: './account-sidebar.css',
 })
 export class AccountSidebar {
-
+constructor(private router: Router) {}
+goBeauty(){this.router.navigate(['beauty-preference']);}
 }

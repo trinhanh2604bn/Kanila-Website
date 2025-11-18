@@ -45,6 +45,9 @@ subscribe(ev: Event) {
   goIntro() {
     this.router.navigate(['intro']);
   }
+  goMainpage() {
+    this.router.navigate(['mainpage']);
+  }
 }
 
 

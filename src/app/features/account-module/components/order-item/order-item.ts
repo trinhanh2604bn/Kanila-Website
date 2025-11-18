@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-item',
@@ -9,5 +10,6 @@ import { Component} from '@angular/core';
   styleUrl: './order-item.css',
 })
 export class OrderItem {
-
+constructor(private router: Router) {}
+ goProductdetail(){this.router.navigate(['detail/:slug']);}
 }

@@ -8,6 +8,7 @@ import { Roya } from '../../components/roya/roya';
 import { ProductSlider } from '../../components/product-slider/product-slider';
 import { Header } from '../../../../layouts/main-layout/header/header';
 import { Footer } from '../../../../layouts/main-layout/footer/footer';
+import { Router } from '@angular/router';
 
 
 
@@ -20,5 +21,7 @@ import { Footer } from '../../../../layouts/main-layout/footer/footer';
 })
 export class Mainpage {
 [x: string]: any;
-
+constructor(private router: Router) {}
+goCategory(){this.router.navigate(['category']);}
+goCommunity(){this.router.navigate(['communitypage']);}
 }

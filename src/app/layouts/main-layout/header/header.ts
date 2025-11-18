@@ -23,5 +23,10 @@ export class Header {
   }
 
    constructor(private router: Router) {}
-   goProductList(){this.router.navigate(['productlist']);}
+   goCategory(){this.router.navigate(['category']);}
+   goMainpage(){this.router.navigate(['mainpage']);}
+   goBrand(){this.router.navigate(['brand-list']);}
+   goWishlist(){this.router.navigate(['/account/wishlist']);}
+   goCart(){this.router.navigate(['/cart']);}
+   goAccount(){this.router.navigate(['/account']);}
 }

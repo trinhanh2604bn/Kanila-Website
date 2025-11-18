@@ -10,12 +10,12 @@
   <div class="main-header-row">
     <div class="header-content">
       <!-- Logo -->
-      <div class="header-logo">
+      <div class="header-logo" (click)="goMainpage()">
         <img src="images/logobg.png" alt="Kanila logo">
       </div>
 
       <!-- Thanh search (desktop) -->
-      <div class="header-search" (click)="goProductList()">
+      <div class="header-search" (click)="goCategory()">
         <div class="search-wrapper">
           <input type="text" placeholder="Tìm kiếm">
           <i class="fa fa-search search-icon"></i>
@@ -35,7 +35,7 @@
       </div>
 
       <!-- Icon Cá nhân -->
-      <a href="#" class="user-avatar">
+      <a class="user-avatar" (click)="goAccount()">
         <i class="fa fa-user"></i>
       </a>
     </div>
@@ -44,18 +44,18 @@
   <!-- Menu desktop -->
   <div class="menu">
     <div>
-      <a href="#">Tất cả</a>
-      <a href="#">Khuôn mặt</a>
-      <a href="#">Đôi mắt</a>
-      <a href="#">Đôi môi</a>
-      <a href="#">Đôi má</a>
-      <a href="#">Sản phẩm mới</a>
-      <a href="#">Thương hiệu</a>
-      <a href="#">Set quà</a>
-      <a href="#">Deal hot</a>
+      <a (click)="goMainpage()">Tất cả</a>
+      <a (click)="goCategory()">Khuôn mặt</a>
+      <a (click)="goCategory()">Đôi mắt</a>
+      <a (click)="goCategory()">Đôi môi</a>
+      <a (click)="goCategory()">Đôi má</a>
+      <a (click)="goCategory()">Sản phẩm mới</a>
+      <a (click)="goBrand()">Thương hiệu</a>
+      <a (click)="goCategory()">Set quà</a>
+      <a (click)="goCategory()">Deal hot</a>
       <div class="icon">
-        <a href="#"><i class="fa fa-heart"></i></a>
-        <a href="#"><i class="fa fa-shopping-bag"></i></a>
+        <a (click)="goWishlist()"><i class="fa fa-heart"></i></a>
+        <a (click)="goCart()"><i class="fa fa-shopping-bag"></i></a>
       </div>
     </div>
   </div>

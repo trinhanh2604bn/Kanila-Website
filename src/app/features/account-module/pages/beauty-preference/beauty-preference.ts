@@ -10,13 +10,13 @@ interface FilterOption {
 }
 
 interface FilterGroup {
-  id: string; // e.g., 'skinTone', 'brand'
-  label: string; // e.g., 'Màu Da', 'Thương Hiệu'
+  id: string; 
+  label: string;
   type: 'single-select' | 'multi-select' | 'brand-search';
-  options?: FilterOption[]; // Cho single/multi-select
-  searchValue?: string; // Cho brand-search
-  isExpanded: boolean; // Trạng thái mở/đóng của từng nhóm filter
-  selectedDisplay: string; // Text hiển thị ở trạng thái default (Hình 5)
+  options?: FilterOption[]; 
+  searchValue?: string;
+  isExpanded: boolean; 
+  selectedDisplay: string; 
 }
 
 @Component({

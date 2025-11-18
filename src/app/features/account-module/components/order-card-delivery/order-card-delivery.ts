@@ -15,4 +15,6 @@ export class OrderCardDelivery {
   goToDetail() {
     this.router.navigate(['account/returnrequest']);
   }
+  
+ goProductdetail(){this.router.navigate(['detail/:slug']);}
 }

@@ -1,6 +1,7 @@
 // src/app/layouts/main-layout/post/post.ts
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -10,9 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './post.css',
 })
 export class Post {
-  @Output() readMore = new EventEmitter<number>();
+  // @Output() readMore = new EventEmitter<number>();
 
-  onReadMore(id: number) {
-    this.readMore.emit(id);
-  }
+  constructor(private router: Router) {}
+  goDetail() {this.router.navigate(['postdetail/:id'])}
 }

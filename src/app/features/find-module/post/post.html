@@ -9,7 +9,7 @@
     <div class="article-hero-content">
       <div>
         <div class="article-hero-date">20/1/2025</div>
-        <h2 class="article-hero-title">
+        <h2 class="article-hero-title" >
           Xu hướng làm đẹp 2025: Chuẩn skincare tối giản với mỹ phẩm thiên nhiên
         </h2>
         <p class="article-hero-text">
@@ -27,13 +27,11 @@
           <span class="tag-pill"># EcoFriendly</span>
         </div>
 
-        <!-- ❌ KHÔNG dùng routerLink -->
-        <!-- ✅ CHỈ dùng click -->
+
         <button
           class="article-hero-btn"
           type="button"
-          (click)="onReadMore(1)"
-        >
+          (click)="goDetail()">
           Đọc thêm
         </button>
       </div>
@@ -68,7 +66,7 @@
         <button
           class="article-hero-btn"
           type="button"
-          (click)="onReadMore(2)"
+          (click)="goDetail()"
         >
           Đọc thêm
         </button>
@@ -105,7 +103,7 @@
         <button
           class="article-hero-btn"
           type="button"
-          (click)="onReadMore(3)"
+          (click)="goDetail()"
         >
           Đọc thêm
         </button>

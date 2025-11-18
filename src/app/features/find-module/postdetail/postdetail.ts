@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-postdetail',
@@ -9,20 +10,23 @@ import { CommonModule } from '@angular/common';
   styleUrl: './postdetail.css',
 })
 export class Postdetail {
-  // id bài hiện tại (MainLayout truyền vào)
-  @Input() detailId = 1;
 
-  // quay lại list
-  @Output() back = new EventEmitter<void>();
+  // @Input() detailId = 1;
 
-  // mở 1 bài khác trong “Blog khác”
-  @Output() openOther = new EventEmitter<number>();
 
-  goBack() {
-    this.back.emit();
-  }
+  // @Output() back = new EventEmitter<void>();
 
-  openOtherDetail(id: number) {
-    this.openOther.emit(id);
-  }
+
+  // @Output() openOther = new EventEmitter<number>();
+
+  // goBack() {
+  //   this.back.emit();
+  // }
+
+  // openOtherDetail(id: number) {
+  //   this.openOther.emit(id);
+  // }
+
+  constructor(private router: Router) {}
+  goBlog() {this.router.navigate(['blog'])}
 }
