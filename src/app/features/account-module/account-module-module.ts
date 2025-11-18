@@ -14,6 +14,7 @@ import { OrdersDelivered } from './pages/order-management/orders-delivered/order
 import { OrdersReturn } from './pages/order-management/orders-return/orders-return';
 import { OrdersCancelled } from './pages/order-management/orders-cancelled/orders-cancelled';
 import { ReturnRequestDetail } from './pages/return-request-detail/return-request-detail';
+import { Payment } from './pages/payment/payment';
 
 
 export const AccountModuleModule: Routes = [
@@ -29,6 +30,7 @@ export const AccountModuleModule: Routes = [
       {path: 'points', component: Points},
       {path: 'returnrequest',component: ReturnRequest},
       {path: 'returndetail',component: ReturnRequestDetail},
+      {path: 'pay',component: Payment},
 
       {
         path: 'ordershell',
