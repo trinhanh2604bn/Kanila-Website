@@ -20,8 +20,8 @@ export class OverlayPreference3 {
     console.log('Chuyển sang page Làn Da Của Bạn');
   }
 
-  goToHomepage() {
-    this.router.navigate([' ']);
+  goMain() {
+    this.router.navigate(['mainpage']);
     console.log('Quay về Homepage');
   }
 }

@@ -1,0 +1,37 @@
+.parent-container {
+    /* 1. Thiết lập ngữ cảnh định vị */
+    position: relative;
+    /* Thiết lập kích thước cho Parent (ví dụ) */
+    width: 100%;
+    height: 100%;
+    border: none; 
+    overflow: auto; /* Quan trọng nếu Overlay có hiệu ứng tràn */
+}
+
+.content-component {
+    /* Component nằm dưới */
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    /* ... các style khác của nội dung chính ... */
+}
+
+.overlay-component {
+    /* 2. Định vị Tuyệt đối so với Parent */
+    position: absolute;
+    /* 3. Đặt Overlay phủ lên toàn bộ Parent */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 4. Đảm bảo nó nằm trên Content Component */
+    z-index: 10; 
+    
+    /* Các style để lớp phủ hiển thị */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu đen trong suốt 50% */
+    color: var(--color-brown);
+    display: flex; /* Ví dụ để căn giữa nội dung */
+    align-items: center;
+    justify-content: center;
+}

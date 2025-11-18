@@ -36,14 +36,20 @@ import { Authentication } from './features/auth/pages/authentication/authenticat
 import { ProductList } from './features/product/components/product-list/product-list';
 import { ProductCardComponent } from './shared/components/product-card/product-card';
 import { OrdersShipping } from './features/account-module/pages/order-management/orders-shipping/orders-shipping';
+import { MainPageOverlay } from './features/homepage/pages/main-page-overlay/main-page-overlay';
 
 
 export const routes: Routes = [
-  // { path: '', redirectTo: 'auth-page', pathMatch: 'full' },
+  { path: '', redirectTo: 'auth-page', pathMatch: 'full' },
 
   // đăng nhập
-  // { path: 'auth-page', component: Authentication },
+  { path: 'auth-page', component: Authentication },
+
+
   // trang chính
+
+  {path: 'ovlp',component: MainPageOverlay},
+  
   {path: '',component: Mainpage},
   
   // account

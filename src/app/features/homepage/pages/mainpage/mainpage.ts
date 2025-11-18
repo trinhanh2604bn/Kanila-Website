@@ -24,4 +24,6 @@ export class Mainpage {
 constructor(private router: Router) {}
 goCategory(){this.router.navigate(['category']);}
 goCommunity(){this.router.navigate(['communitypage']);}
+gOvlp(){this.router.navigate(['ovlp']);}
+
 }
