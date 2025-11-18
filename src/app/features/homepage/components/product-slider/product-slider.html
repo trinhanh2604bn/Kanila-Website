@@ -1,0 +1,22 @@
+<div class="product-list-container">
+  <!-- Lặp qua sản phẩm và hiển thị chúng -->
+  <div class="product-card" *ngFor="let product of paginatedProducts">
+    <app-product-card
+      [brand]="product.brandId"
+      [name]="product.productName"
+      [price]="product.price"
+      [image]="product.imageUrl"
+      [description]="product.description"
+      [stock]="product.stock"
+      [bought]="product.bought"
+      [rating]="product.averageRating">
+    </app-product-card>
+  </div>
+</div>
+
+<!-- Phân trang -->
+<div class="pagination">
+  <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Trước</button>
+  <span>{{ currentPage }}</span>
+  <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage * itemsPerPage >= products.length">Sau</button>
+</div>

@@ -1,0 +1,105 @@
+<div class="card" (mouseenter)="hover = true" (mouseleave)="hover = false" (click)="goToDetail($event)" >
+  <!-- IMAGE + ICONS -->
+  <div class="img-wrapper">
+    <img [src]="image" [alt]="name" class="product-img"  />
+
+    <!-- ICON GROUP -->
+    <div class="icon-group">
+      <!-- HEART -->
+      <button class="icon-btn heart-btn" [class.active]="wishlist" (click)="toggleWishlist($event)">
+        <i class="fa-regular fa-heart" *ngIf="!wishlist"></i>
+        <i class="fa-solid fa-heart" *ngIf="wishlist"></i>
+      </button>
+
+      <!-- EYE -->
+      <button class="icon-btn eye-btn" (click)="openPreview($event)">
+        <i class="fa-regular fa-eye" *ngIf="!showPreview"></i>
+        <i class="fa-solid fa-eye" *ngIf="showPreview"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- TEXT CONTENT -->
+  <div class="content">
+    <h3 class="product-brand">{{ brand }}</h3>
+    <p class="product-name">{{ name }}</p>
+
+    <!-- RATING -->
+    <div class="stars">
+      <ng-container *ngFor="let s of [1, 2, 3, 4, 5]">
+        <i class="fa-solid fa-star" *ngIf="s <= rating"></i>
+        <i class="fa-regular fa-star" *ngIf="s > rating"></i>
+      </ng-container>
+    </div>
+
+    <p class="price">{{ price | currency }}</p>
+
+    <button class="cart-btn" >Thêm Vào Giỏ Hàng</button>
+  </div>
+
+  <!-- OVERLAY PREVIEW -->
+  <div class="overlay" *ngIf="showPreview" (click)="closePreview()">
+    <div class="overlay-content" (click)="$event.stopPropagation()">
+      <button class="overlay-close" (click)="closePreview()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="overlay-body">
+        <!-- LEFT: IMAGE + STARS -->
+        <div class="overlay-left">
+          <img [src]="image" [alt]="name" class="preview-img" />
+
+          <div class="overlay-rating">
+            <ng-container *ngFor="let s of [1, 2, 3, 4, 5]">
+              <i class="fa-solid fa-star" *ngIf="s <= rating"></i>
+              <i class="fa-regular fa-star" *ngIf="s > rating"></i>
+            </ng-container>
+          </div>
+        </div>
+
+        <!-- RIGHT: TEXT -->
+        <div class="overlay-right">
+          <h2 class="overlay-name">{{ name }}</h2>
+
+          <!-- SOLD + STATUS -->
+          <div class="overlay-top-row">
+            <span class="sold">Đã bán {{ bought }} sản phẩm</span>
+            <span class="status">
+              Trạng thái:
+              <span class="status-value" [class.out-of-stock]="status === 'Hết hàng'">
+                {{ status }}
+              </span>
+            </span>
+          </div>
+
+          <!-- DESCRIPTION -->
+          <div class="overlay-desc">
+            {{ description }}
+          </div>
+
+          <!-- LINK -->
+           <div class="overlay-link-row">
+            <a href="javascript:void(0)" class="overlay-link" (click)="goToDetail($event)">
+              Xem chi tiết sản phẩm
+            </a>
+          </div>
+
+          <!-- PRICE -->
+          <div class="overlay-price-row">
+            <span class="price-label">Giá sản phẩm</span>
+            <span class="price-value">{{ price | currency }}</span>
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="overlay-actions">
+            <button class="btn-add">Thêm Vào Giỏ Hàng</button>
+            <button class="btn-buy">Mua Ngay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

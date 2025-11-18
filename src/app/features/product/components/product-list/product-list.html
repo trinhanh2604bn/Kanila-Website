@@ -1,0 +1,55 @@
+
+
+<!-- <section class="catalog-page"> -->
+  <!-- LEFT FILTER COLUMN -->
+  <!-- <aside class="catalog-filter">
+    <app-category-filter></app-category-filter>
+  </aside> -->
+
+  <!-- RIGHT PRODUCT LIST -->
+  <!-- <div class="catalog-products">
+    <h1 class="catalog-title">"p.brand"</h1>
+
+    <div class="product-grid"> -->
+      <!-- LOOP SẢN PHẨM -->
+      <!-- <div *ngFor="let product of products ">
+        <app-product-card
+        [brand]="product.brandId"
+        [name]="product.productName"
+        [price]="product.price"
+        [image]="product.imageUrl"
+        [description]="product.description"
+        [stock]="product.stock"
+        [bought]="product.bought"
+        [rating]="product.averageRating">
+  </app-product-card>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="catalog-page">
+  <aside class="catalog-filter">
+    <app-category-filter></app-category-filter>
+  </aside>
+
+  <div class="catalog-products">
+    <div class="product-grid">
+      <div *ngFor="let product of products">
+        <app-product-card
+          [brand]="product.brandId"
+          [name]="product.productName"
+          [price]="product.price"
+          [image]="product.imageUrl"
+          [description]="product.description"
+          [stock]="product.stock"
+          [bought]="product.bought"
+          [rating]="product.averageRating">
+          [productId]="product._id">
+        </app-product-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+
