@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgClass],
   templateUrl: './header.html',
-  styleUrls: ['./header.css']
+  styleUrls: ['./header.css'],
 })
 export class Header {
+  // trạng thái menu dropdown trên mobile
   menuVisible = false;
 
-  // Hàm toggle menu
   toggleMenu() {
     this.menuVisible = !this.menuVisible;
+  }
+
+  subscribe(ev: Event) {
+    ev.preventDefault();
+    alert('Cảm ơn bạn đã đăng ký!');
   }
 }

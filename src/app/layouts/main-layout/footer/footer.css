@@ -1,19 +1,29 @@
 .site-footer {
-  background: var(--color-red);         /* #6B1E2E */
-  color: var(--color-beige);            /* #FDF9F8 */
+  background: var(--color-red);
+  color: var(--color-beige);
   font-family: var(--font-beVietnamPro);
 }
 
 /* logo */
 .site-footer .brand-logo {
-  max-height: 42px;
-  filter: brightness(0) invert(1);
+  max-width: 180px;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.brand-logo{
+  margin-right: 20px;
+}
+.brand-logo:hover {
+  transform: translateY(-2px) scale(1.1);
 }
 
-/* ============ HÀNG 1 – ICON MXH ============ */
+/* ============ ICON MXH ============ */
 
 .site-footer .social-row {
-  gap: clamp(var(--space-2), 3vw, var(--space-7));
+  gap: clamp(var(--space-2), var(--space-5));
 }
 
 .site-footer .social-row .social,
@@ -32,7 +42,6 @@
     box-shadow 0.2s ease;
 }
 
-/* FB/Twitter/IG/Tiktok: nền sáng – icon đỏ */
 .site-footer .social-row .social {
   background-color: var(--color-beige);
   color: var(--color-red);
@@ -46,7 +55,7 @@
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Telegram: nền đỏ – icon sáng */
+/* Telegram */
 .site-footer .social-row .telegram {
   background-color: var(--color-red);
   color: var(--color-beige);
@@ -59,9 +68,8 @@
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* ============ HÀNG 2 – TIÊU ĐỀ & LINK ============ */
+/* ============ TIÊU ĐỀ & LINK ============ */
 
-/* 4 dòng tiêu đề  */
 .site-footer .sect-title {
   font-family: var(--font-nunito);
   font-weight: var(--font-weight-medium);
@@ -71,7 +79,6 @@
   margin-bottom: 0.75rem;
 }
 
-/* text nội dung – BeVietnamPro, body */
 .site-footer .footer-links a,
 .site-footer .contact li {
   font-family: var(--font-beVietnamPro);
@@ -80,12 +87,11 @@
   cursor: pointer;
 }
 
-/* link nội dung */
 .site-footer .footer-links a {
   color: rgba(253, 249, 248, 0.85);
   text-decoration: none;
   display: inline-block;
-  padding: 0.25rem 0;
+  padding: 0.25rem;
   transition: color 0.15s ease;
 }
 
@@ -94,7 +100,6 @@
 
 }
 
-/* thông tin liên hệ */
 .site-footer .contact li {
   color: var(--color-beige);
   opacity: 0.95;
@@ -105,9 +110,7 @@
   font-size: 1rem;
 }
 
-/* ============ HÀNG 3 – ĐĂNG KÝ EMAIL ============ */
-
-/* label "ĐĂNG KÍ NHANH..." */
+/*ĐĂNG KÍ */
 
 .site-footer .signup-form .email-input {
   min-width: 100px;
@@ -115,7 +118,7 @@
   color: var(--color-beige);
   border-radius: var(--form-border-radius);
   border: 1px solid rgba(253, 249, 248, 0.4);
-  padding: 0.6rem 0.9rem;
+  padding: 0 0.9rem;
   font-family: var(--font-beVietnamPro);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-s);
@@ -134,13 +137,11 @@
 /* ============ MOBILE ============ */
 
 @media (max-width: 700px) {
-  /* mục nhỏ: size mm trên mobile */
   .site-footer .sect-title {
     margin-top: 0.5rem;
     font-size: var(--font-size-mm);
   }
 
-  /* body text: size ms trên mobile */
   .site-footer .footer-links a,
   .site-footer .contact li,
   .site-footer .signup-form .email-input {
@@ -160,4 +161,19 @@
     padding-left: clamp(var(--space-4), 8vw, var(--space-9));
     padding-right: clamp(var(--space-4), 8vw, var(--space-9));
   }
+}
+
+.site-footer .footer-links a:hover,
+.site-footer .contact li:hover {
+  animation: pulse 0.7s ease-in-out infinite;
+}
+
+.site-footer .footer-links a,
+.site-footer .contact li {
+  transition: transform 0.3s ease;
+}
+
+.site-footer .footer-links a:hover,
+.site-footer .contact li:hover {
+  transform: scale(1.1);
 }

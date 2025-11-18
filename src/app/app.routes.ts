@@ -3,6 +3,7 @@ import { Mainpage } from './features/homepage/pages/mainpage/mainpage';
 import { MainLayout  } from './layouts/main-layout/main-layout';
 import { Component } from '@angular/core';
 import { Category } from './features/product/pages/category/category';
+import { ProductDetail } from './features/product/pages/product-detail/product-detail';
 
 
 export const routes: Routes = [
@@ -23,8 +24,12 @@ export const routes: Routes = [
       component: MainLayout,
       children: [
         {
-          path: 'all',
+          path: 'category',
           component: Category
+        },
+        {
+          path: 'detail/:slug',
+          component: ProductDetail
         }
       ]
 

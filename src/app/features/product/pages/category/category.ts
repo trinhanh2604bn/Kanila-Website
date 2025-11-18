@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import {  ProductList } from '../../components/product-list/product-list';
 import { RouterModule } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-category',

@@ -1,11 +1,7 @@
-<div class="card" (mouseenter)="hover = true" (mouseleave)="hover = false">
+<div class="card" (mouseenter)="hover = true" (mouseleave)="hover = false" (click)="goToDetail($event)" >
   <!-- IMAGE + ICONS -->
   <div class="img-wrapper">
-<<<<<<< HEAD
     <img [src]="image" [alt]="name" class="product-img"  />
-=======
-    <img [src]="image" [alt]="name" class="product-img" />
->>>>>>> 7e165251fb8c7aaa822f32a890d5f8767edf019e
 
     <!-- ICON GROUP -->
     <div class="icon-group">
@@ -36,15 +32,9 @@
       </ng-container>
     </div>
 
-<<<<<<< HEAD
     <p class="price">{{ price | currency }}</p>
 
-    <button class="cart-btn" (click)="goToDetail($event)">Thêm Vào Giỏ Hàng</button>
-=======
-    <p class="price">{{ price }}</p>
-
-    <button class="cart-btn">Thêm Vào Giỏ Hàng</button>
->>>>>>> 7e165251fb8c7aaa822f32a890d5f8767edf019e
+    <button class="cart-btn" >Thêm Vào Giỏ Hàng</button>
   </div>
 
   <!-- OVERLAY PREVIEW -->
@@ -88,8 +78,8 @@
           </div>
 
           <!-- LINK -->
-          <div class="overlay-link-row">
-            <a href="javascript:void(0)" class="overlay-link" (click)="openProductDetail($event)">
+           <div class="overlay-link-row">
+            <a href="javascript:void(0)" class="overlay-link" (click)="goToDetail($event)">
               Xem chi tiết sản phẩm
             </a>
           </div>
@@ -110,10 +100,6 @@
     </div>
   </div>
 </div>
-
-
-
-
 
 
 

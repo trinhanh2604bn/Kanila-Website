@@ -8,6 +8,7 @@ import { CategoryFilterComponent } from '../../../../shared/components/category-
 
 
 
+
 @Component({
   selector: 'app-product-list',
   imports: [SharedModule,ProductCardComponent, CommonModule, CategoryFilterComponent],

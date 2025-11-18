@@ -1,0 +1,522 @@
+/* --- BỐ CỤC CHUNG VÀ FLEXBOX --- */
+.product-detail-container {
+    /* ĐẶT CHIỀU RỘNG TỐI ĐA ĐỂ TẠO MARGIN 320PX */
+    max-width: 800px;
+    margin: 0 auto; /* Căn giữa */
+    padding: 40px var(--space-container);
+    font-family: var(--font-beVietnamPro);
+    background-color: var(--color-beige);
+}
+
+.main-content-flex {
+    display: flex;
+    gap: 30px; /* Giảm khoảng cách giữa hai cột */
+    align-items: flex-start;
+}
+
+.column-left {
+    /* GIẢM KÍCH THƯỚC CỘT ẢNH */
+    flex: 0 0 380px;
+    max-width: 45%;
+}
+
+.column-right {
+    flex-grow: 1;
+
+}
+
+/* --- CỘT TRÁI: GALLERY --- */
+.main-image-wrapper {
+    width: 100%;
+    border: var(--border-1) var(--color-pink1);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-white);
+}
+.main-image-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+.thumbnail-gallery {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    justify-content: flex-start;
+}
+
+.thumbnail-item {
+    width: 70px; /* Giảm kích thước ảnh thumbnail */
+    height: 70px;
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background-color: var(--color-white);
+}
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.thumbnail-item.active {
+    border-color: var(--color-red);
+}
+
+/* --- CỘT PHẢI: THÔNG TIN SẢN PHẨM --- */
+.info-section {
+    padding: 10px     ;
+    border-bottom: 1px solid var(--color-pink2);
+}
+
+
+
+.product-name {
+    font-family: var(--font-nunito);
+    font-weight: var(--font-weight-extraBold);
+    font-size: var(--font-size-l);
+    color: var(--color-brown);
+    margin-bottom: var(--space-1);
+}
+
+.product-description {
+    font-size: var(--font-size-s);
+    color: var(--color-brown);
+    margin-bottom: var(--space-3);
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-xs);
+    color: var(--color-brown);
+}
+.stars {
+    color: gold;
+}
+
+/* --- Giá --- */
+.price-section {
+    background-color: var(--color-pink1);
+    margin: var(--space-4) 0;
+    padding: var(--space-4) var(--space-3);
+    border-radius: var(--radius-md);
+    border: none;
+}
+
+.price {
+    font-family: var(--font-nunito);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-black);
+    color: var(--color-red);
+}
+
+/* --- Tùy chọn (Màu sắc) --- */
+.option-type {
+    font-size: var(--font-size-s);
+    color: var(--color-brown);
+    margin-bottom: var(--space-2);
+}
+.option-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-brown);
+    display: block;
+    margin-bottom: var(--space-2);
+}
+
+.color-options {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.color-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius-full);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.color-dot.active {
+    border-color: var(--color-red);
+    box-shadow: 0 0 0 2px var(--color-white);
+}
+
+/* --- Actions (Số lượng & Nút) --- */
+.actions-section {
+    display: flex;
+    align-items: center;
+    /* Giảm gap để các phần tử gần nhau hơn */
+    gap: var(--space-4); /* 16px */
+    border-bottom: none;
+    padding-bottom: var(--space-4);
+}
+
+.quantity-control {
+    display: flex;
+    border: var(--border-1) var(--color-grey);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    /* Thiết lập chiều cao tổng thể nhỏ hơn */
+    height: 38px;
+}
+
+.qty-btn {
+    background: var(--color-white);
+    border: none;
+    /* Giảm padding để thu nhỏ nút */
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--font-size-s); /* Dùng font nhỏ hơn */
+    cursor: pointer;
+    color: var(--color-brown);
+    width: 30px; /* Cố định chiều rộng */
+}
+
+.qty-display {
+    /* Giảm padding và chiều rộng */
+    padding: 0 var(--space-1);
+    border-left: var(--border-1) var(--color-grey);
+    border-right: var(--border-1) var(--color-grey);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-brown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Giảm chiều rộng hiển thị số lượng */
+}
+
+.purchase-buttons {
+    display: flex;
+    /* Đảm bảo các nút hành động nằm cạnh nhau */
+    gap: var(--space-3);
+    /* Áp dụng flex-grow cho các nút để chúng chia đều không gian còn lại */
+    flex-grow: 1;
+}
+
+.add-to-cart, .buy-now {
+    /* Thiết lập padding và chiều cao đồng bộ với quantity-control */
+    height: 45px;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-extraBold);
+    cursor: pointer;
+    font-size: var(--font-size-xs); /* Dùng font nhỏ (14px) */
+    transition: background-color 0.2s;
+    border: 2px solid var(--color-red);
+    flex-grow: 1; /* Quan trọng: làm cho các nút tự động mở rộng đều */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-to-cart {
+    background-color: var(--color-white);
+    color: var(--color-red);
+    /* Thay đổi giao diện nút Thêm vào giỏ hàng */
+    border: 2px solid var(--color-red);
+    background: none;
+    padding: 10px 20px;
+}
+
+.buy-now {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+/* BỔ SUNG CÁC STYLE NÀY VÀO CUỐI FILE product-detail.css CỦA BẠN */
+
+/* --- E. KHUYẾN MÃI / MÃ GIẢM GIÁ --- */
+.discount-section {
+    margin-top: var(--space-7); /* 48px */
+    margin-bottom: var(--space-7);
+}
+
+.discount-wrapper {
+    display: flex;
+    /* Dùng flexbox để căn giữa 3 ảnh và giữ khoảng cách */
+    gap: var(--space-4); /* 16px giữa các ảnh */
+    justify-content: center; /* Căn giữa các ảnh trong container */
+}
+
+.discount-image {
+    /* GIẢM KÍCH THƯỚC ẢNH ĐI KHOẢNG 1/3 */
+    width: 450px;
+    height: 200px; /* Điều chỉnh chiều cao cho cân đối (hoặc dùng auto nếu tỷ lệ ảnh cố định) */
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--color-pink2); /* Thêm border nhẹ để tách biệt */
+    background-color: var(--color-white);
+}
+
+/* --- F. ĐIỂM NỔI BẬT (FEATURES) --- */
+.feature-section {
+    background-color: var(--color-pink1); /* Nền hồng nhạt */
+    padding: var(--space-6) var(--space-5); /* 32px 24px */
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-pink2);
+}
+
+.feature-header {
+    text-align: center;
+    margin-bottom: var(--space-5);
+    position: relative;
+}
+
+.feature-title {
+    font-family: var(--font-nunito);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-extraBold);
+    color: var(--color-brown);
+    text-transform: uppercase;
+}
+
+.feature-subtitle {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: #777;
+    margin-top: var(--space-1);
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--space-4);
+    text-align: center;
+}
+
+.feature-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-4);
+    border-right: 1px solid var(--color-pink2); /* Đường phân cách */
+}
+.feature-item:last-child {
+    border-right: none;
+}
+
+.feature-icon {
+    font-size: var(--font-size-l); /* Icon size */
+    color: var(--color-brown); /* Màu nâu */
+    margin-bottom: var(--space-2);
+}
+
+.feature-item p {
+    font-family: var(--font-beVietnamPro);
+    font-size: var(--font-size-xs);
+    color: var(--color-brown);
+    font-weight: var(--font-weight-medium);
+}
+
+/* --- G. THÔNG TIN CHI TIẾT (ACCORDIONS) --- */
+.accordion-section {
+    margin-top: var(--space-7);
+}
+
+.accordion-item {
+    cursor: pointer;
+    padding: var(--space-4) var(--space-0);
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-beVietnamPro);
+    font-size: var(--font-size-s);
+    color: var(--color-brown);
+    font-weight: var(--font-weight-extraBold);
+    text-transform: uppercase;
+}
+.accordion-header i {
+    font-size: var(--font-size-xs);
+    color: var(--color-brown);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--color-grey);
+    margin: var(--space-0);
+}
+
+/* --- H. KHU VỰC REVIEW VÀ ĐÁNH GIÁ (REVIEW SECTION) --- */
+.review-section {
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    /* Đảm bảo nền khớp với container chính */
+}
+
+/* --- Tiêu đề Review (Giữ nguyên) --- */
+.review-header-wrapper {
+    text-align: center;
+    margin-bottom: var(--space-7);
+    position: relative;
+}
+.review-header-wrapper::before,
+.review-header-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    background-color: var(--color-pink2);
+}
+.review-header-wrapper::before {
+    left: 0;
+    width: 30%;
+    transform: translateY(-50%);
+}
+.review-header-wrapper::after {
+    right: 0;
+    width: 30%;
+    transform: translateY(-50%);
+}
+.review-title {
+    display: inline-block;
+    padding: 0 var(--space-4);
+    background-color: var(--color-beige); /* Sử dụng nền chính của container */
+    position: relative;
+    z-index: 10;
+}
+.review-heading {
+    font-family: var(--font-nunito);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-extraBold);
+    color: var(--color-brown);
+    margin-bottom: var(--space-1);
+    letter-spacing: 0.1em;
+}
+.write-review-link {
+    font-family: var(--font-beVietnamPro);
+    font-size: var(--font-size-s);
+    color: var(--color-brown);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+}
+
+/* --- Danh sách Review --- */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.review-card {
+    /* Đảm bảo có đường kẻ phân cách cho mỗi review */
+    border-bottom: 1px solid var(--color-pink1);
+    padding-bottom: var(--space-4);
+    padding-top: var(--space-4); /* Thêm padding trên để cân đối */
+}
+.review-card:last-child {
+    border-bottom: none;
+}
+
+/* --- Metadata (Avatar, Tên, Ngày) --- */
+.review-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-2);
+}
+
+.user-info-review {
+    display: flex;
+    align-items: flex-start; /* Căn chỉnh thông tin người dùng */
+}
+
+/* Avatar */
+.review-avatar {
+    background-color: var(--color-pink3);
+    color: var(--color-white);
+    width: 35px;
+    height: 35px;
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: var(--font-weight-extraBold);
+    font-size: var(--font-size-s);
+    margin-right: var(--space-3);
+    flex-shrink: 0; /* Ngăn avatar bị co lại */
+}
+
+.name-and-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 3px; /* Căn chỉnh tên với avatar */
+}
+
+/* Tên người đánh giá - LỚN HƠN, ĐẬM HƠN (Nunito) */
+.reviewer-name {
+    font-weight: var(--font-weight-extraBold);
+    color: var(--color-brown);
+    font-size: var(--font-size-s);
+    font-family: var(--font-nunito);
+    line-height: var(--line-height-tight); /* Giảm line height */
+}
+
+/* Verified Buyer - NHỎ HƠN, NHẠT HƠN (Be Vietnam Pro) */
+.reviewer-status {
+    font-size: var(--font-size-xs);
+    color: #777;
+    font-family: var(--font-beVietnamPro);
+    margin-bottom: var(--space-1); /* Khoảng cách với sao */
+}
+
+/* Ngày đăng - NHỎ VÀ NHẠT */
+.review-date {
+    font-size: var(--font-size-xs);
+    color: #777;
+    font-family: var(--font-beVietnamPro);
+    flex-shrink: 0;
+}
+
+/* Sao */
+.review-stars {
+    color: gold;
+    font-size: var(--font-size-xs);
+}
+
+/* --- Nội dung Review --- */
+
+/* Tiêu đề Review (Tried the kit since...) - ĐẬM VÀ RIÊNG BIỆT */
+.review-title-text {
+    font-family: var(--font-beVietnamPro); /* Giữ Be Vietnam Pro cho phần này */
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-extraBold); /* Làm nổi bật */
+    color: var(--color-brown);
+    margin: var(--space-1) 0;
+}
+
+/* Nội dung Review - Kích thước cơ bản, dễ đọc */
+.review-text {
+    font-family: var(--font-beVietnamPro);
+    font-size: var(--font-size-s);
+    color: var(--color-brown);
+    line-height: var(--line-height-base);
+    margin: var(--space-2) 0;
+}
+
+/* --- Ảnh đính kèm trong Review --- */
+.review-images {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+}
+
+.review-image-item {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-pink2);
+}
+
+.review-header-wrapper{
+    padding-top: 50px;
+}
