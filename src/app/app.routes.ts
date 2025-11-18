@@ -27,10 +27,18 @@ import { AdminLayout } from './layouts/admin-layout/admin-layout';
 import { Category } from './features/product/pages/category/category';
 import { ProductDetail } from './features/product/pages/product-detail/product-detail';
 import { Mainpage } from './features/homepage/pages/mainpage/mainpage';
+import { BrandListComponent } from './features/brand/pages/brand-list/brand-list';
+import { BeautyPreferenceComponent } from './features/account-module/pages/beauty-preference/beauty-preference';
+import { OverlayPreference1Component } from './features/account-module/components/overlay-preference1/overlay-preference1';
+import { OverlayPreference2 } from './features/account-module/components/overlay-preference2/overlay-preference2';
+import { OverlayPreference3 } from './features/account-module/components/overlay-preference3/overlay-preference3';
+import { Authentication } from './features/auth/pages/authentication/authentication';
 
 
 export const routes: Routes = [
+  // trang chính
   {path: 'mainpage',component: Mainpage},
+  // admin
   {
     path: '',
     component: AdminLayout,
@@ -41,16 +49,19 @@ export const routes: Routes = [
       }
     ]
   },
+  // account
   {
     path: '',
     component: MainLayout, 
     children: [
-      { path: '', redirectTo: 'profile', pathMatch: 'full'},
+      { path: '', redirectTo: 'mainpage', pathMatch: 'full'},
+      // hồ sơ
       {
         path: 'account',
         loadChildren: () =>
           import('./features/account-module/account-module-module').then(m => m.AccountModuleModule)
       },
+      // giỏ hàng
       {
         path: 'cart',
         component: Cart
@@ -67,10 +78,18 @@ export const routes: Routes = [
         path: 'detail',
         component: DetailOrder
       },
+      // mxh
       {
         path: 'communitypage',
         component: CommunityPage
       },
+      //  blog
+      { path: 'blog', component: Post },
+
+      // blog chi tiết 
+      { path: 'postdetail/:id', component: Postdetail },
+
+      // chính sách
       {
         path: 'contact',
         component: Contact
@@ -111,20 +130,37 @@ export const routes: Routes = [
         path: 'shippolicy',
         component: ShippingPolicy
       },
-      // Trang danh sách blog
-      { path: 'blog', component: Post },
-
-      // Trang chi tiết – có id
-      { path: 'postdetail/:id', component: Postdetail },
-
+      
+      // trang chính
       {path: 'category',component: Category},
 
       {path: 'detail/:slug',component: ProductDetail},
 
-      
+      // brand
+      {
+        path: 'brand-list',
+        component: BrandListComponent,
+      },
+      {
+        path: 'beauty-preference',
+        component: BeautyPreferenceComponent,
+      },
+      {
+        path: 'overlay-preference1',
+        component: OverlayPreference1Component,
+      },
+      {
+        path: 'overlay-preference2',
+        component: OverlayPreference2,
+      },
+      {
+        path: 'overlay-preference3',
+        component: OverlayPreference3,
+      },
+
     ]
   },
-
-  { path: '**', redirectTo: '' }
+  { path: 'auth-page', component: Authentication },
+  // { path: '**', redirectTo: '' }
 ]; 
 
