@@ -1,0 +1,44 @@
+<section class="brand-page">
+  <!-- Header gồm Title + Alphabet -->
+  <div class="brand-header">
+    <!-- Page Title -->
+    <h1 class="page-title">DANH SÁCH THƯƠNG HIỆU</h1>
+    <!-- Alphabet Navigation -->
+    <div class="alphabet-nav">
+      <app-filter
+        *ngFor="let letter of alphabet"
+        class="letter"
+        [variant]="'alphabet'"
+        [active]="activeLetter === letter"
+        (pressed)="onSelectLetter(letter)"
+      >
+        {{ letter }}
+      </app-filter>
+    </div>
+  </div>
+  <!-- CONTENT -->
+  <div class="brand-content">
+    <ng-container *ngFor="let letter of alphabet">
+      <!-- Section của từng ký tự -->
+      <div
+        *ngIf="brands[letter]"
+        [id]="letter"
+        class="brand-section"
+        [class.active]="activeLetter === letter"
+      >
+        <!-- TITLE của Section -->
+        <h2 class="brand-title" [class.active]="activeLetter === letter">{{ letter }}</h2>
+        <!-- GRID 3 CỘT BRAND -->
+        <div class="brand-grid">
+          <app-filter
+            *ngFor="let brand of brands[letter]"
+            [variant]="'default'"
+            (pressed)="goToBrandCatalog(brand)"
+          >
+            {{ brand }}
+          </app-filter>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
