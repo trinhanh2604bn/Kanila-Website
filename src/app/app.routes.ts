@@ -24,9 +24,13 @@ import { ShippingPolicy } from './features/policy-module/shipping-policy/shippin
 import { Post } from './features/find-module/post/post';
 import { Postdetail } from './features/find-module/postdetail/postdetail';
 import { AdminLayout } from './layouts/admin-layout/admin-layout';
+import { Category } from './features/product/pages/category/category';
+import { ProductDetail } from './features/product/pages/product-detail/product-detail';
+import { Mainpage } from './features/homepage/pages/mainpage/mainpage';
 
 
 export const routes: Routes = [
+  {path: 'mainpage',component: Mainpage},
   {
     path: '',
     component: AdminLayout,
@@ -41,7 +45,7 @@ export const routes: Routes = [
     path: '',
     component: MainLayout, 
     children: [
-      // { path: '', redirectTo: 'profile', pathMatch: 'full'},
+      { path: '', redirectTo: 'profile', pathMatch: 'full'},
       {
         path: 'account',
         loadChildren: () =>
@@ -112,6 +116,12 @@ export const routes: Routes = [
 
       // Trang chi tiết – có id
       { path: 'postdetail/:id', component: Postdetail },
+
+      {path: 'category',component: Category},
+
+      {path: 'detail/:slug',component: ProductDetail},
+
+      
     ]
   },
 

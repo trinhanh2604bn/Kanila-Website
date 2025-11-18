@@ -1,43 +1,103 @@
 
-<app-collapse-panel [startOpen]="true">
-  <!-- HEADER: -->
-  <div collapse-header class="user-profile">
-    <i class="fas fa-user-circle user-icon"></i>
-    <div class="user-details">
-      <div class="user-name">Hello Anh</div>
+
+  <!-- <app-collapse-panel [startOpen]="true">
+    
+    <div collapse-header class="user-profile">
+      <i class="fas fa-user-circle user-icon"></i>
+      <div class="user-details">
+        <div class="user-name">Hello Anh</div>
+      </div>
     </div>
-  </div>
-  <!-- BODY: -->
-  <div class="sidebar-body">
-    <div class="menu-group account-settings">
-        <div class="order-management">
+
+
+    <div class="sidebar-body">
+      <div class="menu-group account-settings">
+          <div class="order-management">
+          <div class="group-title-header">
+            <a routerLink="/profile/account" class="group-title-link">Tài khoản cá nhân</a>
+          </div>
+        </div>
+
+        <ul class="menu-list">
+          <li><a routerLink="info">Hồ Sơ</a></li>
+          <li><a routerLink="password">Thay Đổi Mật Khẩu</a></li>
+          <li><a routerLink="address">Địa Chỉ</a></li>
+          <li><a routerLink="payment">Phương Thức Thanh Toán</a></li>
+          <li><a routerLink="points">Hạng Thành Viên</a></li>
+          <li><a routerLink="ordershell">Quản lý đơn hàng</a></li>
+        </ul>
+      </div>
+
+      <div class="menu-group order-management">
         <div class="group-title-header">
-          <a routerLink="/profile/account" class="group-title-link">Tài khoản cá nhân</a>
+          <a routerLink="wishlist" class="group-title-link">Danh Mục Yêu Thích</a>
         </div>
       </div>
 
-      <ul class="menu-list">
-        <li><a routerLink="info">Hồ Sơ</a></li>
-        <li><a routerLink="password">Thay Đổi Mật Khẩu</a></li>
-        <li><a routerLink="address">Địa Chỉ</a></li>
-        <li><a routerLink="payment">Phương Thức Thanh Toán</a></li>
-        <li><a routerLink="points">Hạng Thành Viên</a></li>
-        <li><a routerLink="ordershell">Quản lý đơn hàng</a></li>
-        <!-- demo -->
-        <li><a routerLink="return">hoàn</a></li>
-      </ul>
+      <div class="menu-group order-management">
+        <div class="group-title-header">
+          <a routerLink="discount" class="group-title-link">Mã Giảm Giá</a>
+        </div>
+      </div>
     </div>
+  </app-collapse-panel> -->
 
-    <div class="menu-group order-management">
-      <div class="group-title-header">
-        <a routerLink="wishlist" class="group-title-link">Danh Mục Yêu Thích</a>
+
+
+<!-- ============================ -->
+
+
+
+<div class="sidebar-container">
+  <app-collapse-panel [startOpen]="true">
+    <!-- HEADER: USER PROFILE -->
+    <div collapse-header class="user-profile">
+      <i class="fas fa-user-circle user-icon"></i>
+      <div class="user-details">
+        <div class="user-name">Hello Anh</div>
       </div>
     </div>
 
-    <div class="menu-group order-management">
-      <div class="group-title-header">
-        <a routerLink="discount" class="group-title-link">Mã Giảm Giá</a>
+    <!-- BODY: SIDEBAR MENU -->
+    <div class="sidebar-body">
+      <!-- NHÓM: Tài khoản cá nhân -->
+      <div class="menu-group account-settings">
+        <ul class="menu-list">
+          <!-- HỒ SƠ: MỤC CẤP 1 BÌNH THƯỜNG, CÓ ICON MŨI TÊN -->
+          <li class="menu-item has-children">
+            <a class="parent-link">
+              <span>Tài Khoản Cá Nhân</span>
+            </a>
+
+            <!-- 4 MỤC CON -->
+            <ul class="submenu">
+              <li><a routerLink="info">Hồ Sơ</a></li>
+              <li><a routerLink="address">Địa Chỉ</a></li>
+              <li><a routerLink="payment">Hình Thức Thanh Toán</a></li>
+              <li><a routerLink="points">Hạng Thành Viên</a></li>
+            </ul>
+          </li>
+
+          <!-- Làn Da Của Bạn (cùng cấp với Hồ Sơ) -->
+          <li class="menu-item"><a routerLink="points">Làn Da Của Bạn</a></li>
+        </ul>
+      </div>
+
+      <!-- NHÓM: Quản lý đơn hàng -->
+      <div class="menu-group order-management">
+        <div class="group-title-header">
+          <a routerLink="ordershell" class="group-title-link">Quản lý đơn hàng</a>
+        </div>
+
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a routerLink="wishlist" class="group-title-link">Danh Mục Yêu Thích</a>
+          </li>
+          <li class="menu-item">
+            <a routerLink="discount" class="group-title-link">Mã Giảm Giá</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-</app-collapse-panel>
+  </app-collapse-panel>
+</div>

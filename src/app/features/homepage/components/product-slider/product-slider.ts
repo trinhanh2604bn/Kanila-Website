@@ -3,9 +3,6 @@ import { ProductService } from '../../../product/service/product';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ProductCardComponent } from "../../../../shared/components/product-card/product-card";
-import { SwiperModule, SwiperOptions } from 'swiper/types';
-import Swiper from 'swiper'
-import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { ProductList } from '../../../product/components/product-list/product-list';
