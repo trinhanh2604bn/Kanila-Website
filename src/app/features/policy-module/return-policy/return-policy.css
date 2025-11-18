@@ -1,0 +1,98 @@
+
+.policy-page {
+ font-family: var(--font-nunito);
+ padding: var(--space-7, 48px) 0;
+}
+
+.policy-content-wrapper {
+  max-width: 850px; 
+  width: 100%;
+  margin-inline: auto;
+  padding: 15px;
+  background-color: var(--color-pink1);
+  
+}
+
+.page-title {
+ font-size: var(--font-size-xl, 35px);
+ font-weight: var(--font-weight-extraBold, 800);
+ color: var(--color-red, #6b1e2e);
+ margin-bottom: 25px;
+ padding-left: 185px;
+}
+
+.policy-section {
+    margin-bottom: var(--space-7, 48px);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-m, 20px);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-red, #6b1e2e);
+    margin-top: 0;
+    margin-bottom: var(--space-4, 16px);
+}
+
+
+.return-conditions {
+    list-style: none; 
+    padding-left: 0;
+}
+
+.return-conditions > li {
+    font-size: var(--font-size-s, 16px);
+    line-height: var(--line-height-relaxed, 1.75);
+    color: var(--color-brown, #372b2b);
+    margin-bottom: var(--space-4, 16px);
+
+    position: relative;
+    padding-left: var(--space-4, 16px);
+}
+
+.return-conditions > li::before {
+    content: '•'; 
+    color: var(--color-red);
+    font-weight: 900;
+    display: inline-block;
+    width: var(--space-4, 16px);
+    margin-left: calc(-1 * var(--space-4, 16px));
+}
+
+.return-conditions li ul {
+    list-style: disc; 
+    padding-left: var(--space-6, 32px);
+    margin-top: var(--space-3, 12px);
+}
+
+.return-conditions strong {
+    font-weight: var(--font-weight-extraBold, 800);
+    color: var(--color-red);
+}
+
+
+.note-section .section-subtitle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-m, 20px);
+    color: var(--color-red);
+}
+
+.note-section {
+
+    padding: var(--space-5);
+    margin-top: var(--space-7);
+}
+
+.note-section .return-conditions li::before {
+    content: '!'; 
+    color: var(--color-red);
+}
+
+.closing-remark {
+    font-size: var(--font-size-s, 16px);
+    font-weight: bold;
+    font-style: bold;
+    color: var(--color-red);
+  
+}

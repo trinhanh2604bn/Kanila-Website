@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Header } from './header';
+import { ShippingPolicy } from './shipping-policy';
 
-describe('Footer', () => {
-  let component: Header;
-  let fixture: ComponentFixture<Header>;
+describe('ShippingPolicy', () => {
+  let component: ShippingPolicy;
+  let fixture: ComponentFixture<ShippingPolicy>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Header]
+      imports: [ShippingPolicy]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Header);
+    fixture = TestBed.createComponent(ShippingPolicy);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

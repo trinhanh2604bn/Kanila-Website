@@ -1,0 +1,33 @@
+.agent-certificate-page {
+  font-family: var(--font-nunito, 'Nunito', sans-serif); 
+
+}
+
+.page-title {
+
+  font-size: var(--font-size-xl, 35px);
+  font-weight: var(--font-weight-extraBold, 800);
+  color: var(--color-red, #6b1e2e);
+  margin-bottom: var(--space-7, 48px);
+}
+
+
+
+.agent-content-wrapper{
+    padding: 30px;
+    background-color: var(--color-pink1);
+}
+
+.policy-intro {
+
+  margin-bottom: var(--space-8, 64px);
+  font-size: var(--font-size-s, 16px);
+  color: var(--color-brown, #372b2b);
+  line-height: var(--line-height-relaxed, 1.75);
+}
+
+.policy-intro strong {
+    font-weight: var(--font-weight-extraBold, 800);
+} 
+
+

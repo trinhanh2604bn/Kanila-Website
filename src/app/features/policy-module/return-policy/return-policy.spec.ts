@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Header } from './header';
+import { ReturnPolicy } from './return-policy';
 
-describe('Footer', () => {
-  let component: Header;
-  let fixture: ComponentFixture<Header>;
+describe('ReturnPolicy', () => {
+  let component: ReturnPolicy;
+  let fixture: ComponentFixture<ReturnPolicy>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Header]
+      imports: [ReturnPolicy]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Header);
+    fixture = TestBed.createComponent(ReturnPolicy);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

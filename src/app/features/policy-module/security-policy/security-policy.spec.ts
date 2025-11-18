@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Header } from './header';
+import { SecurityPolicy } from './security-policy';
 
-describe('Footer', () => {
-  let component: Header;
-  let fixture: ComponentFixture<Header>;
+describe('SecurityPolicy', () => {
+  let component: SecurityPolicy;
+  let fixture: ComponentFixture<SecurityPolicy>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Header]
+      imports: [SecurityPolicy]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Header);
+    fixture = TestBed.createComponent(SecurityPolicy);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
