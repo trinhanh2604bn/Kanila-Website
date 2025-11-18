@@ -1,0 +1,213 @@
+.bank-link-container {
+  background-color: var(--color-pink1);
+  min-height: 100%;
+  padding: 0 var(--space-4) var(--space-5);
+  font-family: var(--font-beVietnamPro);
+}
+
+/* Hàng chứa title + button, có line trên & dưới */
+.bank-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-brown);
+  border-bottom: 1px solid var(--color-brown);
+}
+
+/* TIÊU ĐỀ */
+.bank-title {
+  margin: 0;
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-l);
+  color: var(--color-red);
+  letter-spacing: var(--letter-spacing-sm);
+}
+
+/* NÚT “Liên Kết Tài Khoản Ngân Hàng” */
+.bank-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 32px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-s);
+  color: var(--color-red);
+
+  background: var(--color-pink2);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.bank-link-btn__icon {
+  font-size: var(--font-size-m);
+  line-height: 1;
+}
+
+.bank-link-btn:hover {
+  background-color: var(--color-pink3);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Text thông báo */
+.bank-empty-text {
+  margin-top: var(--space-4);
+  margin-left: var(--space-3);
+  font-family: var(--font-beVietnamPro);
+  font-size: var(--font-size-s);
+  color: var(--color-brown);
+}
+
+/* ========== POPUP MOCKUP ========== */
+
+.bank-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-modal);
+}
+
+.bank-modal {
+  width: 100%;
+  max-width: 520px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-beVietnamPro);
+}
+
+/* HEADER POPUP */
+.bank-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.bank-modal__title {
+  margin: 0;
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-ml);
+  color: var(--color-red);
+}
+
+.bank-modal__close {
+  border: none;
+  background: transparent;
+  font-size: var(--font-size-m);
+  cursor: pointer;
+  color: var(--color-brown);
+}
+
+/* BODY POPUP */
+.bank-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.bank-modal__field label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: var(--font-size-ms);
+  color: var(--color-brown);
+}
+
+.bank-modal__field select,
+.bank-modal__field input {
+  width: 100%;
+  height: var(--form-height-sm);
+  padding: 0 var(--space-3);
+  border-radius: var(--form-border-radius);
+  border: var(--form-border-width) solid var(--form-border-color);
+  font-family: var(--font-beVietnamPro);
+  font-size: var(--form-font-size);
+  color: var(--form-color);
+  outline: none;
+}
+
+.bank-modal__field select:focus,
+.bank-modal__field input:focus {
+  border-color: var(--form-border-focus-color);
+}
+
+.bank-modal__hint {
+  margin: 0;
+  font-size: var(--font-size-ms);
+  color: var(--color-brown);
+  opacity: 0.8;
+}
+
+/* FOOTER POPUP */
+.bank-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.bank-modal__btn {
+  min-width: 120px;
+  height: var(--button-height-sm);
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+
+  font-family: var(--font-nunito);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-ms);
+  transition: background-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.bank-modal__btn--secondary {
+  background-color: var(--color-beige);
+  color: var(--color-brown);
+}
+
+.bank-modal__btn--primary {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.bank-modal__btn--primary:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .bank-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .bank-link-btn {
+    align-self: flex-end;
+  }
+
+  .bank-title {
+    font-size: var(--font-size-ml);
+  }
+
+  .bank-modal {
+    margin: 0 var(--space-3);
+    padding: var(--space-3) var(--space-3);
+  }
+}

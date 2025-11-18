@@ -1,0 +1,79 @@
+<div class="bank-link-container">
+  <!-- HÀNG TIÊU ĐỀ + BUTTON -->
+  <div class="bank-header-row">
+    <h2 class="bank-title">NGÂN HÀNG LIÊN KẾT</h2>
+
+    <button
+      type="button"
+      class="bank-link-btn"
+      (click)="showBankMockup = true"
+    >
+      <span class="bank-link-btn__icon">+</span>
+      <span class="bank-link-btn__text">Liên Kết Tài Khoản Ngân Hàng</span>
+    </button>
+  </div>
+
+  <!-- NỘI DUNG TRỐNG -->
+  <p class="bank-empty-text">
+    Bạn Chưa Liên Kết Tài Khoản Ngân Hàng.
+  </p>
+
+  <!-- ========== MOCKUP POPUP LIÊN KẾT ========== -->
+  <div class="bank-modal-backdrop" *ngIf="showBankMockup">
+    <div class="bank-modal">
+      <!-- HEADER POPUP -->
+      <div class="bank-modal__header">
+        <h3 class="bank-modal__title">Liên Kết Tài Khoản Ngân Hàng</h3>
+        <button
+          type="button"
+          class="bank-modal__close"
+          (click)="showBankMockup = false"
+        >
+          ✕
+        </button>
+      </div>
+
+      <!-- BODY POPUP (mockup form) -->
+      <div class="bank-modal__body">
+        <div class="bank-modal__field">
+          <label>Ngân hàng</label>
+          <select>
+            <option>Vietcombank</option>
+            <option>Techcombank</option>
+            <option>VietinBank</option>
+            <option>ACB</option>
+          </select>
+        </div>
+
+        <div class="bank-modal__field">
+          <label>Số tài khoản</label>
+          <input type="text" placeholder="Nhập số tài khoản" />
+        </div>
+
+        <div class="bank-modal__field">
+          <label>Tên chủ tài khoản</label>
+          <input type="text" placeholder="Nhập tên in trên thẻ" />
+        </div>
+
+        <p class="bank-modal__hint">
+          Thông tin chỉ được sử dụng để xử lý thanh toán. Kanila không lưu mật
+          khẩu hay OTP của bạn.
+        </p>
+      </div>
+
+      <!-- FOOTER POPUP -->
+      <div class="bank-modal__footer">
+        <button
+          type="button"
+          class="bank-modal__btn bank-modal__btn--secondary"
+          (click)="showBankMockup = false"
+        >
+          Hủy
+        </button>
+        <button type="button" class="bank-modal__btn bank-modal__btn--primary">
+          Xác Nhận Liên Kết
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
