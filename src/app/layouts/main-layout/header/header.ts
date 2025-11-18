@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -20,4 +21,7 @@ export class Header {
     ev.preventDefault();
     alert('Cảm ơn bạn đã đăng ký!');
   }
+
+   constructor(private router: Router) {}
+   goProductList(){this.router.navigate(['productlist']);}
 }

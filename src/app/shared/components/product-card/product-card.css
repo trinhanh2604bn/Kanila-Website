@@ -328,7 +328,7 @@ transform: scale(0.9);
 .price-value {
   font-family: var(--font-beVietnamPro);
   font-size: var(--font-size-s);
-  font-weight: var(--font-weight-extraBold);
+font-weight: var(--font-weight-extraBold);
 color: var(--color-red);
 }
 

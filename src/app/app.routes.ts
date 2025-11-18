@@ -33,13 +33,16 @@ import { OverlayPreference1Component } from './features/account-module/component
 import { OverlayPreference2 } from './features/account-module/components/overlay-preference2/overlay-preference2';
 import { OverlayPreference3 } from './features/account-module/components/overlay-preference3/overlay-preference3';
 import { Authentication } from './features/auth/pages/authentication/authentication';
+import { ProductList } from './features/product/components/product-list/product-list';
+import { ProductCardComponent } from './shared/components/product-card/product-card';
+import { OrdersShipping } from './features/account-module/pages/order-management/orders-shipping/orders-shipping';
 
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'auth-page', pathMatch: 'full' },
+  // { path: '', redirectTo: 'auth-page', pathMatch: 'full' },
 
   // đăng nhập
-  { path: 'auth-page', component: Authentication },
+  // { path: 'auth-page', component: Authentication },
   // trang chính
   {path: 'mainpage',component: Mainpage},
   
@@ -59,11 +62,11 @@ export const routes: Routes = [
       {path: 'checkout', component: CheckOutPage},
       { path: 'thanks', component: ThankYouPage},
       { path: 'detail', component: DetailOrder },
+
       // mxh
       {path: 'communitypage',component: CommunityPage },
       //  blog
       { path: 'blog', component: Post },
-
       // blog chi tiết 
       { path: 'postdetail/:id', component: Postdetail },
 
@@ -77,8 +80,12 @@ export const routes: Routes = [
       { path: 'intro', component: Introduction },
       { path: 'paymentpolicy', component: PaymentPolicy },
       { path: 'security', component: SecurityPolicy },
+      { path: 'shippolicy', component: ShippingPolicy },
       
       // trang chính
+      {path: 'productlist1', component: ProductCardComponent},
+      {path: 'productlist', component: ProductList},
+
       {path: 'category',component: Category},
       {path: 'detail/:slug',component: ProductDetail},
       // brand

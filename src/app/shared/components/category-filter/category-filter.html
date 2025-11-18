@@ -1,4 +1,10 @@
-<!-- ⭐ DESKTOP SIDEBAR -->
+<div class="selected-filters">
+  <span *ngFor="let selected of selectedFilters; let isLast = last">
+    {{ selected }}<span *ngIf="!isLast"> 🌸 </span>
+  </span>
+</div>
+
+
 <div class="desktop-filter">
   <div class="filter">Bộ Lọc</div>
 
@@ -9,16 +15,18 @@
     </div>
 
     <div class="filter-content" *ngIf="item.open">
+      <!-- Checkbox Filter -->
       <ng-container *ngIf="item.type === 'checkbox'">
         <label class="option" *ngFor="let opt of item.options">
-          <input type="checkbox" />
+          <input type="checkbox" (change)="onFilterChange(item, opt)" />
           {{ opt }}
         </label>
       </ng-container>
 
+      <!-- Price Filter (Radio Buttons) -->
       <ng-container *ngIf="item.type === 'price'">
         <label class="option" *ngFor="let opt of priceOptions">
-          <input type="radio" name="price-range" />
+          <input type="radio" name="price-range" (change)="onFilterChange(item, opt)" />
           {{ opt }}
         </label>
 
@@ -36,7 +44,7 @@
           </div>
         </div>
 
-        <button class="apply-btn" style="margin-left: 55px">Áp dụng</button>
+        <button class="apply-btn" style="margin-left: 55px" (click)="applyPriceFilter()">Áp dụng</button>
       </ng-container>
     </div>
   </div>
