@@ -1,16 +1,12 @@
-
 import { Silder } from '../../components/silder/silder';
 import { Divider } from '../../components/divider/divider';
 import { Component } from '@angular/core';
 import { Bfslider } from '../../components/bfslider/bfslider';
-import { Brand} from '../../components/brand/brand';
+import { Brand } from '../../components/brand/brand';
 import { Roya } from '../../components/roya/roya';
 import { ProductSlider } from '../../components/product-slider/product-slider';
 import { Header } from '../../../../layouts/main-layout/header/header';
 import { Footer } from '../../../../layouts/main-layout/footer/footer';
-
-
-
 
 @Component({
   selector: 'app-mainpage',
@@ -19,6 +15,5 @@ import { Footer } from '../../../../layouts/main-layout/footer/footer';
   styleUrl: './mainpage.css',
 })
 export class Mainpage {
-[x: string]: any;
-
+  [x: string]: any;
 }

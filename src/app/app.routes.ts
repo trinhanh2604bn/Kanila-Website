@@ -9,6 +9,7 @@ import { OverlayPreference2 } from './features/account-module/components/overlay
 import { OverlayPreference3 } from './features/account-module/components/overlay-preference3/overlay-preference3';
 import { BrandCatalogComponent } from './features/brand/pages/brand-catalog/brand-catalog';
 import { BrandListComponent } from './features/brand/pages/brand-list/brand-list';
+import { HomepageModule } from './features/homepage/homepage-module';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,11 @@ export const routes: Routes = [
       {
         path: 'brand-list',
         component: BrandListComponent,
+      },
+
+      {
+        path: ' ',
+        component: HomepageModule,
       },
 
       {

@@ -1,14 +1,17 @@
 <div class="card" (mouseenter)="hover = true" (mouseleave)="hover = false">
   <!-- IMAGE + ICONS -->
   <div class="img-wrapper">
-    <img [src]="image" />
+    <img [src]="image" [alt]="name" class="product-img" />
 
+    <!-- ICON GROUP -->
     <div class="icon-group">
+      <!-- HEART -->
       <button class="icon-btn heart-btn" [class.active]="wishlist" (click)="toggleWishlist($event)">
         <i class="fa-regular fa-heart" *ngIf="!wishlist"></i>
         <i class="fa-solid fa-heart" *ngIf="wishlist"></i>
       </button>
 
+      <!-- EYE -->
       <button class="icon-btn eye-btn" (click)="openPreview($event)">
         <i class="fa-regular fa-eye" *ngIf="!showPreview"></i>
         <i class="fa-solid fa-eye" *ngIf="showPreview"></i>
@@ -16,10 +19,12 @@
     </div>
   </div>
 
+  <!-- TEXT CONTENT -->
   <div class="content">
     <h3 class="product-brand">{{ brand }}</h3>
     <p class="product-name">{{ name }}</p>
 
+    <!-- RATING -->
     <div class="stars">
       <ng-container *ngFor="let s of [1, 2, 3, 4, 5]">
         <i class="fa-solid fa-star" *ngIf="s <= rating"></i>
@@ -27,17 +32,10 @@
       </ng-container>
     </div>
 
-    <p class="price">{price}</p>
+    <p class="price">{{ price }}</p>
 
     <button class="cart-btn">
-      <span
-        style="
-          font-size: var(--font-size-s);
-          font-weight: var(--font-weight-medium);
-          font-family: var(--font-nunito);
-        "
-        >Thêm Vào Giỏ Hàng
-      </span>
+      <span>Thêm Vào Giỏ Hàng </span>
       <svg
         width="20"
         height="20"
@@ -53,6 +51,7 @@
     </button>
   </div>
 
+  <!-- OVERLAY PREVIEW -->
   <div class="overlay" *ngIf="showPreview" (click)="closePreview()">
     <div class="overlay-content" (click)="$event.stopPropagation()">
       <button class="overlay-close" (click)="closePreview()">
@@ -60,13 +59,14 @@
       </button>
 
       <div class="overlay-body">
+        <!-- LEFT: IMAGE + STARS -->
         <div class="overlay-left">
           <img [src]="image" [alt]="name" class="preview-img" />
 
           <div class="overlay-rating">
             <ng-container *ngFor="let s of [1, 2, 3, 4, 5]">
-              <i class="fa-solid fa-star" *ngIf="s <= rating">{{ rating }}</i>
-              <i class="fa-regular fa-star" *ngIf="s > rating">{{ rating }}</i>
+              <i class="fa-solid fa-star" *ngIf="s <= rating"></i>
+              <i class="fa-regular fa-star" *ngIf="s > rating"></i>
             </ng-container>
           </div>
         </div>
@@ -81,19 +81,24 @@
             <span class="status">
               Trạng thái:
               <span class="status-value" [class.out-of-stock]="status === 'Hết hàng'">
-                {stock}
+                {{ status }}
               </span>
             </span>
           </div>
 
-          <div class="overlay-desc">{{ description }}</div>
+          <!-- DESCRIPTION -->
+          <div class="overlay-desc">
+            {{ description }}
+          </div>
 
+          <!-- LINK -->
           <div class="overlay-link-row">
             <a href="javascript:void(0)" class="overlay-link" (click)="openProductDetail($event)">
               Xem chi tiết sản phẩm
             </a>
           </div>
 
+          <!-- PRICE -->
           <div class="overlay-price-row">
             <span class="price-label">Giá sản phẩm</span>
             <span class="price-value">{{ price }}</span>
