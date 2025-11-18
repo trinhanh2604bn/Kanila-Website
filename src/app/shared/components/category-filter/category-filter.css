@@ -10,7 +10,7 @@
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-extraBold);
   color: var(--color-red);
-  padding: 8px 8px 8px 16px; /* Để khớp padding với filter-block */
+  padding: 8px 8px 8px 16px;
 }
 
 .main-filter-header {
@@ -44,7 +44,6 @@
   max-height: 0;
 }
 
-/* Arrow */
 .arrow {
   width: 10px;
   height: 10px;
@@ -58,17 +57,15 @@
   transform: rotate(-135deg);
 }
 
-/* Filter blocks */
 .filter-block {
-  border-radius: 0px;
   padding: 16px;
   margin-bottom: 0px;
   border-bottom: 1px solid var(--color-brown);
 }
 
 .filter-block.active {
-  border-top: 1px solid var(--color-brown); /* Viền trên khi mở */
-  border-bottom: none; /* Loại bỏ viền dưới khi mở */
+  border-top: 1px solid var(--color-brown);
+  border-bottom: none;
 }
 
 .filter-header {
@@ -93,7 +90,6 @@
   margin-top: 15px;
 }
 
-/* Options */
 .option {
   display: flex;
   align-items: center;
@@ -101,7 +97,6 @@
   margin: 6px 0;
 }
 
-/* PRICE */
 .manual-price-row {
   display: flex;
   align-items: center;
@@ -139,9 +134,8 @@
 .apply-btn {
   margin-top: 0px;
   width: 80px;
-  text-align: center; /* Căn giữa text */
-  align-self: center; /* Canh giữa theo chiều ngang */
-  height: fit-content;
+  text-align: center;
+  align-self: center;
   padding: 2px;
   border: 1px solid var(--color-brown);
   border-radius: 20px;
@@ -165,15 +159,12 @@
 .apply-btn:active {
   transform: scale(0.95);
 }
-/* --- Thêm tiêu đề "Bộ Lọc" --- */
 
-/* Container chứa tiêu đề "Bộ Lọc" */
 .filter-title-container {
   margin-bottom: 12px;
   padding-left: 16px;
 }
 
-/* Chữ "Bộ Lọc" màu đỏ đô, căn trái */
 .filter-title {
   font-size: var(--font-size-m);
   font-family: var(--font-nunito);
@@ -181,17 +172,30 @@
   color: var(--color-brown);
 }
 
-/* Container dưới các filter blocks */
 .color-container {
   margin-top: 12px;
   padding: 8px;
-  background-color: var(--color-pink2); /* Màu nền tùy chỉnh */
-  border-radius: 20px; /* Góc bo tròn */
+  background-color: var(--color-pink2);
+  border-radius: 20px;
 }
 
-/* Các kiểu khác cho container */
 .color-container.active {
-  background-color: var(--color-pink3); /* Màu nền khi được chọn */
+  background-color: var(--color-pink3);
+}
+
+.selected-filters {
+  color: var(--color-beige);
+  font: var(--font-nunito);
+  font-weight: var(--font-size-l);
+  text-align: left;
+  border: 1px solid var(--color-red);
+  background-color: var(--color-red);
+  max-width: 230px;
+  padding-left: 10px;
+}
+
+.selected-filters:hover {
+  color: var(--color-pink1);
 }
 
 @media (max-width: 768px) {

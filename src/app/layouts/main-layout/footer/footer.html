@@ -1,10 +1,12 @@
 <footer class="site-footer">
-  <div class="container py-5">
+  <div class="container py-4">
     <!-- HÀNG 1: icon mạng xã hội -->
     <div class="row">
       <div class="col-12 d-flex justify-content-center mb-4">
         <div class="d-flex justify-content-center gap-lg-5 gap-md-4 gap-sm-3 gap-2 social-row">
-          <a class="social" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a class="social" href="#" aria-label="Facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
           <a class="social" href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
           <a class="social" href="#" aria-label="Instagram"
             ><i class="fa-brands fa-instagram"></i
@@ -19,18 +21,27 @@
 
     <!-- HÀNG 2: 4 cột (1 cột logo nhỏ nhất + 3 cột thông tin) -->
     <div class="row g-4 align-items-start">
-      <!-- cột 1: logo (độ rộng nhỏ nhất) -->
+      <!-- cột 1: logo  -->
       <div class="col-12 col-md-auto">
-        <img src="assets/logo.svg" alt="Kanila" class="brand-logo" />
+        <img src="images/logobg.png" alt="Kanila" class="brand-logo" />
       </div>
 
       <!-- cột 2 -->
       <div class="col-12 col-md">
         <h6 class="sect-title">THÔNG TIN VỀ CHÚNG TÔI</h6>
         <ul class="list-unstyled footer-links">
-          <li><a routerLink="/about">Giới Thiệu</a></li>
-          <li><a routerLink="/contact">Liên Hệ KANILA</a></li>
-          <li><a routerLink="/agency-certificate">Giấy Chứng Nhận Đại Lý</a></li>
+          <li>
+            <!-- <a routerLink="/about" >Giới Thiệu</a> -->
+            <a (click)="goIntro()">Giới Thiệu</a>
+          </li>
+          <li>
+            <!-- <a routerLink="/contact">Liên Hệ KANILA</a> -->
+            <a (click)="goContact()">Liên Hệ KANILA</a>
+          </li>
+          <li>
+            <!-- <a routerLink="/agency-certificate">Giấy Chứng Nhận Đại Lý</a> -->
+            <a (click)="goAgent()">Giấy Chứng Nhận Đại Lý</a>
+          </li>
         </ul>
       </div>
 
@@ -38,13 +49,26 @@
       <div class="col-12 col-md">
         <h6 class="sect-title">DỊCH VỤ KHÁCH HÀNG</h6>
         <ul class="list-unstyled footer-links">
-          <li><a routerLink="/support">Trung Tâm Hỗ Trợ KANILA</a></li>
-          <li><a routerLink="/return-policy">Chính Sách Đổi Trả</a></li>
-          <li><a routerLink="/privacy">Chính Sách Bảo Mật</a></li>
-          <li><a routerLink="/payment-policy">Chính Sách Thanh Toán</a></li>
-          <li><a routerLink="/shipping-policy">Chính Sách Vận Chuyển</a></li>
-          <li><a routerLink="/cookie-policy">Chính Sách Cookie</a></li>
-          <li><a routerLink="/feedback">Góp Ý Và Khiếu Nại</a></li>
+          <!-- <li><a routerLink="/support">Trung Tâm Hỗ Trợ KANILA</a></li> -->
+          <li><a (click)="goFaq()">Trung Tâm Hỗ Trợ KANILA</a></li>
+
+          <!-- <li><a routerLink="/return-policy">Chính Sách Đổi Trả</a></li> -->
+          <li><a (click)="goReturnPolicy()">Chính Sách Đổi Trả</a></li>
+
+          <!-- <li><a routerLink="/privacy">Chính Sách Bảo Mật</a></li> -->
+          <li><a (click)="goSecurity()">Chính Sách Bảo Mật</a></li>
+
+          <!-- <li><a routerLink="/payment-policy">Chính Sách Thanh Toán</a></li> -->
+          <li><a (click)="goPayPolicy()">Chính Sách Thanh Toán</a></li>
+
+          <!-- <li><a routerLink="/shipping-policy">Chính Sách Vận Chuyển</a></li> -->
+          <li><a (click)="goShip()">Chính Sách Vận Chuyển</a></li>
+
+          <!-- <li><a routerLink="/cookie-policy">Chính Sách Cookie</a></li> -->
+          <li><a (click)="goCookie()">Chính Sách Cookie</a></li>
+
+          <!-- <li><a routerLink="/feedback">Góp Ý Và Khiếu Nại</a></li> -->
+          <li><a (click)="goPB()">Góp Ý Và Khiếu Nại</a></li>
         </ul>
       </div>
 
@@ -64,16 +88,16 @@
       </div>
     </div>
 
-    <!-- HÀNG 3: đăng ký email (căn phải) -->
-    <div class="row mt-4">
-      <div class="col-20 d-flex justify-content-md-end justify-content-start">
+    <!-- đăng ký email -->
+    <div class="row mt-1">
+      <div class="col-40 d-flex justify-content-md-end justify-content-start">
         <form (submit)="subscribe($event)" class="signup-form d-flex gap-2 flex-wrap">
           <label for="newsletter" class="sect-title mb-0 me-2 align-self-center"
             >ĐĂNG KÍ NHANH BẰNG EMAIL</label
           >
           <input
             id="newsletter"
-            class="form-control email-input"
+            class="form-control mail-input"
             type="email"
             placeholder="Email"
             aria-label="Nhập email để đăng ký"
